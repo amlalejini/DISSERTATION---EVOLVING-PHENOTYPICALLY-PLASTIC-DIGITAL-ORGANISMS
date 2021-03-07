@@ -23,6 +23,6 @@ jobs:
       - name: Upload output as artifact
         uses: actions/upload-artifact@main
         with: 
-          name: manuscript.pdf
+          name: manuscript
           path: output/manuscript.pdf
       
