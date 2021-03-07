@@ -21,7 +21,7 @@ jobs:
           ls
           mv main.pdf output/manuscript.pdf
       - name: Upload output as artifact
-        uses: actions/upload-artifact@main
+        uses: actions/upload-artifact@master
         with: 
           name: manuscript.pdf
           path: output/manuscript.pdf
