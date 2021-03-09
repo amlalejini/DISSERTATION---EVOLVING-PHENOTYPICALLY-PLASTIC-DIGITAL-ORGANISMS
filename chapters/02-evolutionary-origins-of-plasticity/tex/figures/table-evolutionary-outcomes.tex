@@ -1,0 +1,36 @@
+\begin{table*}[t]
+\renewcommand{\arraystretch}{1.5}
+	\centering
+    \small
+    \begin{tabulary}{\textwidth}{| l | r | r | r | r | r |}
+      \hline 
+      \multicolumn{1}{| c |}{\centering \textbf{Treatment}} &
+      \multicolumn{2}{ c |}{\centering \textbf{Plastic Replicates}} &
+      \multicolumn{2}{ p{0.25\textwidth}|}{\centering \textbf{Unconditional Precedes Conditional}} & \multicolumn{1}{p{0.20\textwidth}|}{\centering \textbf{Sub-optimal Precedes Optimal}} \\
+      \cline{2-5}
+      & \multicolumn{1}{p{0.1\textwidth} |}{\centering Total} & \multicolumn{1}{p{0.1\textwidth} |}{\centering Optimal$^{*}$} & \multicolumn{1}{p{0.1\textwidth} |}{\centering NAND Task} & \multicolumn{1}{p{0.1\textwidth} |}{\centering NOT Task} & \\
+      \hline 
+      Baseline 						 & 31 (62\%) & 17 (34\%) & 31 (100\%)   & 28 (90.3\%) & 16 (94.1\%) \\
+      \hline 
+      Low Mutation Rate 			 & 38 (76\%) & 30  (60\%) & 34 (89.5\%) & 35 (92.1\%) & 30 (100\%) \\
+      \hline 
+      High Mutation Rate  			 & 25 (50\%) & 11  (22\%) & 25 (100\%)  & 24 (96\%)  & 10 (90.9\%) \\
+      \hline 
+      \parbox[t]{0.2\textwidth}{Short Environment Cycle Length} & 36 (72\%) & 18  (36\%) & 33 (91.7\%) & 28 (77.8\%) & 18 (100\%) \\
+      \hline 
+      \parbox[t]{0.2\textwidth}{Long Environment Cycle Length}  & 16 (32\%) & 10  (20\%) & 14 (87.5\%) & 16 (100\%)  & 9 (90\%) \\
+      \hline 
+      Control						 & 0 (0\%) & 0 (0\%) & \multicolumn{1}{c|}{--} & \multicolumn{1}{c|}{--} & \multicolumn{1}{c|}{--} \\
+      \hline 
+    \end{tabulary}
+    \begin{tablenotes}
+          \item[*] $^{*}$\small{Optimal is defined as the complete phenotype that only performs the rewarded task in each environment.}
+    \end{tablenotes}
+    \caption{\small 
+    A summary of evolutionary outcomes across all five experimental treatments and control. 
+    Plastic Replicates indicates the number of replicates (out of 50 per treatments) in which the final dominant genotype was plastic at all (Total) and perfectly plastic (Optimal).  
+    Unconditional Precedes Conditional indicates the number of times the NAND task and NOT task were expressed unconditionally before eventually evolving to be express conditionally (out of total plastic).  
+    Finally, Sub-optimal Precedes Optimal indicates how many runs had an imperfect form of plasticity before eventually evolving to be optimally plastic (out of total optimally plastic).
+    }
+    \label{chapter:origins-of-plasticity:table:evolutionary-outcomes}
+\end{table*}

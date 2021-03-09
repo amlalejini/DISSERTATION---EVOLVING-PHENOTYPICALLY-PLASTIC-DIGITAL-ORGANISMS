@@ -1,0 +1,26 @@
+% Table 'bout treatments
+\begin{table}
+\renewcommand{\arraystretch}{1.5}
+  \centering
+  \small
+  \begin{tabular}{| >{\raggedright} p{0.3\columnwidth} |r | r| }
+    \hline
+    \centering \textbf{Treatment} & \multicolumn{1}{>{\raggedright\arraybackslash}p{0.25\columnwidth}|}{\centering \textbf{Point-mutation Rate}} & \multicolumn{1}{>{\raggedright\arraybackslash}p{0.30\columnwidth}|}{\centering \textbf{Environment Cycle Length }}
+    \\ \hline 
+    Baseline &  0.0075 &  100 updates  
+    \\ \hline 
+    Low Mutation Rate &  0.0025 & 100 updates 
+    \\ \hline 
+    High Mutation Rate &  0.0125 &  100 updates 
+    \\ \hline
+    Short Environment Cycle Length & 0.0075 &  50 updates 
+    \\ \hline 
+    Long Environment Cycle Length & 0.0075 &  200 updates 
+    \\ \hline 
+  \end{tabular}
+  \caption{\small 
+  Differences among the five experimental treatments. Point-mutation rate is given as mutations per instruction copied.
+  Environment cycle length describes the length of time (in updates) an environment is active before toggling to the alternative environment.
+  }
+  \label{chapter:origins-of-plasticity:table:treatments}
+\end{table}

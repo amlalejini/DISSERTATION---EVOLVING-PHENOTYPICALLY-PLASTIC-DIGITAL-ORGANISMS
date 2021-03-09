@@ -67,7 +67,7 @@
 \setlength{\cftaftertoctitleskip}{0.1875in}
 \renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
 \renewcommand{\cftaftertoctitle}{\hfill}
-\renewcommand{\contentsname}{\large\centering{TABLE OF CONTENTS}}
+\renewcommand{\contentsname}{\large\begin{center}{TABLE OF CONTENTS}\end{center}}
 
 % Add dot leaders to the chapter entries in the TOC
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
@@ -268,6 +268,7 @@ ACKNOWLEDGEMENTS \par
 \input{acknowledgements}
 
 \end{doublespace}
+\newpage
 
 
 \begin{singlespace}
@@ -281,6 +282,7 @@ ACKNOWLEDGEMENTS \par
 \begin{singlespace}
 \listoftables
 \end{singlespace}
+
 
 \newpage
 
@@ -299,8 +301,6 @@ ACKNOWLEDGEMENTS \par
 \newpage
 \setlength{\parskip}{0 cm} \setlength{\topmargin}{0in}
 \end{singlespace}
-
-
 
 %%%  This concludes the mandatory formatting for a dissertation.
 %%%  Now, reset the page counter, and use arabic numerals for the remainder:
@@ -354,7 +354,7 @@ BIBLIOGRAPHY
 \newpage
 \begin{singlespace}
 \bibliographystyle{apalike}% your bst file here
-\bibliography{references} %your bib file here
+\bibliography{references,software} %your bib file here
 \end{singlespace}
 \end{doublespace}
 \end{document}
