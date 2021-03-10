@@ -1,5 +1,11 @@
 # Construction notes
 
+## Title ideas
+
+- Evolving Responsive digital organisms
+- Evolving phenotypically plastic digital organisms
+- Evolving phenotypically plastic computer programs
+
 ## Reminders/Todos:
 
 - Double check degree names for CS and EEB
@@ -20,6 +26,14 @@
 - Tweak p value reporting
 - Update figure legends
 - Update election figure legend w/abbreviations for conditions
+
+#### Tag-based regulation
+
+- Update with final version of the paper
+- Update chapter title if necessary
+- Update main chapter citation (create from scratch if necessary)
+- Fix boolean logic calculator network figure => currently too large for this format
+  - Break into two figures?
 
 ## Questions:
 

@@ -1,0 +1,289 @@
+\section{Methods}
+\label{chapter:tag-based-regulation:sec:methods}
+
+We evaluated how tag-based genetic regulation faculties contribute to, and potentially detract from, the functionality of evolved genetic programs in the context of SignalGP.
+First, we assessed the evolvability of our implementation of tag-based genetic regulation: 
+can we evolve programs that rely on regulation to dynamically adjust their response to environmental conditions over time? 
+Additionally, can tag-based genetic regulation improve problem-solving success on context-dependent problems?
+We addressed these questions using the signal-counting and contextual-signal problems, diagnostic tasks that require context-dependent responses to an input signal.
+
+Next, we assessed tag-based genetic regulation on the Boolean-logic calculator problem, a more challenging program synthesis problem that requires programs to perform Boolean logic computations in response to a sequence of input events that represent button presses on a simple calculator. 
+
+% ---- BEGIN REVISION ----
+Finally, we used the independent-signal problem to investigate the potential for genetic regulation to impede adaptive evolution by producing maladaptive plasticity. 
+The independent-signal problem is a diagnostic that requires programs to associate distinct responses with each type of input; as such, programs do not need to change their response to particular input signals based on prior context.
+Additionally, fitness evaluation in the independent-signal problem is imperfect: programs receive input signals in a random order, providing ample opportunity for erroneous regulation to impede adaptive evolution.
+
+
+% fitness evaluation in the independent-signal problem is imperfect, providing ample opportunity for erroneous regulation to impede adaptive evolution.  
+
+% The changing-signal task does not require programs to contextually change their response to particular inputs, providing ample opportunity for erroneous regulation to impede adaptive evolution.  
+
+% ----- END REVISION ----
+
+
+
+\subsection{SignalGP}
+\label{chapter:tag-based-regulation:sec:methods:signalgp}
+
+% - High-level overview of SignalGP -
+%   - event-driven computing
+Here, we provide a general overview of SignalGP; see \citep{lalejini_evolving_2018} for a more in-depth description.
+SignalGP defines a scheme for organizing and interpreting genetic programs to afford computational evolution access to the event-driven programming paradigm \citep{cassandras_event-driven_2014}.
+In event-driven programs, software execution focuses on processing events (often in the form of messages from other processes, sensor alerts, or user actions).
+In SignalGP, events (signals) trigger the execution of program modules (functions), facilitating efficient reactions to exogeneously- or endogeneously-generated signals.
+For this work, program modules are represented as sequences of instructions; however, the SignalGP framework generalizes across a variety of program representations \citep{lalejini_what_2019}.
+
+% - Slightly less high-level overview of SignalGP -
+%   - organization of programs
+%   - tags, tag-based referencing (in signalgp context)
+%   - how signals trigger functions
+Programs in SignalGP are explicitly modular, comprising a set of functions, each associating a tag with an instruction sequence.
+SignalGP makes explicit the concept of events or \textit{signals}.
+All signals contain a tag and any associated signal-specific data (\textit{e.g.}, numeric input values).
+Because both signals and program functions are tagged, SignalGP determines the most appropriate function to process a signal using tag-based referencing: signals trigger the function with the closest matching tag.
+
+% ------ BEGIN REVISIONS --------
+% Comment: Please do two things to add clarity here: 
+%  - (1) actually show the equation for the Streak metric, 
+%  - (2) clearly define what you mean by "longest contiguously-matching" and "longest contiguously-mismatching". 
+%  - For example, are these aligned by index, or are slight misalignments taken into account, for example like Levenshtein string distances? Also, what if two bit strings are identical -- is the mismatch length 0, and then what happens when you divide by 0?
+
+In this work, we represent tags as 256-bit strings, and we quantify the similarity between any two tags using the Streak metric.
+The Streak metric was originally proposed by Downing \citep{downing_intelligence_2015} and measures similarity between two bit strings in terms of the relationship between the lengths of the longest contiguously-matching and longest contiguously-mismatching substrings.\footnote{
+We make a slight modification to Downing's matching procedure due to an error in its mathematical derivation, as detailed in the supplement \citep{tag_regulation_supplement_2021}.
+}
+That is, we XOR the two bit strings and count the longest substring of all 0's in the first case or all 1's in the second.
+Both our implementation and the mathematical equations for computing the Streak similarity between two bit strings can be found in supplemental material \supSecStreakMetric\ \citep{tag_regulation_supplement_2021}.
+
+% ------ END REVISIONS --------
+
+% ----- BEGIN REVISIONS -----
+% -- Signal-driven execution --
+When a signal triggers a function, the function executes with the signal's associated data as input.
+SignalGP programs can handle many signals simultaneously by processing and responding to each in parallel threads of execution.
+Threads each contain local memory registers for performing computations.
+Additionally, concurrently executing threads may interact by writing to and reading from a shared global memory buffer.
+% @AML: new lines next
+For this work, we guaranteed deterministic thread execution using a round robin scheduler to step each thread forward one step (\textit{i.e.}, one instruction) synchronously.
+
+% ----- END REVISIONS -----
+
+% - Instructions -
+%   - see supplemental material for full instruction set!
+The SignalGP instruction set allows programs to generate internal signals, broadcast external signals, and otherwise work in a tag-based context. 
+In this work, each instruction contains one tag and three integer arguments. 
+Arguments may modify the effect of an instruction, often specifying memory locations or fixed values.
+For example, instructions may refer to and call internal program modules using tag-based referencing; when an instruction generates a signal (\textit{e.g.}, to be used internally or broadcast), the instruction's tag is used as the signal's tag.
+
+\input{chapters/05-tag-based-genetic-regulation/tex/figures/table-regulation-instructions}
+
+% regulation in signalgp
+Previous work has demonstrated that SignalGP facilitates the evolution of event-driven programs capable of identifying and responding to many \textit{distinct} signals \citep{lalejini_what_2019}.
+% However, without access to regulation, SignalGP requires programs to use procedural mechanisms (\textit{e.g.}, if statements) to adjust how they respond to a particular signal over time.
+However, without access to regulation, SignalGP requires programs to track context in memory and use procedural mechanisms (\textit{e.g.}, if statements) to adjust how they respond to a particular signal over time based on stored context.
+Here, we apply tag-based genetic regulation to SignalGP (as described in Section \ref{chapter:tag-based-regulation:sec:tag-based-genetic-regulation}).
+We supplemented the instruction set with regulatory instructions (Table \ref{chapter:tag-based-regulation:tab:regulation-instructions}) that use tag-based referencing to target internal functions. 
+In this work, we apply regulation to function references using Equation \ref{chapter:tag-based-regulation:equ:reg-transform}. 
+Our full instruction set, including descriptions of each instruction, can be found in our supplemental material \citep{tag_regulation_supplement_2021}.
+
+\subsubsection{Evolution}
+
+In this work, we propagated programs asexually, and we applied mutations to offspring.
+The parent-selection method varied across experiments.
+Programs were variable-length: each program contained up to \MaxFuncCnt\ modules, and each module contained up to \MaxFuncInstCnt\ instructions.
+
+% ---- BEGIN REVISION -----
+
+We applied single-instruction substitution, insertion, and deletion mutations each at a per-instruction rate of \MutRateInstPoint. 
+Additionally, we applied a `slip' mutation operator \citep{lalejini_gene_2017} that could duplicate or delete entire sequences of instructions at a per-module rate of \MutRateSeqSlip. 
+We mutated numeric instruction arguments at a per-argument rate of \MutRateInstArgSub, and we limited numeric arguments to values between \MinArgValue\ and \MaxArgValue.
+When a numeric argument mutated, we randomized the argument's value to a valid integer between \MinArgValue\ and \MaxArgValue.
+We mutated instruction- and module-tags at a per-bit rate of \MutRateTagBF.
+We applied whole-module duplication and deletion operators at a per-module rate of \MutRateFuncDup, allowing the number of modules in a program to evolve.
+
+% ---- END REVISION -----
+
+% \subsection{Repeated-signal Problem}
+% \label{sec:methods:repeated-signal-problem}
+\subsection{Signal-counting Problem}
+\label{chapter:tag-based-regulation:sec:methods:signal-counting-problem}
+
+% ----- BEGIN REVISION -----
+% - Issue: does a program simply have to execute the corresponding Response-i instruction, or do the Response-i instructions output some other value? I think the former, but this could be clearer.
+The signal-counting problem requires programs to continually change their response to an environmental signal, producing the appropriate output each of the $K$ times that signal is repeated.
+Programs output responses by executing one of $K$ response instructions. 
+For example, if a program receives two signals from the environment during evaluation (\textit{i.e.}, $K=2$), the program should execute \code{Response-1} after the first signal and \code{Response-2} after the second signal; aside from executing the correct response instruction, no other output is necessary after receiving an environmental signal.
+
+% ----- END REVISION -----
+
+% ----- BEGIN REVISION -----
+% - Issue: what is a time step?
+We provide programs \RepeatSigTaskCpuTimePerSignal\ time steps to respond to each environmental signal.
+% @AML: new sentence next
+During each time step, each of a program's active thread's execute a single instructions.
+Once the allotted time expires or the program outputs a response, the program's threads of execution reset, resulting in a loss of all thread-local memory; \textit{only} the contents of the global memory buffer and each program module's regulatory state persist.
+The environment then produces the next signal (identical to each previous environmental signal) to which the program may respond.
+A program \textit{must} use the global memory buffer or genetic regulation to correctly shift its response to each subsequent environmental signal. 
+Evaluation continues in this way until the program correctly responds to each of the $K$ environmental signals or until the program executes an incorrect response.
+A program's fitness equals the number of consecutive correct responses given during evaluation, and a program is considered a solution if it correctly responds to all $K$ environmental signals.
+
+% ----- END REVISION ----
+
+\subsubsection{Experimental Design}
+
+The signal-counting problem is explicitly designed to 
+(1) evaluate if tag-based genetic regulation can be evolved to dynamically adjust which modules execute in response to a \textit{repeated} input type 
+and (2) assess the problem-solving success of a regulation-enabled GP system relative to an otherwise identical GP system with regulation disabled. 
+We compared programs evolved in a regulation-on treatment to those evolved in a regulation-off control.
+In the control treatment, we used an identical instruction set where regulation instructions were altered to behave as no-operation instructions.  As such, programs must use global memory (in combination with procedural flow-control mechanisms) to correctly respond to environmental signals.
+
+For each experimental condition, we evolved 200 replicate populations of 1000 programs for 10,000 generations at four levels of problem difficulty: $K=2, 4, 8$, and 16.
+For each replicate, we randomly generated a unique tag for each environmental signal, and we initialized populations with randomly generated programs.
+Each generation, we evaluated programs independently, and we selected programs using size-eight tournament selection.
+
+\subsection{Contextual-signal Problem}
+\label{chapter:tag-based-regulation:sec:methods:contextual-signal-problem}
+
+The contextual-signal problem is inspired by Skocelas and DeVries' method for verifying the functionality of recurrent neural network implementations \citep{skocelas_test_2020}. 
+In the contextual-signal problem, programs must respond appropriately to a pair of input signals.
+The order of these signals does not matter, but the first signal must be remembered (as ``context'') in order to produce the correct response to the second signal.
+In this work, there are a total of four possible input signals and four possible outputs.
+Programs output a particular response by executing one of four response instructions. 
+Table \ref{chapter:tag-based-regulation:tab:context-signal-input-combos} gives the correct output type for each pairing of input signals. 
+
+\input{chapters/05-tag-based-genetic-regulation/tex/figures/table-context-signal-input-combinations} 
+
+We evaluate programs on each of the 16 possible sequences of input signals (Table \ref{chapter:tag-based-regulation:tab:context-signal-input-combos}); we consider each of these input sequences as a single test case.
+For each test case evaluation, we give programs \ContextSigTaskCpuTimePerSignal\ time steps to process each signal.
+After the first input signal, a program must update internal state information to ensure that the second input signal induces the correct response.  
+Once the allotted time expires after the first input signal, the program's threads of execution are reset, resulting in a loss of all thread-local memory; \textit{only} the contents of global memory and each function's regulatory state persist. 
+The program then receives the second input signal and must execute the correct response instruction within \ContextSigTaskCpuTimePerSignal\ time steps.
+A program is considered a solution if it produces the correct response for all 16 possible sequences of input signals.
+
+\subsubsection{Experimental Design}
+
+We use the contextual-signal problem to
+(1) assess the capacity of tag-based genetic regulation to perform context-dependent module execution based on \textit{distinct} input types
+and
+(2) evaluate the problem-solving success of a regulation-enabled GP system relative to an otherwise identical GP system with regulation disabled.
+As in the signal-counting problem, we compared the problem-solving success of regulation-on and regulation-off GP systems.
+
+For each experimental condition, we evolved 200 replicate populations of 1000 programs for 10,000 generations.
+For each replicate, we randomly generated the tags associated with each type of input signal, and we initialized populations with randomly generated programs.
+Instead of selecting programs to propagate based on an aggregate fitness measure, we used the lexicase parent selection algorithm \citep{helmuth_solving_2015} in which each combination of input signals (\textit{i.e}., row in Table \ref{chapter:tag-based-regulation:tab:context-signal-input-combos}) constituted a single test case. 
+
+\subsection{Boolean-logic Calculator Problem}
+\label{chapter:tag-based-regulation:sec:methods:boolean-calc-problem}
+% alternative names
+% - Bitwise Logic Calculator Problem
+
+Inspired by Yeboah-Antwi's PushCalc system \citep{yeboah-antwi_evolving_2012}, 
+the Boolean-logic calculator problem requires programs to implement a push-button calculator capable of performing each of the following 10 bitwise logic operations: ECHO, NOT, NAND, AND, OR-NOT, OR, AND-NOT, NOR, XOR, and EQUALS. 
+Table \ref{chapter:tag-based-regulation:tab:boolean-calc-operations} gives a brief overview of each of these operations. 
+In this problem, there are 11 distinct types of input signals: one for each of the 10 possible operators and one for numeric inputs. 
+Each distinct signal type is associated with a unique tag (randomly generated per-replicate) and is meant to recreate the context that must be maintained on a physical calculator.
+Programs receive a sequence of input signals in prefix notation, starting with an operator signal and followed by the appropriate number of numeric input signals (that each contain an operand to use in the computation).
+After receiving the appropriate input signals, programs must output the correct result of the requested computation.
+
+\input{chapters/05-tag-based-genetic-regulation/tex/figures/table-boolean-calc-operations}
+
+Programs are evaluated on a set of test cases (\textit{i.e.}, input/output examples) where each test case comprises a particular operator, the requisite number of operands, and the expected numeric output.
+Test cases are evaluated on a pass/fail basis, and a program is classified as a solution if it passes all test cases in a training and testing set\footnote{
+We use the testing set only to determine if a program can be categorized as a solution. The testing set is never used by the parent-selection algorithm to determine reproductive success.
+}.
+The training and testing sets used in this work are included in our supplemental material \citep{tag_regulation_supplement_2021} and contained 442 and 5810 test cases, respectively.
+Each generation, we sample 20 test cases from the training set, and we independently evaluate each program in the population on the sampled test cases.
+
+When evaluating a program on a test case, we provide \CalculatorTaskCpuTimePerSignal\ time steps to process each input signal.
+After time expires, the program's threads of execution are reset, resulting in a loss of all thread-local memory; only the contents of global memory and each function's regulatory state persist.
+Because input-signals are given in prefix notation, programs must adjust their internal state to ensure that the program performs and outputs the result of the appropriate computation after receiving the requisite number of operand input signals.
+
+% # training cases: 442
+% # testing cases: 5810
+% # total cases: 6252
+% Number of training examples to evaluate each generation: 20
+%   Test case type: NOR; TypeID: 9; # training cases: 45; # training sample eval: 2
+%   Test case type: ANDNOT; TypeID: 8; # training cases: 45; # training sample eval: 2
+%   Test case type: XOR; TypeID: 7; # training cases: 45; # training sample eval: 2
+%   Test case type: NOT; TypeID: 6; # training cases: 41; # training sample eval: 2
+%   Test case type: ECHO; TypeID: 5; # training cases: 41; # training sample eval: 2
+%   Test case type: EQU; TypeID: 1; # training cases: 45; # training sample eval: 2
+%   Test case type: NAND; TypeID: 0; # training cases: 45; # training sample eval: 2
+%   Test case type: ORNOT; TypeID: 2; # training cases: 45; # training sample eval: 2
+%   Test case type: AND; TypeID: 3; # training cases: 45; # training sample eval: 2
+%   Test case type: OR; TypeID: 4; # training cases: 45; # training sample eval: 2
+
+
+\subsubsection{Experimental Design}
+
+We use the Boolean-logic calculator problem to assess the utility of tag-based regulation on a challenging program synthesis problem. 
+The signal-counting and contextual-signal problems each require programs to perform different computations in response to input signals, but those computations are abstracted as `response' instructions. 
+The Boolean-logic calculator problem requires programs to both dynamically adjust which modules are executed in response to input signals and perform non-trivial computations on numeric inputs. 
+
+We compared the problem-solving success of programs evolved in regulation-on and regulation-off conditions.
+For each condition, we evolved 200 replicate populations of 1000 programs for 10,000 generations.
+For each replicate, we randomly generated the tags associated with each type of input signal, and we initialized populations with randomly generated programs.
+We selected parents using a variant of the down-sampled lexicase algorithm \citep{hernandez_random_2019}, guaranteeing that at least one of each type of test case (\textit{i.e.}, at least one of each type of operator) was used during evaluation. 
+
+\subsection{Independent-signal Problem}
+\label{chapter:tag-based-regulation:sec:methods:independent-signal-problem}
+
+% ----- BEGIN REVISION -----
+
+The independent-signal problem requires programs to execute a unique response for each of 16 distinct input signals. 
+Because signals are distinct, programs need not alter their response to any particular signal over time.
+Instead, programs may ``hardwire'' each of the 16 possible responses to the appropriate input signal.
+However, input signals are presented in a random order; thus, the correct \textit{order} of responses cannot be hardcoded.
+Otherwise, evaluation (and fitness assignment) on the independent-signal task mirrors that of the signal-counting task (Section \ref{chapter:tag-based-regulation:sec:methods:signal-counting-problem}).
+A program is considered a solution if it responds correctly to all 16 input signals during evaluation.
+
+\subsubsection{Experimental Design}
+
+%%% @AML: working on highlighting how fitness eval is deliberately imperfect.
+% - Problems of this nature are common: robot simulations, or large input spaces where only possible to test on small sample of input types. 
+We deliberately configured fitness evaluation and solution identification in the independent-signal problem to be noisy: each program is evaluated once on a single random ordering of input signals, and we label a program as a solution if it performs optimally during a single evaluation.
+Because programs receive input signals in a random order, erroneous genetic regulation can manifest as cryptic variation (\textit{i.e.}, behavioral variation that is not expressed and selected on).
+For example, non-adaptive down-regulation of a particular response-function may be neutral given one sequence of input signals, but may be deleterious in another.
+Indeed, this form of non-adaptive cryptic variation can also result from erroneous flow control structures. 
+
+The independent-signal problem allows us to test whether genetic regulation can impede adaptive evolution in scenarios where outputs are not context-dependent and where fitness evaluation does not reliably differentiate between generalizing and non-generalizing candidate solutions.
+Fitness evaluation for the independent-signal problem is computationally inexpensive, so we could easily increase the reliability of evaluation by testing programs on multiple orderings of input sequences.
+However, our goal is not to demonstrate that we can \textit{solve} this simple diagnostic problem.
+Rather, we aim to determine if this diagnostic represents a general scenario where unnecessary tag-based regulation can impede adaptive evolution relative to not having regulation. %, [as many real-world problems are likely to have unreliable evaluation (\textit{e.g.}, robotics simulations, [...]).]
+% The changing-signal problem assesses the potential for unnecessary tag-based genetic regulation to \textit{impede} adaptive evolution relative to not having regulation.
+
+As in each of the previous experiments, we compared programs evolved in regulation-on and regulation-off conditions.
+Specifically, we compared initial problem-solving success and how well solutions generalized to a sample of 5000 input sequences (of ${\sim}2.1\times10^{13}$ possible sequences). 
+We deemed programs as having generalized only if they responded correctly in all 5000 tests.
+
+We evolved 200 replicate populations of 1000 programs for 10,000 generations under each condition. 
+For each replicate, we randomly generated 16 unique input signal tags.
+All other experimental procedures were identical to that of the signal-counting task.
+
+% ------ END REVISION ------
+
+\subsection{Data Analysis and Reproducibility}
+
+% How knockout experiments work
+For each replicate in a given experiment, we extracted and analyzed the first evolved program that was classified as a solution. 
+We compared the number of successful replicates (\textit{i.e.}, replicates that yielded a solution) across experimental conditions using Fisher's exact test.
+%, and we applied a Bonferroni correction for multiple comparisons where appropriate. %@AML: no actual multiple comparisons in results!
+We conducted knockout experiments on successful programs to identify the mechanisms underlying their behavior.
+In all knockout experiments, we re-evaluated programs with a target functionality (\textit{e.g.}, regulation instructions) replaced with no-operation instructions.
+Specifically, we independently knocked out (1) all regulatory instructions, (2) all instructions that access a program's global memory buffer, and (3) both regulatory instructions and global memory access instructions. 
+We classify a program as reliant on a particular functionality if, when knocked out, fitness decreases. 
+In addition to knockout experiments, we tracked the distribution of instruction types (\textit{e.g.}, flow control, mathematical operations, \textit{etc.}) executed by successful programs. 
+For each successful replicate, we extracted the proportion of flow control instructions (\textit{i.e.}, conditional logic instructions such as ``if'' or ``while'' statements) executed by the evolved solution. 
+We compared the proportions of flow control instructions executed by regulation-on solutions and regulation-off solutions, allowing us to assess the relative importance of conditional logic across experimental treatments.
+
+For programs reliant on genetic regulation, we abstracted regulatory networks as directed graphs by monitoring program execution.
+Vertices represent program functions, and directed edges (each categorized as promoting or repressing) show the regulatory interactions between two functions.
+For example, a repressing edge from function A to function B indicates that B was repressed when A was executing.
+
+We implemented our experiments using the Empirical scientific software library \citep{charles_ofria_2020_empirical}, and we conducted all statistical analyses using R version 4.0.2 \citep{r_language_2020}.
+We used the reshape2 \cite{R-reshape2} R package and the tidyverse \citep{r_tidyverse_2019} collection of R packages to wrangle data. 
+We used the following R packages for graphing and visualization: ggplot2 \citep{R-ggplot2}, cowplot \citep{R-cowplot}, viridis \citep{R-viridis}, Color Brewer \citep{harrower_colorbrewerorg_2003,R-Brewer_2014}, and igraph \citep{igraph2006}.
+We used R markdown \citep{rmarkdown} and bookdown \citep{R-bookdown} to generate web-enabled supplemental material.
+Our source code for experiments and analyses, along with guides for replication, can be found in supplemental material \citep{tag_regulation_supplement_2021}, which is hosted on \href{https://github.com/amlalejini/Tag-based-Genetic-Regulation-for-LinearGP/}{GitHub}\footnote{\url{https://github.com/amlalejini/Tag-based-Genetic-Regulation-for-LinearGP/}}.
+Additionally, we have made all of our experimental data available on the \href{https://osf.io/928fx/}{Open Science Framework} (see \supSecDataAvailability\ in supplement \citep{tag_regulation_supplement_2021}).

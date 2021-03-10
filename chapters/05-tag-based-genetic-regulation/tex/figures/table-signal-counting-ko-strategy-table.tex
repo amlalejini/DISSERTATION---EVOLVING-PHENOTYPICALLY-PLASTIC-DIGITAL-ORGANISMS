@@ -1,0 +1,38 @@
+\begin{table}[htbp]
+    \small
+    \centering
+    \begin{tabularx}{\columnwidth}{cYYY}
+        \toprule
+          & No regulation required
+          & Regulation required 
+          & Unsolved \\
+        %  \hline
+        \cmidrule(lr){1-4}
+         Two-signal     
+            & \RSPTwoSigMemOnlyStrategyCnt  % Memory-only
+            & \RSPTwoSigRegRequiredStrategyCnt  
+            & \RSPTwoSigUnsolvedCnt \\
+        %  \hline
+         Four-signal    
+            & \RSPFourSigMemOnlyStrategyCnt  % Memory-only
+            & \RSPFourSigRegRequiredStrategyCnt   % 
+            & \RSPFourSigUnsolvedCnt \ \\
+        %  \hline
+         Eight-signal   
+            & \RSPEightSigMemOnlyStrategyCnt  % Memory-only
+            & \RSPEightSigRegRequiredStrategyCnt  % 
+            & \RSPEightSigUnsolvedCnt \\
+        %  \hline
+         Sixteen-signal 
+            & \RSPSixteenSigMemOnlyStrategyCnt  % Memory-only
+            & \RSPSixteenSigRegRequiredStrategyCnt  % 
+            & \RSPSixteenSigUnsolvedCnt \\
+         \bottomrule
+    \end{tabularx}
+    \caption{\small 
+    \textbf{Mechanisms underlying solutions from the regulation-on condition for the signal-counting problem.}
+    To determine a successful program's underlying strategy, we re-evaluated the program with global memory access instructions knocked out (\textit{i.e.}, replaced with no-operation instructions) and with regulation instructions knocked out.
+    This table shows the number of regulation-on solutions that actually rely on regulation to solve the signal-counting problem. 
+    }
+    \label{chapter:tag-based-regulation:tab:signal-counting-ko-strategies}
+\end{table}

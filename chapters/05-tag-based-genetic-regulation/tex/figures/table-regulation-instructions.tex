@@ -1,0 +1,204 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Variables to make it easy to change table contents
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%% SetRegulator %%%%%%%%%%
+\newcommand{\SetRegulatorName}{\code{SetRegulator+}}
+\newcommand{\SetRegulatorArgs}{1}
+\newcommand{\SetRegulatorTag}{Yes}
+\newcommand{\SetRegulatorDescription}{Set the regulatory modifier of a target module to the value stored in an argument-specified memory register.}
+
+%%%%%%%%%% SetRegulator- %%%%%%%%%%
+\newcommand{\SetRegulatorMinusName}{\code{SetRegulator-}}
+\newcommand{\SetRegulatorMinusArgs}{1}
+\newcommand{\SetRegulatorMinusTag}{Yes}
+\newcommand{\SetRegulatorMinusDescription}{Set the regulatory modifier of a target module to the negation of the value stored in an argument-specified memory register.}
+
+\newcommand{\SetOwnRegulatorName}{\code{SetOwnRegulator+}}
+\newcommand{\SetOwnRegulatorArgs}{1}
+\newcommand{\SetOwnRegulatorTag}{No}
+\newcommand{\SetOwnRegulatorDescription}{Set the regulatory modifier of the currently executing module to the value stored in an argument-specified memory register.}
+
+\newcommand{\SetOwnRegulatorMinusName}{\code{SetOwnRegulator-}}
+\newcommand{\SetOwnRegulatorMinusArgs}{1}
+\newcommand{\SetOwnRegulatorMinusTag}{No}
+\newcommand{\SetOwnRegulatorMinusDescription}{Set the regulatory modifier of the currently executing module to the negation of the value stored in an argument-specified memory register.}
+
+\newcommand{\AdjRegulatorName}{\code{AdjRegulator+}}
+\newcommand{\AdjRegulatorArgs}{1}
+\newcommand{\AdjRegulatorTag}{Yes}
+\newcommand{\AdjRegulatorDescription}{Add the value stored in an argument-specified memory register to the regulatory modifier of a target module.}
+
+\newcommand{\AdjRegulatorMinusName}{\code{AdjRegulator-}}
+\newcommand{\AdjRegulatorMinusArgs}{1}
+\newcommand{\AdjRegulatorMinusTag}{Yes}
+\newcommand{\AdjRegulatorMinusDescription}{Subtract the value stored in an argument-specified memory register to the regulatory modifier of a target module.}
+
+\newcommand{\AdjOwnRegulatorName}{\code{AdjOwnRegulator+}}
+\newcommand{\AdjOwnRegulatorArgs}{1}
+\newcommand{\AdjOwnRegulatorTag}{No}
+\newcommand{\AdjOwnRegulatorDescription}{Add the value stored in an argument-specified memory register to the regulatory modifier of the currently executing module.}
+
+\newcommand{\AdjOwnRegulatorMinusName}{\code{AdjOwnRegulator-}}
+\newcommand{\AdjOwnRegulatorMinusArgs}{1}
+\newcommand{\AdjOwnRegulatorMinusTag}{No}
+\newcommand{\AdjOwnRegulatorMinusDescription}{Subtract the value stored in an argument-specified memory-register to the regulatory modifier of the currently executing module.}
+
+\newcommand{\ClearRegulatorName}{\code{ClearRegulator}}
+\newcommand{\ClearRegulatorArgs}{0}
+\newcommand{\ClearRegulatorTag}{Yes}
+\newcommand{\ClearRegulatorDescription}{Reset the regulatory modifier of a target module.}
+
+\newcommand{\ClearOwnRegulatorName}{\code{ClearOwnRegulator}}
+\newcommand{\ClearOwnRegulatorArgs}{0}
+\newcommand{\ClearOwnRegulatorTag}{No}
+\newcommand{\ClearOwnRegulatorDescription}{Reset the regulatory modifier of the currently executing module.}
+
+\newcommand{\SenseRegulatorName}{\code{SenseRegulator}}
+\newcommand{\SenseRegulatorArgs}{1}
+\newcommand{\SenseRegulatorTag}{Yes}
+\newcommand{\SenseRegulatorDescription}{Load the value of a target module's regulatory modifier into an argument-specified memory register.}
+
+\newcommand{\SenseOwnRegulatorName}{\code{SenseOwnRegulator}}
+\newcommand{\SenseOwnRegulatorArgs}{1}
+\newcommand{\SenseOwnRegulatorTag}{No}
+\newcommand{\SenseOwnRegulatorDescription}{Load the value of the currently executing module's regulatory modifier into an argument-specified memory register.}
+
+\newcommand{\IncRegulatorName}{\code{IncRegulator}}
+\newcommand{\IncRegulatorArgs}{0}
+\newcommand{\IncRegulatorTag}{Yes}
+\newcommand{\IncRegulatorDescription}{Add one to the regulatory modifier of a target module. }
+
+\newcommand{\IncOwnRegulatorName}{\code{IncOwnRegulator}}
+\newcommand{\IncOwnRegulatorArgs}{0}
+\newcommand{\IncOwnRegulatorTag}{No}
+\newcommand{\IncOwnRegulatorDescription}{Add one to the regulatory modifier of the currently executing module.}
+
+\newcommand{\DecRegulatorName}{\code{DecRegulator}}
+\newcommand{\DecRegulatorArgs}{0}
+\newcommand{\DecRegulatorTag}{Yes}
+\newcommand{\DecRegulatorDescription}{Subtract one from the regulatory modifier of a target module.}
+
+\newcommand{\DecOwnRegulatorName}{\code{DecOwnRegulator}}
+\newcommand{\DecOwnRegulatorArgs}{0}
+\newcommand{\DecOwnRegulatorTag}{No}
+\newcommand{\DecOwnRegulatorDescription}{Subtract one from the regulatory modifier of the currently executing module.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[htbp]
+    \small
+    \centering
+    \begin{tabular}{l | p{0.6\columnwidth}}
+        \toprule
+        \textbf{Instruction} & 
+        % Args. & 
+        % Tag-based? & 
+        \textbf{Description} 
+        \\ \hline 
+        
+        \SetRegulatorName & 
+        % \SetRegulatorArgs & 
+        % \SetRegulatorTag & 
+        \SetRegulatorDescription 
+        \\ \hline
+        
+        \SetRegulatorMinusName & 
+        % \SetRegulatorMinusArgs & 
+        % \SetRegulatorMinusTag & 
+        \SetRegulatorMinusDescription 
+        \\ \hline
+        
+        \SetOwnRegulatorName &
+        % \SetOwnRegulatorArgs &
+        % \SetOwnRegulatorTag &
+        \SetOwnRegulatorDescription 
+        \\ \hline
+        
+        \SetOwnRegulatorMinusName & 
+        % \SetOwnRegulatorMinusArgs & 
+        % \SetOwnRegulatorMinusTag & 
+        \SetOwnRegulatorMinusDescription 
+        \\ \hline
+        
+        \AdjRegulatorName & 
+        % \AdjRegulatorArgs & 
+        % \AdjRegulatorTag & 
+        \AdjRegulatorDescription 
+        \\ \hline
+        
+        \AdjRegulatorMinusName & 
+        % \AdjRegulatorMinusArgs & 
+        % \AdjRegulatorMinusTag & 
+        \AdjRegulatorMinusDescription 
+        \\ \hline
+        
+        \AdjOwnRegulatorName & 
+        % \AdjOwnRegulatorArgs & 
+        % \AdjOwnRegulatorTag & 
+        \AdjOwnRegulatorDescription 
+        \\ \hline
+        
+        \AdjOwnRegulatorMinusName & 
+        % \AdjOwnRegulatorMinusArgs & 
+        % \AdjOwnRegulatorMinusTag &
+        \AdjOwnRegulatorMinusDescription 
+        \\ \hline
+        
+        \ClearRegulatorName & 
+        % \ClearRegulatorArgs & 
+        % \ClearRegulatorTag & 
+        \ClearRegulatorDescription 
+        \\ \hline
+        
+        \ClearOwnRegulatorName & 
+        % \ClearOwnRegulatorArgs & 
+        % \ClearOwnRegulatorTag & 
+        \ClearOwnRegulatorDescription
+        \\ \hline
+        
+        \SenseRegulatorName & 
+        % \SenseRegulatorArgs & 
+        % \SenseRegulatorTag & 
+        \SenseRegulatorDescription 
+        \\ \hline
+        
+        \SenseOwnRegulatorName & 
+        % \SenseOwnRegulatorArgs & 
+        % \SenseOwnRegulatorTag & 
+        \SenseOwnRegulatorDescription
+        \\ \hline
+        
+        \IncRegulatorName & 
+        % \IncRegulatorArgs & 
+        % \IncRegulatorTag & 
+        \IncRegulatorDescription 
+        \\ \hline
+        
+        \IncOwnRegulatorName & 
+        % \IncOwnRegulatorArgs & 
+        % \IncOwnRegulatorTag & 
+        \IncOwnRegulatorDescription 
+        \\ \hline
+        
+        \DecRegulatorName & 
+        % \DecRegulatorArgs & 
+        % \DecRegulatorTag & 
+        \DecRegulatorDescription 
+        \\ \hline
+        
+        \DecOwnRegulatorName & 
+        % \DecOwnRegulatorArgs & 
+        % \DecOwnRegulatorTag & 
+        \DecOwnRegulatorDescription
+        \\ 
+        \bottomrule
+    \end{tabular}
+    \caption{\small 
+    \textbf{Regulatory instructions used in this work.} 
+    We include (+) and (-) instruction variants to ensure that positive and negative regulation values are equally probable.
+    }
+    \label{chapter:tag-based-regulation:tab:regulation-instructions}
+\end{table}

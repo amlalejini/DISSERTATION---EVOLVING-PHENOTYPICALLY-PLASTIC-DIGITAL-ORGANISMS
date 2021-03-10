@@ -1,0 +1,40 @@
+
+\begin{table}[ht!]
+    \small
+    \centering
+    \begin{tabularx}{\columnwidth}{cYY}
+        \toprule
+          & Regulation-off condition 
+          & Regulation-on condition \\
+        %  \hline
+        \cmidrule(lr){1-3}
+         Two-signal   
+            & \RSPTwoSigMemOnlySolutionCnt  % Memory-only
+            & \RSPTwoSigBothSolutionCnt \\  % Both
+        %  \hline
+         Four-signal
+            & \RSPFourSigMemOnlySolutionCnt  % Memory-only
+            & \RSPFourSigBothSolutionCnt \\  % Both
+        %  \hline
+         Eight-signal 
+            & \RSPEightSigMemOnlySolutionCnt  % Memory-only
+            & \RSPEightSigBothSolutionCnt \\  % Both
+        %  \hline
+         Sixteen-signal
+            & \RSPSixteenSigMemOnlySolutionCnt  % Memory-only
+            & \RSPSixteenSigBothSolutionCnt \\  % Both
+         \bottomrule
+    \end{tabularx}
+    \caption{\small
+    \textbf{Signal-counting problem-solving success.}
+    This table gives the number of successful replicates (\textit{i.e.}, in which a perfect solution evolved) out of 200 on the signal-counting problem across four problem difficulties and two experimental conditions. 
+    For each problem difficulty, the regulation-off condition was less successful than the regulation-on condition (Fisher's exact test; all difficulties: $p < 10^{-15}$).
+    }
+    \label{chapter:tag-based-regulation:tab:signal-counting-solutions}
+\end{table}
+
+
+% two-signal: p-value < 2.2e-16, 
+% four-signal: p-value < 2.2e-16
+% eight-signal: p-value < 2.2e-16
+% sixteen-signal: p-value < 2.2e-16

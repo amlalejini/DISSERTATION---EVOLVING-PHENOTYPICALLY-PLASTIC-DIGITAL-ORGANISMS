@@ -1,0 +1,57 @@
+% http://myxo.css.msu.edu/papers/nature2003/Supp2.html
+
+\begin{table}[ht!]
+    \small
+    \centering
+    \begin{tabular}{c | c | c}
+        \toprule
+        Operation & \# Inputs & NAND gates \\ \hline 
+        ECHO &
+        1 &
+        0
+        \\
+        NOT &
+        1 &
+        1
+        \\
+        NAND &
+        2 &
+        1
+        \\
+        AND &
+        2 &
+        2
+        \\
+        OR-NOT &
+        2 &
+        2
+        \\
+        OR &
+        2 &
+        3
+        \\
+        AND-NOT &
+        2 &
+        3
+        \\
+        NOR &
+        2 &
+        4
+        \\
+        XOR &
+        2 &
+        4
+        \\
+        EQUALS &
+        2 &
+        5
+        \\
+        \bottomrule
+    \end{tabular}
+    \caption{\small 
+    \textbf{Bitwise Boolean logic operations used in the Boolean-logic calculator problem.} 
+    Programs are given a \code{nand} instruction and must construct each of the other operations (aside from ECHO) out of \code{nand} operations.
+    As such, we measure the difficulty of each operation as the minimum number of NAND gates required to construct the given operation.
+    }
+    \label{chapter:tag-based-regulation:tab:boolean-calc-operations}
+\end{table}

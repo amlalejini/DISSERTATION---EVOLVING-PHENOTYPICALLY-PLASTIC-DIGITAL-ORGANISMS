@@ -1,0 +1,151 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Utility variables used in paper
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Utility commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% supplemental material
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\supSecDataAvailability}{Section 2}
+\newcommand{\supSecStreakMetric}{Section 5}
+\newcommand{\supSecRepeatedSigAnalysis}{Section 7}
+\newcommand{\supSecContextSigAnalysis}{Section 8}
+\newcommand{\supSecBooleanCalcPrefixAnalysis}{Section 9}
+\newcommand{\supSecChangingSigAnalysis}{Section 10}
+\newcommand{\supSecBooleanCalcPostfixAnalysis}{Section 11}
+\newcommand{\supSecHandcodedPrograms}{Section 12}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Evolution parameters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\MutRateInstArgSub}{0.001}
+
+\newcommand{\MutRateInstSub}{0.001}
+\newcommand{\MutRateInstIns}{0.001}
+\newcommand{\MutRateInstDel}{0.001}
+\newcommand{\MutRateInstPoint}{0.001}
+
+\newcommand{\MutRateSeqSlip}{0.05}
+
+\newcommand{\MutRateFuncDup}{0.05}
+\newcommand{\MutRateFuncDel}{0.05}
+
+\newcommand{\MutRateInstTagBF}{0.0001}
+\newcommand{\MutRateFuncTagBF}{0.0001}
+\newcommand{\MutRateTagBF}{0.0001}
+
+\newcommand{\MaxFuncCnt}{256}
+\newcommand{\MaxFuncInstCnt}{128}
+
+\newcommand{\MinArgValue}{\nobreakdash-4}
+\newcommand{\MaxArgValue}{4}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Repeated-signal task parameters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\RepeatSigTaskCpuTimePerSignal}{128}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contextual-signal task parameters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\ContextSigTaskCpuTimePerSignal}{128}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Boolean logic calculator task parameters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\CalculatorTaskCpuTimePerSignal}{128}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Repeated-signal task results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FROM - 2020-11-25-rep-sig
+%%% TWO SIGNAL %%%
+\newcommand{\RSPTwoSigRegOnlySolutionCnt}{200}
+\newcommand{\RSPTwoSigMemOnlySolutionCnt}{137}
+\newcommand{\RSPTwoSigBothSolutionCnt}{200}
+%%% FOUR SIGNAL %%%
+\newcommand{\RSPFourSigRegOnlySolutionCnt}{200}
+\newcommand{\RSPFourSigMemOnlySolutionCnt}{8}
+\newcommand{\RSPFourSigBothSolutionCnt}{200}
+%%% EIGHT SIGNAL %%%
+\newcommand{\RSPEightSigRegOnlySolutionCnt}{198}
+\newcommand{\RSPEightSigMemOnlySolutionCnt}{0}
+\newcommand{\RSPEightSigBothSolutionCnt}{198}
+%%% SIXTEEN SIGNAL %%%
+\newcommand{\RSPSixteenSigRegOnlySolutionCnt}{73}
+\newcommand{\RSPSixteenSigMemOnlySolutionCnt}{0}
+\newcommand{\RSPSixteenSigBothSolutionCnt}{74}
+
+% --- (KO) STRATEGIES (condition=regulation-augmented/memory+regulation) ---
+%%% TWO SIGNAL %%%
+\newcommand{\RSPTwoSigRegOnlyStrategyCnt}{188}
+\newcommand{\RSPTwoSigMemOnlyStrategyCnt}{11}
+\newcommand{\RSPTwoSigBothStrategyCnt}{1}
+
+\newcommand{\RSPTwoSigRegRequiredStrategyCnt}{189}
+\newcommand{\RSPTwoSigUnsolvedCnt}{0}
+
+%%% FOUR SIGNAL %%%
+\newcommand{\RSPFourSigRegOnlyStrategyCnt}{177}
+\newcommand{\RSPFourSigMemOnlyStrategyCnt}{0}
+\newcommand{\RSPFourSigBothStrategyCnt}{23}
+
+\newcommand{\RSPFourSigRegRequiredStrategyCnt}{200}
+\newcommand{\RSPFourSigUnsolvedCnt}{0}
+
+%%% EIGHT SIGNAL %%%
+\newcommand{\RSPEightSigRegOnlyStrategyCnt}{183}
+\newcommand{\RSPEightSigMemOnlyStrategyCnt}{0}
+\newcommand{\RSPEightSigBothStrategyCnt}{15}
+
+\newcommand{\RSPEightSigRegRequiredStrategyCnt}{198}
+\newcommand{\RSPEightSigUnsolvedCnt}{2}
+
+%%% SIXTEEN SIGNAL %%%
+\newcommand{\RSPSixteenSigRegOnlyStrategyCnt}{71}
+\newcommand{\RSPSixteenSigMemOnlyStrategyCnt}{0}
+\newcommand{\RSPSixteenSigBothStrategyCnt}{3}
+
+\newcommand{\RSPSixteenSigRegRequiredStrategyCnt}{74}
+\newcommand{\RSPSixteenSigUnsolvedCnt}{126}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contextual-signal task results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% From - 2020-11-27
+
+\newcommand{\ContextFourSigMemOnlySolutionCnt}{173}
+\newcommand{\ContextFourSigBothSolutionCnt}{200}
+
+% --- (KO) STRATEGIES (condition=regulation-augmented/memory+regulation) ---
+\newcommand{\ContextFourSigMemOnlyStrategy}{0}
+\newcommand{\ContextFourSigRegOnlyStrategy}{105}
+\newcommand{\ContextFourSigBothStrategy}{95}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Changing-signal task results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% From - 
+
+\newcommand{\ChangingSigSixteenSigMemOnlySolutionCnt}{X}
+\newcommand{\ChangingSigSixteenSigBothSolutionCnt}{X}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Boolean Logic Calculator (PREFIX) results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% From - 
+
+\newcommand{\BoolCalcPrefixMemOnlySolutionCnt}{X}
+\newcommand{\BoolCalcPrefixBothSolutionCnt}{X}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Boolean Logic Calculator (POSTFIX) results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% From - 
+
+\newcommand{\BoolCalcPostfixMemOnlySolutionCnt}{X}
+\newcommand{\BoolCalcPostfixBothSolutionCnt}{X}
