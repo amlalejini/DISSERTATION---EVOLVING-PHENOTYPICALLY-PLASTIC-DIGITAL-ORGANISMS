@@ -1,0 +1,43 @@
+\section{The event-driven paradigm}
+
+% What is event-driven paradigm?
+The event-driven programming paradigm is a software design philosophy where the central focus of development is the processing of events
+\citep{etzion_event_2010,heemels_introduction_2012,cassandras_event-driven_2014}. 
+Events often represent messages from other agents or processes, sensor readings, or user actions in the context of interactive software applications. 
+Events are processed by callback functions (\textit{i.e.}, event-handlers) where the appropriate event-handler is determined by an identifying characteristic associated with the event, often the event's name or type. 
+In this way, events can act as remote function calls, allowing external signals to direct computation. 
+
+Software development environments that support the event-driven paradigm often abstract away the logistics of monitoring for events and triggering event-handlers, simplifying the code that must be designed and implemented by the programmer and easing the development of reactive programs.
+Thus, the event-driven paradigm is especially useful when developing software where computation is most appropriately directed by external stimuli, which is often the case in domains such as robotics, embedded systems, distributed systems, and web applications. 
+
+For any event-driven system, we can address the following three questions: 
+What are events? 
+How are event-handlers represented? 
+And, how does the system determine the most appropriate event-handler to trigger in response to an event? 
+Crosbie and Spafford \citep{crosbie_evolving_1996} have addressed why answering such questions can be challenging in genetic programming; thus, it is useful to look to how existing event-driven systems address them.
+While many systems that exhibit event-driven characteristics exist, we restrict our attention to three: 
+the Robot Operating System (ROS) \citep{quigley_ros:_2009}, 
+the biological process of signal transduction, 
+and Byers \textit{et al.}'s digital enzymes robot controller \citep{byers_digital_2011,byers_exploring_2012}. 
+
+ROS is a popular robotics software development framework that provides standardized communication protocols to independently running programs referred to as nodes.
+While the ROS framework provides a variety of tools and other conveniences to robotics software developers, we focus on ROS's publish-subscribe communication protocol, framing it under the event-driven paradigm. 
+ROS nodes can communicate by passing strictly typed messages over named channels (topics). 
+Nodes send messages by publishing them over topics, and nodes receive messages from a particular topic by subscribing to that topic. 
+A node subscribes to a topic by registering a callback function that takes the appropriate message type as an argument. 
+Anytime a message is sent over a topic, all callback functions registered with the topic are triggered, allowing subscribed nodes to react to published messages.
+Topics can have any number of publishers and subscribers, all agnostic to one another \citep{quigley_ros:_2009}. 
+In ROS's publish-subscribe system, events are represented as strictly typed messages, event-handlers are callback functions that take event information as input, and named channels (topics) determine which event-handlers an event triggers. 
+ 
+The behavior of many natural systems can be interpreted as using the event-driven paradigm. 
+In cell biology, signal transduction is the process by which a cell transforms an extracellular signal into a response, often in the form of cascading biochemical reactions that alter the cell's behavior. 
+Cells respond to signaling molecules via receptors, which bind specifically to nearby signaling molecules and initiate the cell's response \citep{alberts_molecular_2002}. 
+The process of cell signal transduction can be viewed as a form of event-driven computation: signaling molecules are like events, receptors are event-handlers, and the chemical and physical properties of signaling molecules determine with which receptors they are able to bind. 
+
+% Event-driven computing in an evolving system
+Evolutionary computation researchers have also made use of the event-driven paradigm; for example, Byers \textit{et al.} \citep{byers_digital_2011,byers_exploring_2012} demonstrated virtual robot controllers that operate using a digital model of signal transduction, and like biological signal transduction, these controllers follow an event-driven paradigm. 
+Byers \textit{et al.}'s virtual robot controllers have digital stimuli receptors, which bind to nearby ``signaling molecules'' represented as bit strings.
+Different bit strings represent different signals in the environment (\textit{e.g.}, the presence of nearby obstacles). 
+Once a signaling molecule binds to a digital receptor, a digital enzyme (program) processes the signaling molecule and influences the controller's behavior. 
+In a single controller, there are many digital enzymes (not all of the same type) processing signaling molecules in parallel, all vying to influence the controller's actions; in this way, virtual robot behavior emerges. 
+As in cell signal transduction, signaling molecules are events, digital stimuli receptors and digital enzymes act as event-handlers, and events are paired with handlers based on signal type and signal location.

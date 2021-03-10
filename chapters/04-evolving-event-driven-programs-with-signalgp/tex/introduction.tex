@@ -1,0 +1,22 @@
+\section{Introduction}
+
+% SignalGP exists; we did it!
+Here, we introduce SignalGP, a new genetic programming (GP) technique designed to provide evolution direct access to the event-driven programming paradigm, allowing evolved programs to handle signals from the environment or from other agents in a more biologically inspired way than traditional GP approaches. 
+In SignalGP, signals (\textit{e.g.}, from the environment or from other agents) direct computation by triggering the execution of program modules (\textit{i.e.}, functions). 
+SignalGP augments the tag-based referencing techniques demonstrated by Spector \textit{et al.}
+\citep{spector_tag-based_2011,spector_whats_2011,spector_tag-based_2012} to specify which function is triggered by a signal, allowing the relationships between signals and functions to evolve over time. 
+The SignalGP implementation presented here is demonstrated in the context of linear GP, wherein programs are represented as linear sequences of instructions; however, the ideas underpinning SignalGP are generalizable across a variety of genetic programming representations. 
+
+% Linear GP is imperative. Event-driven computing is different.
+Linear genetic programs generally follow an imperative programming paradigm where computation is driven procedurally.
+Execution often starts at the top of a program and proceeds in sequence, instruction-by-instruction, jumping or branching as dictated by executed instructions \citep{brameier_linear_2007,mcdermott_genetic_2015}.
+In contrast to the imperative programming paradigm, program execution in event-driven computing is directed primarily by signals (\textit{i.e.}, events), easing the design and development of programs that, much like biological organisms, must react on-the-fly to signals in the environment or from other agents. 
+Is it possible to provide similarly useful abstractions to evolution in genetic programming? 
+
+Different types of programs are more or less challenging to evolve depending on how they are represented and interpreted.  
+By capturing the event-driven programming paradigm, SignalGP targets problem domains where agent-agent and agent-environment interactions are crucial, such as in robotics or distributed systems. 
+
+In the following sections, we provide a broad overview of the event-driven paradigm, discussing it in the context of an existing event-driven software framework, cell signal transduction, and an evolutionary computation system for evolving robot controllers. 
+Next, we discuss our implementation of SignalGP in detail. 
+Then, we use SignalGP to demonstrate the value of capturing event-driven programming in GP with two test problems: an environment coordination problem and a distributed leader election problem. 
+Finally, we conclude with planned extensions, including how SignalGP can be generalized beyond our linear GP implementation to other forms of GP. 

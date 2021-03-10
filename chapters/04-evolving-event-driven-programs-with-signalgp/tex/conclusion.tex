@@ -1,0 +1,19 @@
+\section{Conclusion}
+
+We introduced SignalGP, a new type of GP technique designed to provide evolution direct access to the event-driven programming paradigm by augmenting Spector \textit{et al.}'s \citep{spector_tag-based_2011} tag-based modular program framework. 
+We have described and demonstrated SignalGP within the context of linear GP. 
+Additionally, we used SignalGP to explore the value of capturing the event-driven paradigm on two problems where the capacity to react to external signals is critical: the changing environment problem, and the distributed leader election problem. 
+At a minimum, our results show that access to the event-driven programming paradigm allows programs to more efficiently encode agent-agent and agent-environment interactions, resulting in higher performance on both the changing environment and distributed leader election problems. 
+Deeper analyses are needed to tease apart the effects of the event-driven programming paradigm on the evolvability of solutions. 
+
+\subsection{Beyond Linear GP}
+
+While this work presents SignalGP in the context of linear GP, the ideas underpinning SignalGP are generalizable across a variety of evolutionary computation systems. 
+
+We can imagine SignalGP functions to be black-box input-output machines. 
+Here, we have exclusively put linear sequences of instructions inside these black-boxes, but could have easily put other representations capable of processing inputs (\textit{e.g.}, other forms of GP, Markov brains \citep{hintze_markov_2017}, artificial neural networks, \textit{etc.}).
+We could even employ black-boxes with a variety of different contents within the same agent. 
+Encasing a variety of representations within a single agent may complicate the virtual hardware, program evaluation, and mutation operators, but also provides evolution with a toolbox of diverse representations.
+
+As we continue to explore the capabilities of SignalGP, we plan to explore the evolvability of event-driven programs versus imperative programs across a wider set of problems and incorporate comparisons to other GP representations. 
+Further, we plan to extend SignalGP to other representations beyond linear GP and compare their relative capabilities and interactions.

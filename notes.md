@@ -5,6 +5,7 @@
 - Double check degree names for CS and EEB
 - Double check general formatting requirements
 - Fix copyright page formatting
+- Make capitalization consistent (check to see if others did this)
 
 ### Editing/writing
 
@@ -12,6 +13,13 @@
 
 - Editing pass over origins of plasticity chapter
 - Optimize lineage figure placement (High mut and baseline can be next to each other?)
+
+#### SignalGP
+
+- Editing pass over chapter
+- Tweak p value reporting
+- Update figure legends
+- Update election figure legend w/abbreviations for conditions
 
 ## Questions:
 
@@ -42,6 +50,7 @@
 - Section: `chapter:[chapter id]:sec:[section path]`
 - Figures: `chapter:[chapter id]:fig:[figure name]`
 - Tables: `chapter:[chapter id]:table:[table name]`
+- Equation: `chapter:[chapter id]:equ:[equation name]`
 
 ## Future work
 

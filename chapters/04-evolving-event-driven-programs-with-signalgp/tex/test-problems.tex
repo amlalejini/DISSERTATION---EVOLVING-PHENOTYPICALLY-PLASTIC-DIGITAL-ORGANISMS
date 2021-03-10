@@ -1,0 +1,126 @@
+\section{Test Problems}
+\label{chapter:signalgp:sec:test-problems}
+
+We demonstrate the value of incorporating the event-driven programming paradigm in GP using two distinct test problems: a changing environment problem and a distributed leader-election problem. 
+For both problems, we compared SignalGP performance to variants that are otherwise identical, except for how they handle sensor information. 
+For example, our primary variant GP must actively monitor sensors to process external signals (using the imperative paradigm).
+For both test problems, a program's capacity to react efficiently to external events is crucial; thus, we hypothesized that SignalGP should perform better than our imperative alternatives.  
+
+\subsection{Changing Environment Problem}
+
+This first problem requires agents to coordinate their behavior with a randomly changing environment. 
+The environment can be in one of $K$ possible states; to maximize fitness, agents must match their internal state to the current state of their environment. 
+The environment is initialized to a random state and has a 12.5\% chance of changing to a random state at every subsequent time step.
+Successful agents must adjust their internal state whenever an environmental change occurs. 
+
+We evolved agents to solve this problem at $K$ equal to 2, 4, 8, and 16 environmental states. 
+The problem scales in difficulty as the number of possible states that must be monitored increases. 
+Agents adjust their internal state by executing one of $K$ state-altering instructions.
+For each possible environmental state, there is an associated \code{SetState} instruction
+(\textit{i.e.}, for $K=4$, there are four instructions: \code{SetState,0}, \code{SetState1}, \code{SetState2}, and \code{SetState3}).
+Being required to execute a distinct instruction for each environment represents performing a behavior unique to that environment. 
+
+We compared the performance of programs with three different mechanisms to sense the environment: 
+(1) an event-driven treatment where environmental changes produce signals that have environment-specific tags and can trigger functions; 
+(2) an imperative control treatment where programs needed to actively poll the environment to determine its current state; 
+and (3) a combined treatment where agents are capable of using either option.  
+Note that in the imperative and combined treatments we added new instructions to test each environmental state (\textit{i.e.}, for $K=4$, there are four instructions: \code{SenseEnvState0}, \code{SenseEnvState1}, \code{SenseEnvState2}, and \code{SenseEnvState3}). 
+In preliminary experiments we had provided agents with a single instruction that returned the current environmental state, but this mechanism proved more challenging for them to use effectively when there were too many states (the environment ID returned by the single instruction needed to be thresholded into a true/false value, whereas the individual environment state tests directly returned a true/false value). 
+
+% Some common loose ends across all conditions. 
+Across all treatments, we added a \code{Fork} instruction to the available instruction set. 
+The \code{Fork} instruction generates an internally-handled signal when executed, which provides an independent mechanism to spawn parallel-executing threads. 
+The \code{Fork} instruction ensures that programs in all treatments had trivial access to parallelism. 
+Because the \code{SenseEnvState} instructions in both the imperative and combined treatments bloated the instruction set relative to the event-driven treatment, we also added an equivalent number of no-operation instructions in the event-driven treatment.
+
+% Predictions. 
+\subsubsection{Hypotheses}
+
+For low values of $K$, we expected evolved programs from all treatments to perform similarly. 
+However, as continuously polling the environment is cumbersome at higher values of $K$, we expected fully event-driven SignalGP programs to drastically outperform programs evolved in the imperative treatment; further, we expected successful programs in the combined treatment to favor the event-driven strategy. 
+
+\subsubsection{Experimental Parameters}
+
+We ran 100 replicates of each condition at $K$ = 2, 4, 8, and 16. 
+In all replicates and across all treatments, we evolved populations of 1000 agents for 10,000 generations, starting from a simple ancestor program consisting of a single function with eight no-operation instructions. 
+Each generation, we evaluated all agents in the population individually three times (three trials) where each trial comprised 256 time steps. 
+For a single trial, an agent's fitness was equal to the number of time steps in which its internal state matched the environment state during evaluation. 
+After three trials, an agent's fitness was equal to the minimum fitness value obtained across its three trials. 
+We used a combination of elite and tournament (size four) selection to select which individuals reproduced asexually each generation. 
+We applied mutations to offspring as described in Section \ref{chapter:signalgp:sec:signalgp:evolution}. 
+Agents were limited to a maximum of 32 parallel executing threads and a maximum of 32 functions. 
+Functions were limited to a maximum length of 128 instructions. 
+Agents were limited to 128 call states per call stack. 
+The minimum tag reference threshold was 50\% (\textit{i.e.}, tags must have at least 50\% similarity to successfully reference). 
+All tags were represented as length 16 bit strings. 
+
+\subsubsection{Statistical Methods}
+
+For every run, we extracted the program with the highest fitness after 10,000 generations of evolution. 
+Because the sequence of environmental states experienced by an agent during evaluation are highly variant, we tested each extracted program in 100 trials, using a program's average performance as its fitness in our analyses. 
+For each environment size, we compared the performances of evolved programs across treatments. 
+To determine if any of the treatments were significant ($p < 0.05$) within a set, we performed a Kruskal-Wallis test. 
+For an environment size in which the Kruskal-Wallis test was significant, we performed a post-hoc Dunn's test, applying a Bonferroni correction for multiple comparisons. All statistical analyses were conducted in R 3.3.2 \citep{r_core_team_2016}, and each Dunn's test was conducted using the FSA package \citep{r_FSA_2017}.
+
+\subsection{Distributed Leader Election Problem}
+
+In the distributed leader election problem, a network of agents must unanimously designate a single agent as leader. Agents are each given a unique identifier (UID). 
+Initially, agents are only aware of their own UID and must communicate to resolve the UIDs of other agents. 
+During an election, each agent may vote, and an election is successful if all votes converge to a single, consensus UID. 
+This problem has been used to study the evolution of cooperation in digital systems \citep{knoester_using_2007,knoester_genetic_2013} and as a benchmark problem to compare the performance of different GP representations in evolving distributed algorithms \citep{weise_evolving_2012}. 
+A common strategy for successfully electing a leader begins with all agents voting for themselves. 
+Then, agents continuously broadcast their vote, changing it only when they receive a message containing a UID greater than their current vote. 
+This process results in the largest UID propagating through the distributed system as the consensus leader. 
+Alternatively, a similar strategy works for electing the agent with the smallest UID. 
+
+We evolved populations of homogeneous distributed systems of SignalGP agents where networks were configured as 5x5 toroidal grids, and agents could only interact with their four neighbors. 
+When evaluating a network, we initialized each agent in the network with a random UID (a number between 1 and 1,000,000). 
+We evaluated distributed systems for 256 time steps. 
+During an evaluation, agents retrieve their UID by executing a \code{GetUID} instruction. 
+Agents vote with a \code{SetOpinion} instruction, which sets their opinion (vote) to a value stored in memory, and agents may retrieve their current vote by executing a \code{GetOpinion} instruction. 
+Agents communicate by exchanging messages, either by sending a message to a single neighbor or by broadcasting a message to all neighboring agents. 
+
+After an evaluation, we assigned fitness, $F$ according to Equation \ref{chapter:signalgp:equ:consensus-fitness} where 
+$V$ gives the number of valid votes at the end of evaluation, 
+$C_{\text{max}}$ gives the maximum consensus size at the end of evaluation,  
+$T_{\text{consensus}}$ gives the total number of time steps at full consensus, and
+$S$ gives the size of the distributed system. 
+
+
+\begin{equation}
+    F = V + C_{\text{max}} + (T_{\text{consensus}} \times S)
+    \label{chapter:signalgp:equ:consensus-fitness}
+\end{equation}
+
+Distributed systems maximize their fitness by achieving consensus as quickly as possible and maintaining consensus for the duration of their evaluation. 
+Our fitness function rewards partial solutions by taking into account valid votes (\textit{i.e.}, votes that correspond to a UID present in the network) and partial consensus at the end of an evaluation. 
+
+We evolved distributed systems in three treatments: one with event-driven messaging and two different imperative messaging treatments. 
+In the event-driven treatment, messages were events that, when received, could trigger a function. 
+In both imperative treatments, messages did not automatically trigger functions; instead, messages were sent to an inbox and needed to be retrieved \textit{via} a \code{RetrieveMessage} instruction. 
+The difference between the two imperative treatments was in how messages were handled once retrieved. 
+In the fork-on-retrieve imperative treatment, messages act like an internally-generated event when retrieved from an inbox, triggering the function with the closest (above a threshold) matching tag on a new thread. 
+In the copy-on-retrieve imperative treatment, messages are not treated as internal events when retrieved; instead, message contents are loaded into the input memory of the thread that retrieved the message. 
+In the copy-on-retrieve imperative treatment, we augmented the available instruction set with the \code{Fork} instruction, allowing programs to trivially spawn parallel-executing threads. 
+
+\subsubsection{Hypothesis}
+
+Event-driven SignalGP agents do not need to continuously poll a message inbox to receive messages from neighboring agents, allowing event-driven programs to more efficiently coordinate. 
+Thus, we expected distributed systems evolved in the event-driven treatment to outperform those evolved in the two imperative treatments. 
+
+\subsubsection{Experimental Parameters}
+We ran 100 replicates of each treatment. 
+In all replicates of all treatments, we evolved populations of 400 homogeneous distributed systems for 50,000 generations. 
+We initialized populations with a simple ancestor program consisting of a single function with eight no-operation instructions. 
+Selection and reproduction were identical to that of the changing environment problem. 
+Agents were limited to a maximum of 8 parallel executing threads. 
+Agents were limited to a maximum of 4 functions, and function length was limited to a maximum 32 instructions. 
+Agents were limited to 128 call states per call stack. 
+The minimum tag reference threshold was 50\%. All tags were represented as length 16 bit strings. 
+The maximum inbox capacity was 8. 
+If a message was received and the inbox was full, the oldest message in the inbox was deleted to make room for the new message. 
+
+\subsubsection{Statistical Methods}
+
+For every replicate across all treatments, we extracted the program that produces the most fit distributed system after 50,000 generations of evolution. 
+As in the changing environment problem, we compared treatments using a Kruskal-Wallis test, and if significant ($p < 0.05$), we performed a post-hoc Dunn's test, applying a Bonferroni correction for multiple comparisons.  
