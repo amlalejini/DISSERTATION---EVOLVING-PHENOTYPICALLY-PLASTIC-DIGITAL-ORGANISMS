@@ -15,12 +15,12 @@ Conventionally, such evolution experiments are performed under laboratory condit
 
 % -- Evolutionary computation & Genetic programming --
 Evolutionary computation exploits evolution as a general purpose search algorithm to solve challenging computational problems.
-Such evolutionary algorithms begin with an initial population of individuals, be they potential solutions, computer programs, or robot body plans [citations]. 
+Such evolutionary algorithms begin with an initial population of individuals, be they potential solutions, computer programs, neural networks, or robot body plans [citations]. 
 Each generation, individuals are evaluated on one or more criteria and selected to contribute genetic material to the next generation.
 % @AML: a little awkward
 Evolutionary algorithms [steer/direct] populations through a problem's search space (i.e., the space of all possible [solutions/?]) by repeatedly replicating and varying (typically through mutation and crossover) promising individuals, replacing lower quality individuals in the population.
 % In this way, the populations explore [conceptual figure?]... 
-In my evolutionary computing dissertation work, I focus on \textit{genetic programming} wherein we evolve computer programs rather than writing them by hand.
+In my work, I focus on \textit{genetic programming} wherein we apply the natural principles of evolution to automatically synthesize computer programs rather than writing them by hand.
 
 % -- Synergy between disciplines --
 Synergistic.
@@ -30,38 +30,32 @@ Advances in evolutionary computing can improve our ability to model evolutionary
 
 % @AML: need a smoother way to transition into defining/explaining/motivating plasiticity
 % -- what is phenotypic plasticity & some biological motivation --
-In my first [two] chapters, I used digital evolution to investigate the evolutionary origins and consequences of phenotypic plasticity.
+In my Chapters \ref{chapter:evolutionary-origins-of-phenotypic-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity}, I used [digital evolution] to investigate the evolutionary origins and consequences of phenotypic plasticity.
 Phenotypic plasticity is the capacity for a single genotype to express different phenotypes in response to a change in its environment [cite - west-eberhard].
 Phenotypic plasticity underlies many complex traits and developmental patterns found in nature and serves as a key mechanism for responding to spatially and temporally variable environments [citations - Bradshaw, 1965].
 For example, [ famous example? ].
 Genetically homogeneous cells in a developing multicellular organism leverage their capacity for phenotypic plasticity to coordinate their expression patterns through environmental signals [Schlichting, 2003].
 % @AML: don't love this next sentence
 % Thus, understanding how phenotypic plasticity evolves and how it influences subseqent evolutionary outcomes is an important step toward a deeper understanding of [biological complexity].
-[Indeed, biologists have long been interested in understanding how adaptive phenotypic plasticity evolves and how the evolution of plasticity influences subsequent evolutionary outcomes] [citations].
+[Indeed, biologists have long been interested in understanding how adaptive phenotypic plasticity evolves, the mechanisms underpinning that plasticity in natural organisms, and how the evolution of plasticity influences subsequent evolutionary outcomes] [citations].
 
 % -- evolutionary computation motivation --
 % Plasticity relevant to EC blah.
-% In genetic programming, ...
-% In Chapters [XX], I...
+Phenotypic plasticity also has practical applications in evolutionary computing.
+In many realistic problem domains, conditions are noisy or cyclically change.
+Phenotypic plasticity can allow generated solutions to be robust to noise and capable of dynamically responding to changing problem conditions.
+[Examples: robot controllers, plastic morphology, something neuroevolution/learning/neuroplasticity.]
 
+Automating software development has been a long-standing goal in the genetic programming community [cite - Koza].
+All useful software applications require some degree of phenotypic plasticity in order to conditionally respond to inputs.
+For example, each input button on a calculator triggers a different software response.
+Most software applications require more advanced levels of phenotypic plasticity, as they must \textit{regulate} responses to inputs based on prior context.
+For example, the computations that must occur on a calculator after pressing the ``equals'' button depend on the set of operators and operands (i.e., inputs) previously provided.
+We can draw on our understanding of the evolutionary causes and consequences of phenotypic plasticity to design better algorithms for evolving dynamic computer programs.
+Long recognized that program representations best for human software developers are not ideal for evolving computer programs [citations - red code, etc].
+Still, many mechanisms of plasticity in existing genetic programming representations (conditional logic and mathematical [something]) are identical to that of traditional programming languages.
+By looking to the mechanisms of plasticity in biological organisms, we can also improve the way we represent computer programs for evolution. 
 
-% In the remaining [X] chapters, I drew inspiration from phenotypic plasticity in biological organisms to [develop/propose and] demonstrate novel techniques for representing evolvable computer programs that facilitate 
-
-% I propose and demonstrate novel ways of representing evolvable computer programs that  
-
-% : understanding the evolutionary origins and consequences of phenotypic plasticity and building new ways to represent 
-
-
-
-
-% - [biological motivation]
-
-
-
-
-% Focus:
-% (1) Empirically studying the evolutionary origins and consequences of phenotypic plasticity.
-% (2) Developing novel techniques for evolving computer programs, moving closer to capacity for complex plasticity we observe in nature.
-
-
-
+In Chapter [X], I propose SignalGP, ....
+In Chapter [Y], I ... tag-based genetic regulation, ...
+In Chapter [Z], ...

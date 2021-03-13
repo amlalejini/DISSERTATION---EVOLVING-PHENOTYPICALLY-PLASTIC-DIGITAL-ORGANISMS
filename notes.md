@@ -12,6 +12,7 @@
 - Double check general formatting requirements
 - Fix copyright page formatting
 - Make capitalization consistent (check to see if others did this)
+- Name figures
 
 ### Editing/writing
 
@@ -56,6 +57,7 @@
 - Evolutionary consequences of phenotypic plasticity: `consequences-of-plasticity`
 - Evolving event-driven programs with SignalGP: `signalgp`
 - Tag-based genetic regulation: `tag-based-regulation`
+- Tag-accessed memory for genetic programming: `tag-accessed-memory`
 - Conclusion: `conclusion`
 
 ### Labeling

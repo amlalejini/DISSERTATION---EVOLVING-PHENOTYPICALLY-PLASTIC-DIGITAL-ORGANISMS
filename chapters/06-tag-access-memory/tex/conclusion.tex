@@ -1,0 +1,8 @@
+\section{Conclusion}
+
+Our preliminary experiments show that, under favorable mutation rates, both tag-accessed and direct-indexed memory achieve statistically equivalent performance.
+Because tag-based instruction arguments index into the \textit{closest matching} memory register, single bit-flip mutations may be neutral (not affecting the program's behavior), which affords programs robustness to minor genetic perturbations. 
+The down-side to a more robust genetic encoding for instruction arguments is that mutations are less able to generate novel phenotypic variation (program behavior).
+For the relatively simple program synthesis problems used in our experiments, the capacity of our GP system to generate novel phenotypic variation is likely more important than robustness to mutation. 
+Future work will continue to explore the efficacy of tag-accessed memory, supplementing bit-flip mutation operators with more impactful mutation operators that allow tag-mutations to more easily generate novel phenotypic variation.
+Future work will also investigate the possibility of coevolving register labels (tags) with programs, allowing evolution to adjust the adjacency of memory registers in tag-space.

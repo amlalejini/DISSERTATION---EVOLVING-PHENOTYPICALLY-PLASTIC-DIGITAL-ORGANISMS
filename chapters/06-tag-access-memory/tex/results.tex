@@ -1,0 +1,20 @@
+\section{Experimental Results}
+
+We compared the performance of our simple linear GP to a variant that replaced the tag-accessed memory with memory indexed with direct arguments (which is more akin to memory access in traditional linear GP~\citep{brameier_linear_2007}).
+We evolved programs using the lexicase parent selection algorithm~\cite{helmuth_solving_2015} to solve five problems from Helmuth and Spector's program synthesis benchmark suite~\citep{helmuth_general_2015}: number IO, smallest, median, grade, and for loop index.
+For each problem, we added custom instructions to the instruction set that facilitated loading test case inputs into memory and returning program responses. 
+We used the same training and testing sets when evaluating programs as Helmuth and Spector in~\citep{helmuth_general_2015}.
+We measured performance by counting the number of successful runs (\textit{i.e.}, runs that produced a perfect solution).%, and we tested for statistical significance using Fisher's exact test (with a significance threshold of 0.05).
+
+For each experimental condition, we evolved 50 replicate populations of 500 individuals (for 100 generations for the number IO problem and 500 generations for all other problems), giving each replicate a unique random number seed.
+We propagated programs asexually and applied mutations to offspring (single-instruction insertions, deletions, and substitutions at a per-instruction rate of 0.005 each and multi-instruction sequence duplications and deletions at a per-program rate of 0.05). 
+The relative success of these two memory-indexing techniques is influenced by how (and at what rate) we mutate instruction arguments; as such, we mutated tag-based arguments (per-bit) and traditional arguments (per-argument) at the following ten rates: 0.0001, 0.001, 0.0025, 0.005, 0.0075, 0.01, 0.025, 0.05, 0.075, and 0.1. 
+See our online supplemental material \citep{tag_accessed_memory_supplement_2019} for source code, details on problem-specific configurations (\textit{e.g.}, program evaluation time, \textit{etc.}), and for our more detailed analyses.
+
+\input{chapters/06-tag-access-memory/tex/figures/problem-solving-success}
+
+Figure \ref{chapter:tag-accessed-memory:fig:successful-runs} shows the performance of tag-accessed memory and direct-indexed memory across all five problems and mutation rates.
+For each problem, we selected the best (most successful) mutation rate for tag-based arguments and the best mutation rate for traditional arguments.
+We compared the performance of tag-based arguments and numeric arguments at these `optimal' mutation rates, and we tested for we tested for statistical significance using Fisher's exact test (with a significance threshold of 0.05). 
+Across all problems, there was no statistically significant difference between tag-based instruction arguments (tag-accessed memory) and numeric instruction arguments (direct-indexed memory).
+% @AML: One more sentence about problem solving success?
