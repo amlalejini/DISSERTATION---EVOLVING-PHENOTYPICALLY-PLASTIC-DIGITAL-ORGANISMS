@@ -2,8 +2,83 @@
 
 % [Discuss chronological ordering => development as an academic/scientist].
 
-% [recommended reading - interpretting the tape of life?]
+This dissertation can be divided into two parts.
+In the first (Chapters \ref{chapter:evolutionary-origins-of-phenotypic-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity}), I conducted digital evolution studies to investigate the evolutionary origins and consequences of adaptive phenotypic plasticity in cyclic environments.
+In the second (Chapters \ref{chapter:signalgp}, \ref{chapter:tag-based-regulation}, and \ref{chapter:tag-accessed-memory}), I introduce and experimentally demonstrate three novel genetic programming techniques for representing and evolving more responsive (i.e., plastic) computer programs: signal-driven genetic programs (SignalGP), tag-based genetic regulation, and tag-accessed memory.
 
-\subsection{Part 1. Understanding the evolutionary causes and consequences of adaptive phenotypic plasticity}
+% -- Meta paragraph? --
+% Each of my chapters is a collaborative effort...
+% ??
 
-\subsection{Part 2. Building [more responsive program representations]}
+\subsection{Part 1. Understanding the evolutionary origins and consequences of adaptive phenotypic plasticity in fluctuating environments}
+
+% -- Origins --
+% ABSTRACT 
+\textbf{Chapter \ref{chapter:evolutionary-origins-of-phenotypic-plasticity}} focuses on the step-by-step process by which adaptive phenotypic plasticity evolves in a fluctuating environment.
+Many effective and innovative survival mechanisms used by natural organisms rely on the capacity for phenotypic plasticity.
+Understanding the evolution of phenotypic plasticity is an important step towards understanding the origins of many types of biological complexity, as well as to meeting challenges in evolutionary computation where dynamic solutions are required.
+In Chapter \ref{chapter:evolutionary-origins-of-phenotypic-plasticity}, we used the Avida Digital Evolution Platform to experimentally explore the selective pressures and evolutionary pathways that lead to phenotypic plasticity.  
+We present evolved lineages wherein unconditionally expressed (non-plastic) traits tend to evolve first.
+Next, imprecise forms of phenotypic plasticity often appear before optimal forms finally evolve.   
+We experimentally disallowed each of these intermediate phenotypic stepping stones to test their importance, and we found that phenotypic plasticity is less likely to evolve when each of unconditional trait expression and sub-optimal forms of plasticity are prevented from evolving. 
+We also visualized the phenotypic states traversed by evolved lineages across environments with differing rates of mutations and environmental change. 
+We found that under all conditions, populations can fail to evolve phenotypic plasticity, instead relying on mutation-based solutions.
+
+% @AML: todo - update this depending on 
+In Chapter \ref{chapter:evolutionary-consequences-of-plasticity}, we used Avida to investigate how the evolution of adaptive phenotypic plasticity alters evolutionary dynamics and influences evolutionary outcomes in cyclically changing environments.
+Specifically, we 
+(1) examined the evolutionary histories of plastic and non-plastic populations to test whether the evolution of adaptive plasticity promotes or constrains subsequent evolutionary change;
+(2) evaluated how adaptive plasticity influences fitness landscape exploration and exploitation by testing whether plastic populations are better able to evolve and then maintain novel traits;
+and (3) tested if the evolution of adaptive plasticity increases the potential for deleterious mutations to accumulate in evolving genomes.
+We find that populations with adaptive phenotypic plasticity evolve more slowly than non-plastic populations, which rely on genetic variation from \textit{de novo} mutations to continuously re-adapt to the environment.
+The non-plastic populations undergo more frequent selective sweeps and accumulate many more genetic changes. %, [finish listing big results]. 
+We find that phenotypic plasticity stabilizes populations against environmental fluctuations; whereas the repeated selective sweeps in non-plastic populations drive the loss of beneficial traits and accumulation of deleterious mutations via genetic hitchhiking.  
+As such, plastic populations are more likely to retain novel adaptive traits than their non-plastic counterparts. 
+All natural environments subject populations to some form of change; our findings suggest that the stabilizing effect of adaptive phenotypic plasticity plays an important role in subsequent adaptive evolution.
+
+% @AML: need better heading here
+\subsection{Part 2. Building more responsive program representations}
+
+% -- Lead-in --
+% Motivate
+% MODEL DIGITAL ORGANISMS?? Pull from abstract for ECLife?
+In traditional digital evolution systems (e.g., Avida), genetic programs---linear sequences of program instructions---are expressed procedurally: actions are performed one at a time in a single chain of execution and must explicitly check for new sensory information.
+Conventional linear program representations are convenient for their simplicity to analyze, but they can limit the evolution of complex forms of phenotypic plasticity. 
+Such traditional digital organisms must generate explicit queries in order to identify (and react to) any changes in their environment.
+Further, these genetic representations do not easily support the evolution of modularized responses to environmental signals that can be dynamically regulated over the organism's lifetime [cite].
+[This shortcoming can hold conventional digital organisms back as a model organism for studying the evolution of complex forms of phenotypic plasticity.]
+Indeed, these issues are also present in conventional linear genetic programming systems where it can be challenging to evolve modular programs capable of dynamically regulating responses to inputs over time. 
+
+In Chapters \ref{chapter:signalgp}, \ref{chapter:tag-based-regulation}, and \ref{chapter:tag-accessed-memory}, we introduce novel genetic programming techniques for evolving modular programs capable of more dynamically responding to environmental signals. 
+These techniques not only improve the problem-solving potential of genetic programming systems, but also provide new forms of model digital organisms for in silico experimental evolution, which allows digital methods to realize a broader and richer spectrum of evolutionary dynamics that more closely rivals that of biological evolution.
+
+% -- SignalGP --
+In Chapter \ref{chapter:signalgp}, we present SignalGP, a new genetic programming technique designed to incorporate the event-driven programming paradigm into computational evolution's toolbox. 
+Event-driven programming is a software design philosophy that simplifies the development of reactive programs by automatically triggering program modules (event-handlers) in response to external events, such as signals from the environment or messages from other programs. 
+SignalGP incorporates these concepts by extending existing tag-based referencing techniques into an event-driven context. 
+Both events and functions are labeled with evolvable tags; when an event occurs, the function with the closest matching tag is triggered. 
+In this chapter, we apply SignalGP in the context of linear GP. 
+We demonstrate the value of the event-driven paradigm using two distinct test problems (an environment coordination problem and a distributed leader election problem) by comparing SignalGP to variants that are otherwise identical, but must actively query sensors to process events or messages. 
+In each of these problems, rapid interaction with the environment or other agents is critical for maximizing fitness. 
+We also discuss ways in which SignalGP can be generalized beyond our linear GP implementation.
+
+% -- Tag-based regulation --
+In Chapter \ref{chapter:tag-based-regulation}, we introduce and experimentally demonstrate tag-based genetic regulation, a new genetic programming technique that allows programs to dynamically adjust which code modules to express.
+Tags are evolvable labels that provide a flexible mechanism for referencing code modules. 
+Tag-based genetic regulation extends existing tag-based naming schemes to allow programs to ``promote'' and ``repress'' code modules to alter expression patterns.
+This extension allows evolution to structure a program as a gene regulatory network where modules are regulated based on instruction executions.
+We demonstrate the functionality of tag-based regulation on a range of program synthesis problems. 
+We find that tag-based regulation improves problem-solving performance on context-dependent problems; that is, problems where programs must adjust how they respond to current inputs based on prior inputs (\textit{i.e.}, current context).
+Indeed, some context-dependent problems were unable to be solved by the system until regulation was added.
+Our implementation of tag-based genetic regulation is not universally beneficial, however.
+We identify scenarios where the correct response to a particular input never changes, rendering tag-based regulation an unneeded functionality that can impede adaptive evolution.
+Tag-based genetic regulation broadens our repertoire of techniques for evolving more dynamic genetic programs and can easily be incorporated into existing tag-enabled GP systems.
+
+% -- Tag-accessed memory --
+Finally, in Chapter \ref{chapter:tag-accessed-memory}, we demonstrate the use of tags to label memory positions in GP, enabling programs to define and use evolvable variable names \citep{lalejini_tag-accessed_2019}.
+Our tag-based memory implementation did not substantively affect problem-solving performance across several program synthesis benchmark problems.
+However, tag-based addressing features a larger addressable memory space than more traditional register-based memory approaches in GP.
+Further, in combination with tag-based regulation, tag-accessed memory has the potential to enable more dynamic, context-dependent memory storage in GP.
+
+ 
+

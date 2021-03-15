@@ -1,3 +1,124 @@
 \section{Digital Evolution}
+% -- What is digital evolution? --
+% - define
+% - test hypotheses that are otherwise impossible
 
-\subsection{Why use digital evolution to study the evolutionary origins and consequences of phenotypic plasticity?}
+Digital evolution experiments have emerged as a powerful research framework from which evolution can be studied.
+In digital evolution, self-replicating computer programs (digital organisms) compete for resources, mutate, and evolve \textit{in silico} \citep{wilke_biology_2002}.
+Digital evolution studies balance the speed and transparency of mathematical and computational simulations with the open-ended realism of laboratory experiments. 
+
+% - Avida (1-2 paragraph) -
+Wide range of digital systems for studying evolution exist.
+One of the most 
+
+
+
+
+% @AML: don't like this subheading
+\subsection{Why use digital evolution to conduct evolution experiments?}
+
+% The effects of phenotypic plasticity on adaptive evolution have been disputed, as few studies have been able to observe both the initial patterns of plasticity and the subsequent divergence of traits in natural populations \citep{ghalambor_adaptive_2007,wund_assessing_2012,forsman_rethinking_2015,ghalambor_non-adaptive_2015,hendry_key_2016}.
+% Experimental studies investigating the relationship between phenotypic plasticity and evolutionary outcomes can be challenging to conduct in natural systems.
+% Such experiments would require the ability to irreversibly toggle plasticity followed by long periods of evolution during which detailed phenotypic data would need to be collected.
+
+% Digital evolution experiments have emerged as a powerful research framework from which evolution can be studied.
+% Digital evolution studies allow us to directly toggle the possibility for adaptive plastic responses to evolve, which enables us to empirically test hypotheses that were previously relegated to theoretical analyses.
+
+\subsubsection{Generality}
+
+% -- Generality --
+% - Quote
+% - Not derived from LUCA
+
+% - Evolution happens regardless of the substrate [creativity paper?].
+
+% - specific to mechanisms
+
+\subsubsection{Transparency}
+
+% Digital evolution systems also allow for perfect, non-invasive data tracking.
+% Such transparency permits the tracking of complete evolutionary histories within an experiment, which circumvents the historical problem of drawing evolutionary inferences using incomplete records (from frozen samples or even fossils) and extant genetic sequences.
+
+% Relative to biology
+
+% Relative to neural networks/other computational substrates
+
+
+\subsubsection{Control}
+% -- Experimental control --
+% - basic configuration: mutation rate
+% - experimental manipulations
+
+% Additionally, digital evolution systems allow for experimental manipulations and analyses that go beyond what is possible in wet-lab experiments.
+% Individual-based => things that can't be done in numerical simulations [cite - Chapter 1 Dolson thesis].
+
+% Basic configuration
+% - Mutation rate, population size
+% - Survival of the flattest?
+
+% Environmental control
+% - connectivity (local vs well-mixed)
+% - Dolson's work
+
+% Genetic control
+% - Linear computer programs execute instructions
+
+
+% Such analyses have included exhaustive knockouts of every loci to identify the functionality of each \citep{lenski_evolutionary_2003},
+% comprehensive characterization of local mutational landscapes \citep{lenski_genome_1999,canino-koning_fluctuating_2019},
+% and the real-time reversion of all deleterious mutations as they occur to isolate their long-term effects on evolutionary outcomes \citep{covert_experiments_2013}. 
+
+
+\subsubsection{Scale}
+
+% Modern computers allow us to observe many generations of digital evolution at tractable time scales; thousands of generations can take mere minutes as opposed to months, years, or centuries.
+
+
+
+
+% -- Why use digital evolution to study evolution? --
+% - ?for why study eco-evolutionary dynamics [cite - DOlson]?
+
+
+
+% -- Transparency --
+%  - via computation
+%  - via instructions => easier to understand functionality, introduce new functionality than in neural networks for example
+%  - Possible to characterize the fitness landscape
+
+% -- Scale --
+% - speed (smaller population sizes, though)
+% - Compare to LTEE
+% - Mike's long-term evolution work
+
+% -- Avida --
+
+% -- Core world => Tierra => Avida --
+% - + Core world, tierra
+% - described in greater detail in [cite] and Chapters X and Y.
+
+%%%%%%%% TEXT FROM COMPS %%%%%%%%%
+% What is digital evolution?
+% Together, carefully designed laboratory and field experiments, mathematically rigorous simulations, and studies of natural evolutionary dynamics in digital organisms are beginning to yield insight into the evolution of complex traits and behaviors.
+% Digital organisms balance the speed and transparency of simulations with the open-ended realism of laboratory experimental systems.
+% In digital evolution, self-replicating computer programs (digital organisms) mutate, compete, and evolve \textit{in silico} \citep{wilke_biology_2002}. 
+% Digital evolution systems enable perfect data tracking, and modern compute power allows experimenters to observe many generations of evolution at tractable time-scales (thousands of generations of evolution in minutes as opposed to months or years).
+
+% Why use digital evolution?
+% Artificial life forms afford the opportunity to seek general principles about self-replicating systems. As John Maynard Smith made the case \citep{maynard_smith_byte-sized_1992}: ``So far, we have been able to study only one evolving system and we cannot wait for interstellar flight to provide us with a second. If we want to discover generalizations about evolving systems, we will have to look to artificial ones."
+% Beyond generalizability, digital organisms allow researchers to test hypotheses about evolution that would otherwise be difficult or impossible to test in natural systems \citep{ofria_avida:_2009}.
+% For example, Lenski \textit{et al.}~\citep{lenski_evolutionary_2003} used digital evolution to show the mutation-by-mutation origins of a complex trait, demonstrating the importance of intermediate forms that can be co-opted and repurposed for new function.
+% Covert \textit{et al.}~\citep{covert_experiments_2013} demonstrated the importance of deleterious mutations by \textit{disallowing} them, showing that evolving populations without access to deleterious mutations achieved lower fitness levels than control populations in which such mutations were allowed.
+
+% Digital evolution has its roots in Genetic Programming (GP), wherein computer programs are evolved using natural principles. 
+% Tierra \citep{ray_approach_1991}, one of the first digital evolution systems, used self-replicating linear genetic programs as its organisms.
+% The Avida system \citep{ofria_avida:_2009} expanded on the ideas behind Tierra, but added the ability to configure complex environments and sophisticated data tracking tools.
+% Avida legitimized digital evolution as an approach to conducting scientifically rigorous evolution experiments.
+% Experimental evolution studies using Avida as a model system have been well received, and topics such as the evolution of complexity, sexual recombination, modularity, robustness, and division of labor have been published in top evolutionary biology venues \citep{lenski_genome_1999,adami_evolution_2000,lenski_evolutionary_2003,elena_effects_2007,misevic_experiments_2010,goldsby_task-switching_2012,goldsby_evolutionary_2014}.
+
+% However, despite digital evolution's track record, current forms of digital organisms lack a rich spectrum of mechanisms for interacting with other organisms or for responding to environmental changes, which limits their capacity to study the evolution of biological responsiveness.
+% Traditional digital organisms generally follow an imperative programming paradigm where computation is driven procedurally. 
+% Program execution starts at the top of the program and proceeds in sequence, instruction-by-instruction, jumping or branching as dictated by executed instructions \citep{mcdermott_genetic_2015}.
+% Thus, unlike natural organisms, exogenous signals cannot directly trigger computations (\textit{e.g.}, as it does in cellular signal transduction) in traditional forms of digital organisms.
+% Instead, these digital organisms must actively (via repeated polling) monitor environmental cues or communication from other agents.
+

@@ -84,7 +84,6 @@
 
 - It really shows that Chapter one is my first publication. A little clunky. Buries the lead. Etc.
 - Do not love the organization of this paper!
-- My first experience writing a web-based visualization from scratch. Shout out to Emily Dolson for showing me how awesome web visualizations can be, for introducing me to D3js, and for letting me to pepper you with questions.
 - Did *not* yet know how to manage experiment code, data, and analyses well. 
 
 ## Thoughts

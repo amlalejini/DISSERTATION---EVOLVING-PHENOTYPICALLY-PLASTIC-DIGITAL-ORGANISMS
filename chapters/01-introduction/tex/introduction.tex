@@ -4,29 +4,33 @@
 
 % @AML: Do not love how this sentence is currently structured. Would prefer simpler organization (but still provides strong contrast between diverging goals and unifying approach).
 % @AML: comp exp evo => 'digital evolution'?
-[This/my] dissertation straddles two [disciplines/methodologies] that have divergent goals but are unified by our ability to implement, observe, and exploit the constructive process of evolution [\textit{in silico}/in a computer/etc]: [\textit{in silico}/computational] experimental evolution and evolutionary computation.
+This dissertation straddles [computational experimental evolution] and evolutionary computation, two disciplines with divergent goals but unified by our ability to implement, observe, and exploit the constructive process of evolution \textit{in silico}.
+% two [disciplines] with divergent goals but that are unified by our ability to implement, observe, and exploit the constructive process of evolution [\textit{in silico}/in a computer/etc]: [\textit{in silico}/computational] experimental evolution and evolutionary computation.
 Experimental evolution is the study of evolutionary change that occurs in experimental populations in response to conditions imposed by the experimenter [cite - Kawecki].
 Experimental evolution allows us to test general hypotheses about evolutionary processes. 
 Conventionally, such evolution experiments are performed under laboratory conditions using populations of biological organisms (e.g., e coli, pseudomanas, yeast, Drosophila, and phage-bacteria systems). 
-[Famous examples, LTEE, experimental evolution of multicellularity, ...].
-% @aml: keep comp exps general vs. narrowing immediately on self-replicating computer programs
-[In silico] evolution experiments are performed using populations of \textit{digital} organisms---self-replicating computer programs---that compete, mutate, and evolve in computational environments. 
+For example, the ongoing long-term evolution experiment with \textit{E. coli} (over 70,000 generations of evolution have elapsed) has yielded important insights into [X,Y,Z].
+% [Famous examples, LTEE, experimental evolution of multicellularity, ...].
+% @aml: keep comp exps general vs. narrowing immediately on self-replicating computer programs?
+In my work, I use \textit{digital evolution}, a form of computational experimental evolution wherein populations of digital organisms---self-replicating computer programs---compete, mutate, and evolve in computational environments. 
 % In my ..., test hypotheses about the evolution of phenotypic plasticity.
 
 % -- Evolutionary computation & Genetic programming --
-Evolutionary computation exploits evolution as a general purpose search algorithm to solve challenging computational problems.
+Evolutionary computation exploits the natural principles of evolution as a general purpose search algorithm to solve challenging computational problems.
 Such evolutionary algorithms begin with an initial population of individuals, be they potential solutions, computer programs, neural networks, or robot body plans [citations]. 
 Each generation, individuals are evaluated on one or more criteria and selected to contribute genetic material to the next generation.
 % @AML: a little awkward
-Evolutionary algorithms [steer/direct] populations through a problem's search space (i.e., the space of all possible [solutions/?]) by repeatedly replicating and varying (typically through mutation and crossover) promising individuals, replacing lower quality individuals in the population.
-% In this way, the populations explore [conceptual figure?]... 
-In my work, I focus on \textit{genetic programming} wherein we apply the natural principles of evolution to automatically synthesize computer programs rather than writing them by hand.
+Evolutionary algorithms direct populations through a problem's search space (i.e., the space of all possible [solutions]) by repeatedly replicating and varying (typically through mutation and crossover) promising individuals, replacing lower quality individuals in the population.
+In my work, I focus on \textit{genetic programming} (GP) wherein we apply evolutionary algorithms to automatically synthesize computer programs rather than writing them by hand.
 
 % -- Synergy between disciplines --
-Synergistic.
-% introduce term 'biological complexity' maybe also diversity?
-Deeper understanding of evolutionary processes that generated biological complexity observed on Earth/in nature improve existing and inspire new evolutionary algorithms, helping us solve increasingly challenging problems.
-Advances in evolutionary computing can improve our ability to model evolutionary processes in silico, providing new ways to represent digital organisms, new analyses and visualizations. 
+% - biological complexity
+% Evolutionary biology and evolutionary computation  
+% Genetic programming and digital evolution research have [obvious] synergy.
+Advances in genetic programming and digital evolution research are [mutually beneficial/synergistic].
+Digital evolution studies can lead to a deeper understanding of the evolutionary processes that generate the biological complexity we observe on Earth [cite?].
+Such knowledge can then be exploited in evolutionary computation to help us solve increasingly challenging problems, inspiring improvements to existing approaches (e.g., [??]) or inspiring new algorithms altogether (e.g., [eco-ea, ??]).  
+Likewise, advances in evolutionary computing can improve our ability to [model/instantiate] evolutionary processes \textit{in silico}, including new ways of representing digital organisms (e.g., [??]), data analysis techniques (e.g., [??]), and visualizations (e.g., [??]).
 
 % @AML: need a smoother way to transition into defining/explaining/motivating plasiticity
 % -- what is phenotypic plasticity & some biological motivation --
@@ -38,6 +42,9 @@ Genetically homogeneous cells in a developing multicellular organism leverage th
 % @AML: don't love this next sentence
 % Thus, understanding how phenotypic plasticity evolves and how it influences subseqent evolutionary outcomes is an important step toward a deeper understanding of [biological complexity].
 [Indeed, biologists have long been interested in understanding how adaptive phenotypic plasticity evolves, the mechanisms underpinning that plasticity in natural organisms, and how the evolution of plasticity influences subsequent evolutionary outcomes] [citations].
+
+% Fluctuating environmental conditions are ubiquitous in natural systems, and the particular mechanisms that populations rely on to cope with environmental fluctuations profoundly influence subsequent evolutionary dynamics.
+% Phenotypic plasticity, the ability of a single genotype to produce alternate phenotypes, allows organisms to dynamically adjust phenotypic expression in an environmentally dependent context.
 
 % -- evolutionary computation motivation --
 % Plasticity relevant to EC blah.
@@ -52,10 +59,14 @@ For example, each input button on a calculator triggers a different software res
 Most software applications require more advanced levels of phenotypic plasticity, as they must \textit{regulate} responses to inputs based on prior context.
 For example, the computations that must occur on a calculator after pressing the ``equals'' button depend on the set of operators and operands (i.e., inputs) previously provided.
 We can draw on our understanding of the evolutionary causes and consequences of phenotypic plasticity to design better algorithms for evolving dynamic computer programs.
-Long recognized that program representations best for human software developers are not ideal for evolving computer programs [citations - red code, etc].
+Long recognized that program representations (i.e., the way in which computer programs are organized and [interpreted/executed]) best for human software developers are not ideal for evolving computer programs [citations - red code, etc].
 Still, many mechanisms of plasticity in existing genetic programming representations (conditional logic and mathematical [something]) are identical to that of traditional programming languages.
 By looking to the mechanisms of plasticity in biological organisms, we can also improve the way we represent computer programs for evolution. 
 
-In Chapter [X], I propose SignalGP, ....
-In Chapter [Y], I ... tag-based genetic regulation, ...
-In Chapter [Z], ...
+In Chapter \ref{chapter:signalgp}, I introduce SignalGP, a novel genetic programming technique for evolving event-driven programs that handle signals from the environment or from other agents in a more biologically inspired way than traditional GP approaches. 
+In Chapter \ref{chapter:tag-based-regulation}, I introduce tag-based module regulation for genetic programming, which allows us to more easily evolve programs capable of dynamically regulating responses to inputs over time.
+Finally, in Chapter \ref{chapter:tag-accessed-memory}, I briefly introduce tag-accessed memory, a more flexible approach to labeling and accessing memory (e.g., indexable memory registers) than traditional direct-addressed memory schemes.
+
+% @AML: do we want an overview paragraph?
+% Reminder of this chapter, give brief overview of digital evolution and genetic programming.
+% Additionally, give a brief outline of my dissertation's contributions.
