@@ -1,5 +1,54 @@
 \section{Genetic programming}
+% -- Very high-level literature review --
 
+% -- What is genetic programming? --
+
+% --- Relationship to GP ----
+% @AML: needs better transition in/out of this paragraph
+Both digital evolution (as used in this dissertation) and genetic programming systems evolve populations of computer programs.
+Conventional genetic programming systems evolve computer programs by [following] the five steps: 
+(1) random candidate solutions,
+(2) evaluate each candidate's quality relative to one or more criteria,
+(3) select promising candidates based their quality,
+(4) vary candidates by mutating or recombining them, and
+(5) repeat this process from step 2 until a sufficiently good solution is found [cite - Ofria 2009].
+This approach works well for solving problems, but omits many important aspects of living systems.
+For example,
+[self-replication, whereas gp systems perform this automatically (some work has been done in gp [cite - autoconstructive evolution])].
+[interact with other organisms and their environment, which is often not part of algorithm, or these interactions are very limited].
+As such, genetic programming systems are not an ideal platform for conducting experimental evolution \textit{in silico}. 
+
+
+% -- forms/representations (non-exhaustive) --
+%   @AML: how to make it clear that this is non-exhaustive
+% - tree-based gp (pioneered by Koza?, earliest and perhaps must widespread and successful)
+% - graph-based gp (CGP, TPG)
+% - grammatical evolution
+% - stack-based gp
+% - linear gp
+
+% -- application areas --
+% - symbolic regression
+% - bug fixing
+% - program synthesis
+
+% -- benefits --
+% - transparency
+% - efficient => computers are designed to run computer programs, so GP can run on existing hardware at a very low level
+% - ??
+
+% -- my work --
+% - In my work, I focus on making gp systems more dynamic.
+% - (1) modules with evolvable labels
+% - (2) allowing signals to automatically trigger modules
+% - (3) allowing programs to adjust links between modules on the fly
+% - (4) developing more flexible ways of memory access
+
+
+
+
+
+% ---------------------------------------------------------
 % Independent origins and different approaches
 % - Tied together by the fact that we're using Darwinian dynamics to generate programs.
 
