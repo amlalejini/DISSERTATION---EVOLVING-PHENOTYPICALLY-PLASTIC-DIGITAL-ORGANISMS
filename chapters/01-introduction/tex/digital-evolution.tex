@@ -118,6 +118,8 @@ Indeed, studies of carbon-based lifeforms that all share common ancestry dominat
 By testing hypotheses across biological and digital model systems, we can disentangle general principles from the effects of specific model organisms.  
 
 % --- Examples ---
+[Examples?]
+% @AML: example of study replicated across digital organisms and biological organisms?
 
 
 \subsubsection{Transparency}
@@ -132,80 +134,71 @@ Digital evolution systems allow for perfect, non-invasive data tracking.
 Experimenters can save complete details of evolving populations for further analysis, including mutations, genotypes, environment information, phenotypes, organism-organism interactions, organism-environment interactions, \textit{et cetera}.
 By tracking parent-offspring relationships, we can analyze complete evolutionary histories within an experiment, which circumvents the historical problem of drawing evolutionary inferences using incomplete records (from frozen samples or even fossils) and extant genetic sequences.
 
-% --- Examples ---
-% [Dolson - Interpreting the tape of life]
-% [Dolson - Evolutionary hot spots]
-% [Lenski et al. - Complex features]
+% --- Lineages + Phylogenies ---
+Many digital evolution studies inspect the complete lineages of evolved digital organisms to tease apart the mutation-by-mutation evolution of complex features \citep{lenski_evolutionary_2003,dolson_spatial_2017,grabowski_case_2013,goldsby_evolutionary_2014,pontes_evolutionary_2019}.
+In an exemplary analytical undertaking, Dolson and Ofria identified hotspots of evolutionary potential (i.e., regions of an environment where novel traits disproportionately evolved) in a spatially heterogeneous environment, finding that the \textit{paths} traversed by lineages through space might explain the existence of evolutionary hotspots \citep{dolson_hotspots_2017}. 
+Recently, Dolson \textit{et al.} reviewed a breadth of ancestry-based metrics and analyses that operate on lineages and phylogenies in an effort to improve our capacity to quantitatively explore evolutionary histories in digital evolution experiments \citep{dolson_interpreting_2020}.
 
-% [Fortuna  - host-parasite ancestral analyses]
+% -- networks --
+By tracking phenotypes over time, Cooper and Ofria were able to observe the real-time evolution of stable ecosystems of digital organisms under resource-limited conditions \citep{cooper_evolution_2002}.
+In a similar vein, Fortuna \textit{et al.} tracked host-parasite interactions to investigate how antagonistic coevolution shapes the structure of infection networks over time \citep{fortuna_coevolutionary_2019}.
 
+% -- Knockout analyses --
+For an individual digital organism, we can perform systematic knockout analyses to identify which instructions are responsible for producing a given phenotypic outcome.
+To perform a knockout, we duplicate an organism, replacing a single instruction with an inert ``no-operation'' instruction.
+We then identify any phenotypic changes by contrasting phenotype of the ``knockout'' organism and the original.
+Such changes provide evidence of the role that the original instruction must have played in the genome.
+For example, when an organism performs a particular computational task but loses it when an instruction is knocked out, we categorize that instruction as part of that task's genetic machinery.
+By knocking out every loci in a genome, we can begin to tease apart that genome's genetic architecture, isolating regions of the genome that encode particular phenotypic traits.
+For example, this sort of analysis has been applied along lineages to investigate how environmental change shapes the evolution of genetic architectures in digital organisms \citep{canino-koning_evolution_2016}.
 
-% --- Examples ---
-% [Rose - 2016]
+Mutational landscaping analyses go a step further than knockout analyses, allowing experimenters to fully characterize local mutational landscapes.
+That is, we can systematically apply all possible one- and two-step mutations to a given genome to generate a set of possible mutant genotypes. 
+We can then express each possible mutant, characterizing its phenotype and self-replication rate relative to the original.
+Such analyses have been used to quantify mutational robustness [citations] and investigate the evolution of evolvability \citep{canino-koning_fluctuating_2019}. 
 
 \subsubsection{Control}
 % -- Experimental control --
-% - basic configuration: mutation rate
-% - experimental manipulations
 
-Digital evolution systems facilitate experimental manipulations and analyses that go beyond what is possible in wet-lab or field experiments.
-This allows researchers to test hypotheses about evolution that would otherwise be difficult or impossible to test in natural systems.
-
-
-
+Digital evolution systems facilitate experimental manipulations that go beyond what is possible in wet-lab or field experiments.
+This allows researchers to empirically test hypotheses that would otherwise be relegated to theoretical analyses.
 % -- Basic configuration --
-% - Mutation rate, population size
-% - Survival of the flattest?
+Digital evolution systems allow experimenters to vary basic parameters such as population size and mutation rate.
+For example, by varying mutation rate, Wilke \textit{et al.} discovered the ``survival of the flattest'' effect where high mutation rate environments selected for genomes that with slower replication rates but that were more robust to mutation \citep{wilke_flattest_2001}. 
+% For example, by controlling population size, LaBar and Adami... \citep{labar_evolution_2017}
 
 % -- Environmental control --
 % - connectivity (local vs well-mixed)
 % - Dolson's work
-% - Dirty work hypothesis
+Digital evolution experiments also allow for fine-grained control over the environment.
+For example, Dolson \textit{et al.} used Avida to experimentally manipulate the spatial distribution of resource availability, finding that spatial entropy and phenotypic diversity had a strong positive correlation and that spatially heterogeneous environments exhibited increased evolutionary potential \citep{dolson_spatial_2017}.
+By experimentally controlling how environments changed temporally, Nahum \textit{et al.} demonstrated that a single temporary environmental change can improve fitness landscape exploration and exploitation in evolving populations of digital organisms \citep{nahum_improved_2017}.
 
 % -- Genetic control --
-% - Linear computer programs execute instructions
+Digital evolution systems also allow experimenters to monitor and manipulate mutational effects in real-time.
+Covert \textit{et al.} performed real-time reversions of all deleterious mutations as they occurred to isolate their long-term effects on evolutionary outcomes \citep{covert_experiments_2013}.
+Lalejini \textit{et al.} implemented a range of slip duplication mutation operators (each designed to isolate a single effect of duplication mutations) in order to tease apart why such mutations can promote the evolution of complex traits \citep{lalejini_gene_2017}.
 
-% -- Analyses --
-% While the functionality of individual instructions are clearly defined, the emergent function of an instruction depends on its context within a genome. 
-
-% While Avida clearly defines the mechanics of each instruction, the emergent function of an instruction depends on its context within a genome. 
-% For an individual organism, we can perform knockout experiments to identify which instructions are responsible for producing a given phenotypic outcome.
-% To perform a knockout, we duplicate the organism, replacing a single instruction with an inert ``no-operation'' instruction.
-% We then identify any phenotypic changes by contrasting the execution results of the ``knockout'' organism and the original.
-% Such changes provide evidence of the role that the original instruction must have played in the genome.
-% For example, when an organism performs the NAND task but loses it when an instruction is knocked out, we categorize that instruction as part of the NAND task machinery.
-% We use knockout experiments to characterize the role of each instruction in the genomes of every organism along all study lineages, revealing how genetic architectures change over time.
-
-% -- Mutational landscaping analyses --
-% - Possible to characterize the local fitness landscape
-
-
-
-
-% Such analyses have included exhaustive knockouts of every loci to identify the functionality of each \citep{lenski_evolutionary_2003},
-% comprehensive characterization of local mutational landscapes \citep{lenski_genome_1999,canino-koning_fluctuating_2019},
-% and the real-time reversion of all deleterious mutations as they occur to isolate their long-term effects on evolutionary outcomes \citep{covert_experiments_2013}. 
-
+% -- ??? --
+% @AML: becoming exhausted with doing lit review... 
 
 \subsubsection{Scale}
 
 Modern computers allow us to observe many generations of digital evolution at tractable time scales; thousands of generations can take mere minutes as opposed to months, years, or centuries.
-% - examples of this -
+For example, populations of digital organisms have been used to test theoretical predictions about the expected rate of adaption over hundreds of thousands of generations~\citep{wiser_analysis_2015,wiser_boundedness_2018}.
 
 Further, digital evolution experiments allow researchers to enact complex experimental protocols with minimal extra effort. 
 That is, unlike in wet-lab experiments, computational experiment protocols can easily be automated using modern scripting tools [cite].
-% - Example -
+% - @AML: Example?? -
 
 With the increasing accessibility of high performance computing systems [cite], it can be trivial to evolve hundreds of replicate populations for a given experimental treatment. 
 Evolution is an inherently stochastic process, so increased replication provides a clearer picture of the distribution of treatment effects. 
 Further, easier to identify and study rare events.
-% - Examples -
+% - @AML: Examples ??? -
 
 Even the best high performance computing systems, however, lack the parallelism of the real world.
 That is, digital evolution systems cannot yet rival bacterial systems in their ability to scale to large population sizes. 
 A typical population of digital organisms comprises thousands of digital organisms; however, bacterial populations in laboratory experiments [???]. 
-
-% yedid?
 
 \subsection{Phenotypic plasticity in digital organisms}
 
