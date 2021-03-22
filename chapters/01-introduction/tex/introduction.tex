@@ -11,27 +11,19 @@ These two disciplines have divergent goals, but are unified by our ability to im
 % Experimental evolution uses populations that are tractable to observe and experimentally manipulate in order to study real-time evolutionary change in response to conditions imposed by the experimenter \citep{kawecki_experimental_2012}.
 Experimental evolution allows us to test general hypotheses about evolutionary processes by studying real-time evolutionary changes occurring in experimental populations in response to conditions imposed by the experimenter \citep{kawecki_experimental_2012}.
 % Such studies allow us to test general hypotheses about evolutionary processes.
-Conventionally, evolution experiments are performed under laboratory conditions using populations of biological organisms that are tractable to observe and experimentally manipulate (\textit{e.g.}, \textit{Escherichia coli}, \textit{Pseudomonas}, \textit{Saccharomyces cerevisiae}, \textit{Drosophila melanogaster}, and in a variety of phage-bacteria systems). 
-For example, over 70,000 generations of evolution have elapsed the ongoing long-term evolution experiment with \textit{E. coli} \citep{barrick_test_2020}, which has yielded analyses on a wide range of topics such as 
-long-term evolutionary dynamics \citep{wiser_long-term_2013,good_dynamics_2017}, 
-historical contingency [cite]
-
-
-
-
-the evolution of mutation rates
-evolutionary origins of novel traits [cite - citrate], 
-maintenance of plasticity under relaxed selection [cite - grant],
-
-
-
-[X,Y,Z].
+Conventionally, evolution experiments are performed under laboratory conditions using populations of biological organisms that are tractable to observe and experimentally manipulate (\textit{e.g.}, \textit{Escherichia coli}, \textit{Pseudomonas}, \textit{Saccharomyces cerevisiae}, \textit{Drosophila melanogaster}, and in a variety of phage-bacteria systems).
+For example, over 70,000 generations of evolution have elapsed the ongoing long-term evolution experiment with \textit{E. coli} \citep{barrick_test_2020}, which has yielded analyses on a wide range of topics such as
+long-term evolutionary dynamics \citep{wiser_long-term_2013,good_dynamics_2017},
+historical contingency \citep{travisano_experimental_1995,card_historical_2019},
+the evolution of mutation rates \citep{sniegowski_evolution_1997},
+the origins of novel traits \citep{blount_historical_2008},
+and the maintenance of phenotypic plasticity under relaxed selection \citep{grant_maintenance_2020}.
 In my work, I conduct experimental evolution studies using populations of \textit{digital} organisms, which are self-replicating computer programs that compete, mutate, and evolve in computational environments.
 
 
 % In my ..., test hypotheses about the evolution of phenotypic plasticity.
 
-% [computational experimental evolution] and evolutionary computation, two disciplines with 
+% [computational experimental evolution] and evolutionary computation, two disciplines with
 
 % two [disciplines] with divergent goals but that are unified by our ability to implement, observe, and exploit the constructive process of evolution [\textit{in silico}/in a computer/etc]: [\textit{in silico}/computational] experimental evolution and evolutionary computation.
 
@@ -39,21 +31,21 @@ In my work, I conduct experimental evolution studies using populations of \texti
 % more applied research
 My experimental studies help provide insights into evolutionary dynamics that can also be useful for more applied goals.
 Evolutionary computation exploits the natural principles of evolution as a general purpose search algorithm to solve challenging computational problems.
-Such evolutionary algorithms begin with an initial population of individuals, be they computer programs, neural networks, robot body plans, or potential solutions to some other kind of a well-defined problem [citations]. 
+Such evolutionary algorithms begin with an initial population of individuals, be they computer programs, neural networks, robot body plans, or potential solutions to some other kind of a well-defined problem [citations].
 Each generation, individuals are evaluated on one or more criteria and promising individuals are selected to contribute genetic material to the next generation.
 % @AML: a little awkward - break into two sentences
-Evolutionary algorithms direct populations of prospective solutions through a problem's search space (i.e., the space of all possible [solutions]). 
+Evolutionary algorithms direct populations of prospective solutions through a problem's search space (i.e., the space of all possible [solutions]).
 [how steering happens] these algorithms repeatedly select, replicate, and vary promising individuals, [replacing lower quality individuals in the population/forming the next generation of the population].
 In the work presented here, I focus on \textit{genetic programming} (GP) wherein we apply evolutionary algorithms to automatically synthesize computer programs rather than writing them by hand.
 
 % -- Synergy between disciplines --
 % - biological complexity
-% Evolutionary biology and evolutionary computation  
+% Evolutionary biology and evolutionary computation
 % Genetic programming and digital evolution research have [obvious] synergy.
 Advances in genetic programming and digital evolution research are [mutually beneficial/synergistic].
 [unified in the idea that we can use the same/similar systems to tackle these goals].
 Digital evolution studies can lead to a deeper understanding of the open-ended evolutionary processes that generate the [incredible/adaptive] biological complexity we observe on Earth [cite?].
-Such knowledge can then be exploited in evolutionary computation to help us solve increasingly challenging problems, inspiring improvements to existing approaches (e.g., [autoconstructive evolution, ??]) or inspiring [entirely new/??] algorithms or ways of representing solutions (e.g., [eco-ea, ??]).  
+Such knowledge can then be exploited in evolutionary computation to help us solve increasingly challenging problems, inspiring improvements to existing approaches (e.g., [autoconstructive evolution, ??]) or inspiring [entirely new/??] algorithms or ways of representing solutions (e.g., [eco-ea, ??]).
 Likewise, advances in evolutionary computing can improve our ability to [model/instantiate] evolutionary processes \textit{in silico}, including new ways of representing digital organisms (e.g., [indirect encodings??]), data analysis techniques (e.g., [??]), and visualizations (e.g., [??]).
 
 % @AML: need a smoother way to transition into defining/explaining/motivating plasiticity
@@ -92,10 +84,10 @@ We can draw on our understanding of the evolutionary causes and consequences of 
 The way in which computer programs are org and inter for human software developers has long been recognized as being inefficient for evolving computer programs [citations - red code].
 % Long recognized that program representations (i.e., the way in which computer programs are organized and [interpreted/executed]) best for human software developers are not ideal for evolving computer programs [citations - red code, etc].
 Still, many mechanisms of plasticity in existing genetic programming representations are identical to that of traditional programming languages, such as conditional logic and jump-based flow control.
-By looking to the evolved mechanisms of plasticity in biological organisms, we can also improve the way in which we represent computer programs for evolution. 
+By looking to the evolved mechanisms of plasticity in biological organisms, we can also improve the way in which we represent computer programs for evolution.
 
 % @AML: clean up the wording to be less repetitive
-In Chapter \ref{chapter:signalgp}, I introduce SignalGP, a novel genetic programming technique for evolving event-driven programs that handle signals from the environment or from other agents in a more biologically inspired way than traditional GP approaches. 
+In Chapter \ref{chapter:signalgp}, I introduce SignalGP, a novel genetic programming technique for evolving event-driven programs that handle signals from the environment or from other agents in a more biologically inspired way than traditional GP approaches.
 Next in Chapter \ref{chapter:tag-based-regulation}, I introduce tag-based module regulation for genetic programming, which allows us to more easily evolve programs capable of dynamically regulating responses to inputs over time.
 Finally, in Chapter \ref{chapter:tag-accessed-memory}, I briefly introduce tag-accessed memory, a more flexible approach to labeling and accessing memory than traditional direct-addressed memory schemes.
 
