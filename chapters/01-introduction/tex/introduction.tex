@@ -5,6 +5,8 @@
 
 % @AML: Emphasize that my applied work is on building *representations*
 
+% @AML: Should I reframe digital evolution as in the surprising creativity paper? (evolving digital substrates)
+
 % -- Two disciplines & in silico experimental evolution --
 This dissertation straddles basic research using computational systems for experimental evolution and more applied research for evolutionary computation.
 These two disciplines have divergent goals, but are unified by our ability to implement, observe, and exploit the constructive process of evolution \textit{in silico}.
@@ -20,73 +22,66 @@ the origins of novel traits \citep{blount_historical_2008},
 and the maintenance of phenotypic plasticity under relaxed selection \citep{grant_maintenance_2020}.
 In my work, I conduct experimental evolution studies using populations of \textit{digital} organisms, which are self-replicating computer programs that compete, mutate, and evolve in computational environments.
 
-
-% In my ..., test hypotheses about the evolution of phenotypic plasticity.
-
-% [computational experimental evolution] and evolutionary computation, two disciplines with
-
-% two [disciplines] with divergent goals but that are unified by our ability to implement, observe, and exploit the constructive process of evolution [\textit{in silico}/in a computer/etc]: [\textit{in silico}/computational] experimental evolution and evolutionary computation.
-
 % -- Evolutionary computation & Genetic programming --
 % more applied research
-My experimental studies help provide insights into evolutionary dynamics that can also be useful for more applied goals.
+
+% My experimental studies help provide insights into evolutionary dynamics that can also be useful for more applied goals.
+Insights into evolutionary dynamics from experimental evolution studies can also be useful for more applied goals.
 Evolutionary computation exploits the natural principles of evolution as a general purpose search algorithm to solve challenging computational problems.
-Such evolutionary algorithms begin with an initial population of individuals, be they computer programs, neural networks, robot body plans, or potential solutions to some other kind of a well-defined problem [citations].
-Each generation, individuals are evaluated on one or more criteria and promising individuals are selected to contribute genetic material to the next generation.
-% @AML: a little awkward - break into two sentences
-Evolutionary algorithms direct populations of prospective solutions through a problem's search space (i.e., the space of all possible [solutions]).
-[how steering happens] these algorithms repeatedly select, replicate, and vary promising individuals, [replacing lower quality individuals in the population/forming the next generation of the population].
+Such evolutionary algorithms begin with an initial population of individuals, be they computer programs, neural networks, robot body plans, or potential solutions to some other kind of a well-defined problem [citations?].
+Each generation, candidate solutions are evaluated on one or more criteria to determine their quality. 
+After evaluating the population, promising individuals are selected as parents to contribute genetic material to produce the next generation of individuals.
+% @AML: next sentence could be streamlined
+Evolutionary algorithms directing populations through a problem's search space via repeated evaluation, selection, and variation (i.e, replicating promising individuals with random mutations) until a sufficiently good solution is found. 
 In the work presented here, I focus on \textit{genetic programming} (GP) wherein we apply evolutionary algorithms to automatically synthesize computer programs rather than writing them by hand.
 
 % -- Synergy between disciplines --
 % - biological complexity
-% Evolutionary biology and evolutionary computation
-% Genetic programming and digital evolution research have [obvious] synergy.
-Advances in genetic programming and digital evolution research are [mutually beneficial/synergistic].
-[unified in the idea that we can use the same/similar systems to tackle these goals].
-Digital evolution studies can lead to a deeper understanding of the open-ended evolutionary processes that generate the [incredible/adaptive] biological complexity we observe on Earth [cite?].
-Such knowledge can then be exploited in evolutionary computation to help us solve increasingly challenging problems, inspiring improvements to existing approaches (e.g., [autoconstructive evolution, ??]) or inspiring [entirely new/??] algorithms or ways of representing solutions (e.g., [eco-ea, ??]).
-Likewise, advances in evolutionary computing can improve our ability to [model/instantiate] evolutionary processes \textit{in silico}, including new ways of representing digital organisms (e.g., [indirect encodings??]), data analysis techniques (e.g., [??]), and visualizations (e.g., [??]).
+% Advances in
+Advances in genetic programming and digital evolution research are synergistic.
+Both genetic programming and digital evolution systems evolve computer programs albeit with different goals in mind; as such, similar systems of representing and interpreting computer programs can be shared across disciplines.
+Further, digital evolution studies contribute to a deeper understanding of the open-ended evolutionary processes that continue to generate adaptive biological complexity. 
+We can exploit our understanding of open-ended evolutionary processes to improve existing evolutionary computing techniques or to inspire new evolutionary algorithms altogether (e.g., [citations]).   
+Likewise, advances in evolutionary computing can improve our ability to model evolutionary processes \textit{in silico}, such as providing new ways of representing digital organisms ([citations]), data analysis techniques ([citation]), and visualizations ([citations]). 
 
-% @AML: need a smoother way to transition into defining/explaining/motivating plasiticity
+% A deeper understanding of evolutionary processes can then be exploited in evolutionary computation to help us solve increasingly challenging problems, inspiring improvements to existing approaches (e.g., [autoconstructive evolution, ??]) or inspiring [entirely new/??] algorithms or ways of representing solutions (e.g., [eco-ea, ??]).
+% Likewise, advances in evolutionary computing can improve our ability to [model/instantiate] evolutionary processes \textit{in silico}, including new ways of representing digital organisms (e.g., [indirect encodings??]), data analysis techniques (e.g., [??]), and visualizations (e.g., [??]).
+
 % -- what is phenotypic plasticity & some biological motivation --
-In my first two research chapters, I focus on phenotypic plasticity, which is the capacity for a single genotype to express different phenotypes in response to a change in its environment [cite - west-eberhard].
-% In my Chapters \ref{chapter:evolutionary-origins-of-phenotypic-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity}, I used [digital evolution] to investigate the evolutionary origins and consequences of adaptive phenotypic plasticity.
-% Phenotypic plasticity is the capacity for a single genotype to express different phenotypes in response to a change in its environment [cite - west-eberhard].
+In my first two research chapters (Chapters \ref{chapter:evolutionary-origins-of-phenotypic-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity}), I focus on phenotypic plasticity, which is the capacity for a single genotype to express different phenotypes in response to a change in its environment \citep{west-eberhard_developmental_2003}.
 Phenotypic plasticity underlies many complex traits and developmental patterns found in nature and serves as a key mechanism for responding to spatially and temporally variable environments [citations - Bradshaw, 1965].
-For example, [ famous example? ].
-Genetically homogeneous cells in a developing multicellular organism leverage their capacity for phenotypic plasticity to coordinate their expression patterns through environmental signals [Schlichting, 2003].
-% @AML: don't love this next sentence
-% Thus, understanding how phenotypic plasticity evolves and how it influences subseqent evolutionary outcomes is an important step toward a deeper understanding of [biological complexity].
-[Indeed, biologists have long been interested in understanding how adaptive phenotypic plasticity evolves, the mechanisms underpinning that plasticity in natural organisms, and how the evolution of plasticity influences subsequent evolutionary outcomes] [citations].
-In chapter X I investigate ...
-In chapter Y I investigate ...
+For example, genetically homogeneous cells in a developing multicellular organism leverage their capacity for phenotypic plasticity to coordinate their expression patterns through environmental signals \citep{schlichting_origins_2003}.
+Indeed, biologists have long been interested in understanding how adaptive phenotypic plasticity evolves, the mechanisms underpinning that plasticity in natural organisms, and how the evolution of plasticity influences subsequent evolutionary outcomes [citations].
+In Chapter \ref{chapter:evolutionary-origins-of-phenotypic-plasticity}, I investigate how mutation rate and environmental change rate affect the evolution of adaptive phenotypic plasticity, and I additionally characterize intermediate evolutionary stepping stones along the lineages of adaptively plastic digital organisms. 
+In Chapter \ref{chapter:evolutionary-consequences-of-plasticity}, I shift my focus from the evolutionary origins of adaptive plasticity to its evolutionary consequences, exploring how the evolution of plasticity affects the rate of subsequent evolutionary change and the evolution and maintenance of novel traits. 
 
 % Fluctuating environmental conditions are ubiquitous in natural systems, and the particular mechanisms that populations rely on to cope with environmental fluctuations profoundly influence subsequent evolutionary dynamics.
 % Phenotypic plasticity, the ability of a single genotype to produce alternate phenotypes, allows organisms to dynamically adjust phenotypic expression in an environmentally dependent context.
 
 % -- evolutionary computation motivation --
 % Plasticity relevant to EC blah.
-Phenotypic plasticity also has practical applications in evolutionary computing that I explore in [Chapters X, Y, and Z].
+Phenotypic plasticity also has practical applications in evolutionary computing, which I explore in Chapters \ref{chapter:signalgp}, \ref{chapter:tag-based-regulation}, and \ref{chapter:tag-accessed-memory}.
 In many realistic problem domains, conditions are noisy or cyclically change.
-Phenotypic plasticity can allow generated solutions to be robust to noise and capable of dynamically responding to changing problem conditions.
-[Examples: robot controllers, plastic morphology, something neuroevolution/learning/neuroplasticity.]
+As in biological organisms, phenotypic plasticity can allow generated solutions to be robust to noise and capable of dynamically responding to changing problem conditions (\textit{e.g.}, \citealt{soltoggio_born_2018}).
+% TODO - more citations above?
+% For example, ... [Examples: robot controllers, plastic morphology, something neuroevolution/learning/neuroplasticity.]
 
 % @AML: abrupt transition
-On topic where [plasticity] Genetic Programming is especially relevant is in the automatic synthesis of software systems.
-Automating software development has been a long-standing goal in the genetic programming community [cite - Koza].
+% The evolution of adaptive phenotypic plasticity is especially relevant to automatic program 
+Synthesizing computer programs capable of [complex] forms of adaptive plasticity is especially relevant to genetic programming.
+Automating software development has been a long-standing goal in the genetic programming community \citep{koza_hierarchical_1989,oneill_automatic_2019}.
 All useful software applications require some degree of phenotypic plasticity in order to conditionally respond to inputs.
-[For example, each input button on a calculator triggers a different software response.]
-Most software applications require more advanced levels of phenotypic plasticity, as they must \textit{regulate} responses to inputs based on prior context.
+% [For example, each input button on a calculator triggers a different software response.]
+Indeed, most software applications require [advanced levels] of phenotypic plasticity, as they must \textit{regulate} responses to inputs based on prior context.
 For example, the computations that must occur on a calculator after pressing the ``equals'' button depend on the set of inputs previously provided.
-We can draw on our understanding of the evolutionary causes and consequences of phenotypic plasticity to design better algorithms for evolving dynamic computer programs.
-% solution not to use languages written for people
-The way in which computer programs are org and inter for human software developers has long been recognized as being inefficient for evolving computer programs [citations - red code].
-% Long recognized that program representations (i.e., the way in which computer programs are organized and [interpreted/executed]) best for human software developers are not ideal for evolving computer programs [citations - red code, etc].
-Still, many mechanisms of plasticity in existing genetic programming representations are identical to that of traditional programming languages, such as conditional logic and jump-based flow control.
-By looking to the evolved mechanisms of plasticity in biological organisms, we can also improve the way in which we represent computer programs for evolution.
+I argue that we can draw on our understanding of biological mechanisms of adaptive plasticity and their evolution to improve our techniques for evolving dynamic computer programs. 
+% adaptive phenotypic plasticity and its mechanisms in biological organisms in order to design better algorithms and program representation for evolving more dynamic computer programs.
 
-% @AML: clean up the wording to be less repetitive
+We have long recognized that conventional programming languages used by human software developers are not [easily] evolvable \citep{rasmussen_coreworld_1990}, as conventionally written software is not robust minor perturbations (e.g., mutations). 
+Yet, many of the mechanisms required for adaptive plasticity in existing genetic programming representations (e.g., conditional logic and jump-based flow control) are identical to that of traditional programming languages. 
+In my work, I look to the evolved mechanisms of plasticity in biological organisms to improve the way in which we represent computer programs for evolution.
+
+% @AML: This feels redundant with contributions? Maybe cut this, but add references to chapters in last sentence of previous paragraph?
 In Chapter \ref{chapter:signalgp}, I introduce SignalGP, a novel genetic programming technique for evolving event-driven programs that handle signals from the environment or from other agents in a more biologically inspired way than traditional GP approaches.
 Next in Chapter \ref{chapter:tag-based-regulation}, I introduce tag-based module regulation for genetic programming, which allows us to more easily evolve programs capable of dynamically regulating responses to inputs over time.
 Finally, in Chapter \ref{chapter:tag-accessed-memory}, I briefly introduce tag-accessed memory, a more flexible approach to labeling and accessing memory than traditional direct-addressed memory schemes.
