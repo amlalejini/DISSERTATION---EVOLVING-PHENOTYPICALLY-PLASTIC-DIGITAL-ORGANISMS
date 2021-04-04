@@ -1,13 +1,9 @@
 \section{Genetic programming}
-% -- Very high-level literature review --
 
-% -- What is genetic programming? --
-
-% --- Relationship to GP ----
-% @AML: needs better transition in/out of this paragraph
-Both digital evolution and genetic programming systems evolve populations of computer programs, but each does so with a different objective.
-Digital evolution aims to use computer programs as model organisms for evolution experiments, whereas genetic programming aims to synthesize computer programs to solve computational problems.
-As such, GP systems often remove much of the biological realism in digital evolution systems to increase problem-solving efficiency and to more directly steer populations toward promising regions of the search space.
+% --- Digital evolution relationship to GP ----
+Both digital evolution and genetic programming (GP) systems evolve populations of computer programs, but each does so with a different objective.
+Digital evolution aims to use computer programs as model organisms for evolution experiments, whereas GP aims to synthesize computer programs to solve computational problems.
+As such, GP systems often ignore much of the biological realism that is present in digital evolution systems in order to increase problem-solving efficiency by actively steering populations toward promising regions of the search space.
 
 % --- GP algorithm ---
 Most GP systems follow the same overarching recipe for synthesizing computer programs \citep{ofria_avida:_2009}:
@@ -23,19 +19,20 @@ Most GP systems follow the same overarching recipe for synthesizing computer pro
 \end{displayquote}
 
 Of course, the details of each of these components---initialization, evaluation, selection, and variation---vary dramatically across GP systems \citep{poli_field_2008}, as different techniques are more or less effective depending on the problem domain.
-% @AML: Next two sentences are a little clunky
-In my dissertation work (Chapters [X], [Y], and [Z]), I focus on an even more fundamental aspect of genetic programming: how should we represent and interpret [the computer programs that we evolve/evolvable computer programs]? 
-More specifically, how can we better represent computer programs such that we can more easily evolve programs capable of [complex forms of] adaptive phenotypic plasticity?
+In my final three research chapters (Chapters \ref{chapter:signalgp}, \ref{chapter:tag-based-regulation}, and \ref{chapter:tag-accessed-memory}), I focus on another fundamental aspect of genetic programming: the substrate being evolved.
+A major challenge with any problem being solved with GP is determining how to represent and interpret the computer programs that we evolve. 
+More specifically, I ask how we can better represent computer programs such that we can more easily evolve programs capable of complex forms of adaptive phenotypic plasticity.  
+I want GP to be able to produce programs that can dynamically respond to external conditions (including user input) while modifying their behavior based on prior events.
 
 % The obvious answer might be to 
-Given that software developers commonly write highly responsive, ``phenotypically plastic'' programs, perhaps the obvious choice would be to evolve programs with one of the many modern programming languages used by software developers.
+Given that software developers commonly write highly responsive, ``phenotypically plastic'' programs, perhaps the obvious choice would be to evolve programs with one of the many modern programming languages used by professional software developers.
 However, as early digital evolution studies revealed, conventional programming languages are ill-suited for evolving computer programs \citep{rasmussen_core_1989}.
-For example, any professional software developer will attest that random perturbations (mutations) to a conventionally written program is likely to fatally break its functionality. %are likely to [fatally] break code written using a conventional programming language.  
-% Indeed, many representation exist...
-As a result, a substantial amount of research in the GP community revolves around developing and analyzing different techniques for representing evolvable computer programs.
+For example, any professional software developer will attest that random perturbations (mutations) to a conventionally written program is likely to fatally break its functionality. 
+Even experiments that preserve syntax, however, still find it challenging to cope with the complexity and brittleness of human programming languages, though progress has been made in automatically repairing bugs in human-written code \citep{le_goues_genprog_2012,le_goues_systematic_2012,yuan_arja_2020}.
+As a result, a substantial amount of research in the GP community revolves around developing and analyzing new languages and techniques for representing evolvable computer programs.
 
 % -- many GP representations --
-Just as human software developers have access to an enormous variety of programming languages, each specialized for solving different types of problems, GP features many ways to represent evolvable programs.
+Just as human software developers have access to an enormous variety of specialized programming languages, GP features many ways to represent evolvable programs.
 Each representation features different programmatic elements that vary in their syntax, organization, interpretation, and evolution.
 These differences can dramatically influence the types of computer programs that can be evolved, and as such, influence a representation's problem-solving range \citep{hintze_buffet_2019,wilson_comparison_2008}. 
 
@@ -46,15 +43,22 @@ These differences can dramatically influence the types of computer programs that
 % @AML: Figure would help
 The earliest examples of successfully evolving computer programs used tree-based representations \citep{forsyth_beagle_1981,koza_hierarchical_1989}.
 In tree-based GP, programs are organized as abstract syntax trees \citep{poli_field_2008}.
-The leaves of a tree are inputs or constants (i.e., terminals) and the internal nodes are arithmetic operations (e.g., addition, multiplication, \textit{etc.}).
-Trees can be executed in a bottom-up fashion; that is, the bottom-most operations can be executed first using their associated terminals as inputs, and the results of lower operations can be propagated up the tree (as inputs to [higher?] operations) until the root can be executed to produce the program's final output. 
-Trees [are apt at] describing multivariate mathematical functions, and as such, tree-based GP is often applied to symbolic regression problems [citations]. 
-Since the early success of tree-based GP, a wide range of GP representations have been developed, including graph-based GP \citep{miller_empirical_1999,kelly_multi-task_2017}, stack-based GP \citep{perkis_stack-based_1994,spector_autoconstructive_2001}, and linear GP \citep{brameier_linear_2007}. 
+The leaves of a tree are variable inputs or constants (\textit{i.e.}, terminals) and the internal nodes are typically arithmetic operations (\textit{e.g.}, addition, multiplication, \textit{etc.}).
+Trees are conventionally executed using preorder traversal.
+That is, tree execution begins at the root, which immediately request the return value of its first sub-tree, triggering a recursive execution pattern.
+In practice, results from a tree are produces in a bottom-up fashion; that is, the bottom-most operations are resolved first, and the results of lower operations are propagated up the tree (as inputs to operations higher in the tree) until the root can finish being executed to produce the program's final output.
+Tree-based programs typically describe multivariate mathematical functions.
+As such, tree-based GP is often applied to symbolic regression problems \citep{orzechowski_where_2018}. % [citations]. 
 
-As in conventional digital evolution, linear GP represents programs as linear sequences of instructions.
-Linear genetic programs traditionally follow an imperative paradigm where computation is driven procedurally, often starting at the top of the program and proceeding in sequence, instruction-by-instruction, jumping or branching as dictated by executed instructions.
+Since the early success of tree-based GP, a wide range of other GP representations have been developed, including graph-based GP \citep{miller_empirical_1999,kelly_multi-task_2017}, stack-based GP \citep{perkis_stack-based_1994,spector_autoconstructive_2001}, and linear GP \citep{brameier_linear_2007}. 
+% As in conventional digital organisms, linear GP represents programs as linear sequences of instructions.
+In particular, linear GP represents programs as linear sequences of instructions and is the technique used for most conventional digital organism research.
+Linear genetic programs follow an imperative paradigm where computation is procedural: execution often starts at the top of the program and proceeds instruction-by-instruction, jumping or branching as dictated by executed instructions.
 % @AML: next sentence is way too clunky
-[Indeed, the techniques that I propose in Chapters [x], [y], [z] for improving our capacity to evolve more responsive computer programs are in the context of linear GP, facilitating easier knowledge transfer between my GP work and digital evolution]. 
+Indeed, due to linear GP's similarity with conventional digital organism genetic representations, the techniques that I propose in Chapters \ref{chapter:signalgp}, \ref{chapter:tag-based-regulation}, and \ref{chapter:tag-accessed-memory} are in the context of linear GP, facilitating more direct knowledge transfer between my digital evolution and GP research.
+Within each of these chapters, I provide a more targeted literature review of the specific types of GP techniques that I am examining.
+
+% for improving our capacity to evolve more responsive computer programs are in the context of linear GP, facilitating easier knowledge transfer between my GP work and digital evolution]. 
 
 
 % In my work, I focus on [making representations more dynamic and easier to evolve plasticity] in context of linear GP.

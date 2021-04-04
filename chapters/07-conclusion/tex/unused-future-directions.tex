@@ -1,0 +1,132 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Major Transitions in SignalGP}
+
+In a major evolutionary transition in individuality, formerly distinct individuals unite to form a new, more complex lifeform, redefining what it means to be an individual. 
+The evolution of eukaryotes, multi-cellular life, and eusocial insect colonies are all examples of transitions in individuality. 
+Often the individuals that make up the higher-level entity are limited to local information, lacking direct access to the global state of the higher-level unit; lower-level units must rely on signaling and sensory information to coordinate their roles in the group [cite - Smith1997,West2015].
+In a computational sense, a major transition in individuality is the evolution of a distributed system.
+Capturing these types of transitions in GP would give evolution a mechanism to incrementally form distributed systems from formerly individual programs. 
+
+Above, I described how SignalGP could be extended to allow multi-representation programs where functions can be of any representation capable of receiving input and producing output. 
+We can take this approach one step further: any module within a SignalGP agent could be \textit{another} (formerly individual) SignalGP agent. 
+
+For example, we can imagine a mutation operator that, when applied, induces transitions in individuality by injecting co-evolving SignalGP programs as self-contained, tagged modules into a mutated program, allowing single individuals to be aggregates of lower-level individuals. 
+Further, transitions in individuality can be applied \textit{hierarchically}. 
+Biological evolution has examples of such hierarchical transitions: eusocial insect colonies are composed of many multicellular individuals, each of which are composed of many eukaryotic cells, which in turn are composed of organelles (many of which are thought to have been formally distinct individuals).
+An individual SignalGP program may be composed of many SignalGP program modules, which may themselves be composed of many SignalGP programs. 
+
+Implementing a mutation operator capable of inducing arbitrary numbers of hierarchical transitions in individuality requires us to answer the following questions: 
+How should formerly individual programs interact when forced into an aggregate? 
+And, how should an evolutionary algorithm handle evaluating both individuals and aggregates of individuals? 
+
+From the evolutionary algorithm's perspective, a multi-level SignalGP program is indistinguishable from a single-level. 
+However, just as biological organisms composed of lower-level units of individuality require more energy to subsist, multi-level SignalGP programs require many more CPU cycles than single-level SignalGP programs. 
+This is consistent with biology where major transitions disproportionately occur in energy-rich environments [cite - Smith1997]. 
+
+Extending SignalGP to support hierarchical transitions in individuality could also provide a useful model for studying biological evolutionary transitions, allowing us to ask general questions about their dynamics. 
+A transition in individuality mutation operator would also allow us to solve problems that might be best solved by a distributed system without knowing the optimal configuration of that distributed system \textit{a priori}. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Applying evolutionary algorithms to evolving microbial populations}
+
+Directed evolution wields artificial selection as a tool to generate biomolecules and organisms with enhanced or novel functional traits [cite - Sanchez,Chen].
+The scale and specificity of artificial selection has been revolutionized by a deeper understanding of evolutionary and molecular biology in combination with technological innovations in sequencing, sensing, and laboratory automation.
+These advances have cultivated growing interest in directing the evolution of whole microbial communities with functions that can be harnessed in medicine, biotechnology, and agriculture [cite - Sanchez]. 
+Yet, the procedures for selecting which promising communities to propagate remain unexplored; can we look to other forms of directed evolution for inspiration?
+
+Directed evolution has not been limited to biological systems. 
+Indeed, since the 1960s, evolutionary computing has harnessed the principles of natural evolution as a general purpose search engine for solving challenging computational and engineering problems (\textit{e.g.}, evolving computer programs, designing hardware components, \textit{etc.}) [cite - Back]. 
+As evolutionary computing has matured, the field has identified common pitfalls in directing evolution and developed a robust toolbox of algorithms to more effectively steer evolutionary processes.
+\textbf{As a postdoctoral fellow with Dr. Luis Zaman, I propose to
+(1) implement modern evolutionary computing algorithms in the context of directing the evolution of microbial communities
+and (2) serve as a liaison between the evolutionary computing and directed evolution communities, fostering collaboration and bidirectional knowledge transfer between disciplines.}
+
+% Just turn this into bolded text at beginning of paragraph
+\subsection*{Artificial selection \textit{in silico} and \textit{in vitro}}
+\vspace{-0.5em}
+
+% EC
+Evolutionary algorithms begin with an initial population of individuals, be they  potential solutions, computer programs, or robot body plans. 
+Each generation, individuals are evaluated on one or more criteria and selected to contribute genetic material to the next generation.
+Finite computing resources limit the scale of directed evolution \textit{in silico}. 
+%; for example, a single evaluation could take multiple days. 
+Thus, solving increasingly challenging problems has required innovating on each algorithmic component (initialization, evaluation, selection, and variation operators), resulting in a comprehensive toolbox of evolutionary algorithms and techniques for directing evolution on a diversity of problems and under a range of practical constraints.
+
+% DE
+As in evolutionary computing, directed evolution \textit{in vitro} begins with a library of variants (\textit{e.g.}, communities, genomes, or molecules). 
+Variants are scored according to the phenotypic trait (or set of traits) of interest, and
+the variants with the `best' traits are selected and used to produce the next generation.
+%; as in evolutionary computing, this procedure continues iteratively.
+
+% Selection
+The method by which we select variants to propagate from generation to generation dramatically influences the success of directing evolution. 
+In complex fitness landscapes, using only the overall `best' variants to produce the next generation can lead to premature convergence on local optima and adaptive stagnation; 
+this is especially likely in scenarios with multiple objectives that have inherent functional trade-offs.
+These pitfalls are well studied in evolutionary computation and have 
+motivated new selection schemes (methods for deciding which variants to propagate based on one or more criteria) that have dramatically improved the quality and diversity of evolved solutions.
+Microbial directed evolution, however, currently selects only the most performant variants to propagate [ cite - Sanchez]; does this prevent microbial directed evolution from realizing its full potential?
+
+% @AML: Still need to shift to talking about *families* of algorithms: novelty-based algorithms, quality-diversity algorithms, lexicase based algorithms, and moeas.
+Modern evolutionary computing selection schemes promote diverse populations of candidate solutions that avoid adaptive stagnation and instead explore many independent evolutionary trajectories.
+At one extreme, \textit{novelty-based algorithms} disregard functional objectives entirely, selecting the most phenotypically novel variants; this drives the population to explore the fitness landscape and discover unique solutions.
+\textit{Diversity-maintenance algorithms} balance selecting for high-performance with selecting for diversity by adjusting the probability of selecting a variant based how many similar variants are already in the population.
+\textit{Lexicase-based algorithms} evaluate variants on a set of tests 
+and choose parents based on their relative performance on random permutations of the full test set; this allows variants specializing on different sequences (or prioritizations) of tests to coexist until a complete solution evolves. 
+Finally, \textit{multi-objective evolutionary algorithms} (MOEAs) are designed for problems with multiple functional objectives that exhibit inherent trade-offs; MOEAs select and maintain Pareto-optimal variants, generating a repertoire of candidate solutions that prioritize different objectives.
+
+\vspace{-1em}
+\subsection*{Research plan}
+\vspace{-0.5em}
+
+\noindent
+\textbf{Building biologically realistic computational models:}
+I will develop agent-based computational models of microbial community evolution featuring multiple levels of environmental complexity.
+These models will serve as a predictive testbed for parameterizing and applying evolutionary computing algorithms to produce target microbial community functions. 
+Despite overt similarities, evolutionary computing and biological directed evolution feature subtle differences that may impact overall evolutionary dynamics. 
+For example, in evolutionary computing, evaluation is independent of mutation, whereas microbial communities mutate, reproduce, and evolve continuously, even during evaluation. 
+Computational models allow me to test the efficacy of novelty-based, diversity-maintenance, lexicase-based, and multi-objective selection schemes under biologically realistic evolutionary conditions.
+%Further, studies show that the timing of measuring the functional performance affects the success of directed evolution.
+Computational models also feature perfect data tracking, allowing me to identify exactly \textit{how} each algorithm's evolutionary dynamics are altered by the conditions imposed by \textit{in vitro} directed evolution.
+Overall, my computational results will screen evolutionary algorithms for their suitability in directing the evolution of microbial communities.
+
+\noindent
+\textbf{Implementing evolutionary algorithms \textit{in vitro}:}
+I will evolve microbial communities on a series of biodegradation tasks, comparing the efficacy of traditional artificial selection and evolutionary computing selection schemes (chosen using computational modeling experiments).
+Biodegradation is a well-established functional objective for microbial communities [cite - Sanchez], 
+can easily be extended from single- to multi-objective with additional substrates, and
+provides inherent evolutionary trade-offs when degrading multiple compounds that use competing metabolic pathways.
+Recent advances in community-level metabolic modeling tools, such as COMETS[cite - Dukovski], allow us to identify and approximate these metabolic trade-offs \textit{in silico}, providing further control over the magnitude of objective trade-offs. 
+I will determine the particular biodegradation tasks based on the accessibility of reagents and sample analysis technology (\textit{e.g.}, chromatography, spectroscopy, \textit{etc.}) in consultation with Zaman and the Metabolomics Core at the University of Michigan.
+I will use high-throughput Illumina sequencing with FREQ-Seq [cite - Chubiz] to analyze how each selection regime affects genetic and community composition changes over time.
+My experiments will show whether computational evolutionary algorithms designed to maintain diversity and improve problem solving can effectively be transferred to the domain of directed microbial evolution.
+Most importantly, I will determine if these transferred selection schemes improve the prospects of \textit{in vitro} directed evolution.
+
+\vspace{-1em}
+\subsection*{Broader impacts}
+\vspace{-0.5em}
+% \noindent
+% \textbf{Bridging directed evolution communities:}
+
+%My work will explore new methods of directing biological evolution applicable beyond evolving microbial communities.
+%that will be applicable beyond evolving microbial communities. 
+Improving the efficacy of directing evolution has far reaching applications in, for example, biodegrading environmental contaminants, improving agricultural products, or producing biofuels.
+Further, I am committed to open science, and as such, all software, procedures, and fabricated laboratory equipment that I develop will be open source and accessible for other scientists or teachers to use and improve upon.
+To increase the accessibility of my work, I will build interactive web interfaces with demonstrative examples for the core software models developed for this project.
+% Furthermore, I will build accessible web interfaces for the core software I develop for this project.
+% TODO - accessible web interfaces
+
+% Bridging communities
+
+As a postdoctoral fellow with degrees in both Computer Science and Ecology, Evolutionary Biology, \& Behavior, I will foster cross-disciplinary relationships among the evolutionary computing, evolutionary biology, and directed evolution communities. 
+I will bootstrap knowledge exchange by organizing workshops at both national and international academic conferences with invited speakers from across fields. 
+Together with multi-disciplinary collaborators, I will coordinate a perspective piece that identifies shared open challenges and discusses opportunities for cross-disciplinary expertise to advance each of these fields. 
+
+% paragraph about goals, teaching, research, etc
+My eventual goal is to work, teach, and mentor seamlessly across computational and laboratory systems.
+As a postdoctoral fellow, I will pursue teaching opportunities in the University of Michigan's Complex Systems program, and I will apply to the Center for Research on Learning and Teaching's postdoctoral course on College Teaching in Science and Engineering.
+A diversity of voices and perspectives enriches scientific inquiry; I will continue my commitment to mentoring undergraduates from underrepresented groups by continuing to participate in the Summer Research Opportunities Program during my tenure at the University of Michigan.
+
+
+(1) develop a hybrid experimental evolution platform that facilitates coevolution between digital communities \textit{in silico} and microbial communities, 
+and (2) use digital-microbial coevolution to investigate the evolutionary origins and consequences of system feedbacks.

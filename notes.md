@@ -8,32 +8,35 @@
 
 ## Reminders/Todos:
 
-- Double check degree names for CS and EEB
-- Double check general formatting requirements
-- Fix copyright page formatting
-- Make capitalization consistent (check to see if others did this)
-- Name figures
+- [ ] Double check degree names for CS and EEB
+- [ ] Double check general formatting requirements
+- [ ] Make capitalization consistent (check to see if others did this)
+- [ ] Print/read Introduction
+- [ ] Print/read Conclusion
+- [x] Fix copyright page formatting
+- [x] Name figures
 
 ### Editing/writing
 
 #### Origins of Plasticity
 
-- Editing pass over origins of plasticity chapter
-- Optimize lineage figure placement (High mut and baseline can be next to each other?)
+- [ ] Editing pass over origins of plasticity chapter
+- [ ] Optimize lineage figure placement (High mut and baseline can be next to each other?)
+- [ ] Correct grammar for 'point-mutation rate' vs 'point mutation rate'?
 
 #### SignalGP
 
-- Editing pass over chapter
-- Tweak p value reporting
-- Update figure legends
-- Update election figure legend w/abbreviations for conditions
+- [ ] Editing pass over chapter
+- [ ] Tweak p value reporting
+- [ ] Update figure legends
+- [ ] Update election figure legend w/abbreviations for conditions
 
 #### Tag-based regulation
 
-- Update with final version of the paper
-- Update chapter title if necessary
-- Update main chapter citation (create from scratch if necessary)
-- Fix boolean logic calculator network figure => currently too large for this format
+- [ ] Update with final version of the paper
+- [ ] Update chapter title if necessary
+- [ ] Update main chapter citation (create from scratch if necessary)
+- [ ] Fix boolean logic calculator network figure => currently too large for this format
   - Break into two figures?
 
 ## Questions:
@@ -44,10 +47,6 @@
   - This chapter is adapted from a paper that appeared in ... [citation].
 - How much effort should I put into editing old publications (e.g., origins of plasticity chapter)?
 
-### Origins of Plasticity
-
-- Correct grammar for 'point-mutation rate' vs 'point mutation rate'?
- 
 ## Nomenclature and convention
 
 ### Chapter IDs
