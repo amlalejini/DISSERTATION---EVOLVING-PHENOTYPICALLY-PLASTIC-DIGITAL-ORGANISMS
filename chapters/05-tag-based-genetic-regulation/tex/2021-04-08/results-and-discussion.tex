@@ -26,9 +26,11 @@ Further, we found that, in the two- and four-signal tasks, solutions arose after
 
 \input{chapters/05-tag-based-genetic-regulation/tex/figures/figure-signal-counting-solve-time}
 
+% --- BEGIN REVISION ---
 Tag-based regulation renders the two-signal task trivial: all solutions evolved in under 10 generations. 
 In fact, the majority of regulation-on solutions (178 out of 200) were found in the initial randomly generated population. 
 However, not all replicates without access to tag-based regulation even found a solution to the two-signal task.
+% ---- END REVISION ---
 
 \input{chapters/05-tag-based-genetic-regulation/tex/figures/table-signal-counting-ko-strategy-table} 
 
@@ -43,7 +45,7 @@ Our knockout experiments confirm that the majority of solutions evolved with acc
 We further assessed the functionality of tag-based regulation by analyzing the execution traces of evolved solutions.
 We visualized the gene regulatory networks that manifest as a result of programs executing promoter and repressor instructions. 
 Figure \ref{chapter:tag-based-regulation:fig:signal-counting-example-networks} overviews the execution of a representative evolved program on the four-signal instance of the signal-counting problem.
-We found that successful programs tend to operate via a succession of self-repressing events where modules express the appropriate response then disable themselves so that the next best-matching function---expressing the appropriate next response---will activate instead.
+We found that successful programs tend to operate via a succession of self-repressing events where modules express the appropriate response then disable themselves so that the next best-matching function --- expressing the appropriate next response --- will activate instead.
 This behavioral pattern continues for each subsequent environmental signal.
 Indeed, across all problem difficulties, we observed that successful regulatory networks generally contained more repression relationships than promotion relationships between functions (supplemental \supSecRepeatedSigAnalysis\  \citep{tag_regulation_supplement_2021}).
 Independent knockouts of up-regulation and down-regulation confirm that the majority of successful regulatory networks rely on down-regulation: 
@@ -78,6 +80,7 @@ We also found that all 200 regulation-on solutions relied on tag-based regulatio
 In contrast to the signal-counting problem, we did not find that successful regulatory networks used primarily self-repressing modules.
 Instead, we found that networks were more balanced between repressing and promoting edges; indeed, we found that successful networks generally contained more promoting edges than repressing edges (supplement \supSecContextSigAnalysis\ \citep{tag_regulation_supplement_2021}).
 This result suggests that we should expect different problems to select for different forms of gene regulatory networks.
+% @AML: I assume there are some AGRN results that support that ^^
 
 \subsubsection{Boolean-logic Calculator Problem}
 \label{chapter:tag-based-regulation:sec:results:boolean-calc-problem}
@@ -87,7 +90,7 @@ This result suggests that we should expect different problems to select for diff
 
 Figure \ref{chapter:tag-based-regulation:subfig:boolean-calc-prefix-solution-count} shows the number of successful replicates on the Boolean-logic calculator problem for both the regulation-on and regulation-off conditions.
 While both regulation-on and regulation-off solutions evolved, we again found that access to genetic regulation significantly improved problem-solving success.
-Further, as in the signal-counting and contextual-signal problems, regulation-on solutions typically required fewer generations to evolve than regulation-off solutions (Figure~\ref{chapter:tag-based-regulation:subfig:boolean-calc-prefix-solve-time}).
+Further, as in the signal-counting and contextual-signal problems, regulation-on solutions typically required fewer generations to evolve than regulation-off solutions (Figure \ref{chapter:tag-based-regulation:subfig:boolean-calc-prefix-solve-time}).
 
 \input{chapters/05-tag-based-genetic-regulation/tex/figures/figure-boolean-calc-prefix-reg-networks}
 
@@ -106,17 +109,24 @@ These visualizations confirm that tag-based regulation allows programs to dynami
 
 \subsection{Erroneous regulation can hinder task generalization}
 
+\input{chapters/05-tag-based-genetic-regulation/tex/figures/figure-independent-signal-generalization}
+
 In the signal-counting, contextual-signal, and Boolean-logic calculator problems, programs must adjust their behavior depending on the particular sequence of received signals.
 The independent-signal problem, however, requires no signal-response plasticity; programs maximize fitness by statically associating $K$ distinct responses each with one of $K$ distinct input signals.
 For this task, re-wiring signal-response associations within-lifetime is maladaptive.
 As such, does the capacity for regulation impede adaptation to the independent-signal task?
 
+
 We compared 200 replicate populations evolved with regulation-enabled SignalGP (``regulation-on'') and 200 populations evolved with regulation-disabled SignalGP (``regulation-off'').
 All replicates produced a SignalGP program capable of achieving a perfect score during evaluation. 
 We found no evidence that the availability of regulation affected the number of generations required to produce these solutions.
 
+
 Next, we investigated how well evolved solutions \textit{generalized} across random permutations of input sequences.
 Selection was deliberately based on a single stochastic ordering of environmental signals, so a ``perfect'' score may not generalize across all signal orderings.
+% Because there are $K!$ possible sequences, each generation, we evaluated programs against random permutations of input signals.
+% To test for generalization, we sampled 5000 input sequences (of ${\sim}2.1\times10^{13}$ possible sequences);
+% we deem programs as having generalized only if they respond correctly in all 5000 tests.
 We expect that programs evolved with access to regulation will more often exhibit non-adaptive plasticity that hinders generalization.
 
 Figure \ref{chapter:tag-based-regulation:fig:independent-signal-generalization} shows the number of evolved solutions from each condition that successfully generalized.
@@ -125,10 +135,10 @@ Moreover, 5 of 18 non-generalizing programs generalized when we knocked out tag-
 Upon closer inspection, the other non-general programs relied on tag-based regulation for initial success but failed to generalize to arbitrary environment sequences.
 % fisher's p-value = 5.113e-06
 
-\input{chapters/05-tag-based-genetic-regulation/tex/figures/figure-independent-signal-generalization}
-
+% --- BEGIN REVISION ---
 Unexpressed traits that vary in a population (but do not affect fitness) are collectively known as cryptic variation. 
 Cryptic variation is pervasive in nature and thought to play an important role in evolution, potentially acting as a cache of diverse phenotypic effects in novel environments \citep{gibson_uncovering_2004,paaby_cryptic_2014}.
+% @AML: new line, could be stronger
 Such cryptic variation has been shown to help GP systems escape local optima, improving overall problem-solving performance \citep{turner_neutral_2015}.
 Cryptic variation arises when environmental conditions that would reveal the variation are not experienced. 
 Access to tag-based regulation appears to make such cryptic variation in evolving programs a stronger possibility than previously.
@@ -136,13 +146,14 @@ This dynamic can be valuable for performing more realistic studies of evolutiona
 However, when using regulation-enabled SignalGP in problem-solving domains, such as automatic program synthesis, non-adaptive plasticity should be accounted for in fitness objectives.
 In the independent-signal problem, for example, we could have performed more thorough evaluations of programs using multiple random permutations of input sequences instead of one.
 In more challenging problems, however, more thorough evaluations can come at the cost of substantial computational effort. 
+% --- END REVISION ---
 
 \subsection{Reducing the context required for the Boolean-logic calculator problem eliminates the benefit of regulation}
 
 Experimental results on the independent-signal problem suggest that enabling tag-based regulation is not necessarily beneficial for solving problems that do not require context-dependent responses to input. 
 We use a modified version of the Boolean-logic calculator problem to further investigate the potential for tag-based regulation to impede adaptive evolution. 
 The Boolean-logic calculator problem as described in Section \ref{chapter:tag-based-regulation:sec:methods:boolean-calc-problem} provides inputs in prefix notation: the operator (\textit{e.g.}, AND, OR, XOR, \textit{etc.}) is specified first, followed by the requisite number of numeric operands. 
-As such, the final input signal does not differentiate which type of computation a program is expected to perform.
+As such, the final input signal does not differentiate which type of computation a program is expected to perform. % (\textit{e.g.}, AND, OR, XOR, \textit{etc.}).
 Programs must adjust their response based on the context provided by previous signals, thereby increasing the utility of regulation. 
 
 Here, we explore whether the calculator problem's context-dependence is driving the benefit of tag-based regulation that we identified in Section \ref{chapter:tag-based-regulation:sec:results:boolean-calc-problem}.
@@ -162,3 +173,5 @@ Additionally, we did not observe a significant difference in the proportion of f
 
 These results, in combination with our previous experimental results, suggest that tag-based regulation is beneficial when prior context dictates behavioral responses to input.
 On such context-dependent problems, representations without explicit regulation must compensate with additional conditional logic structures. 
+
+

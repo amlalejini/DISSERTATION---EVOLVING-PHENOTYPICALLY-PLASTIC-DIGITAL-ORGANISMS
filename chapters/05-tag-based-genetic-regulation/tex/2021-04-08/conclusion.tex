@@ -11,6 +11,7 @@ Our results also reveal that tag-based regulation is not necessarily beneficial 
 We observed that the addition of tag-based regulation can impede adaptive evolution on problems where responses to inputs are not context-dependent (\textit{e.g.}, the independent-signal task and postfix version of the Boolean-logic calculator problem). 
 A more thorough examination of what types of context-free problems are most sensitive to tag-based regulation---and how to mitigate any harm---would be potentially fruitful.
 
+% ---- BEGIN REVISION ----
 % - issues with existing representations -
 Across all problems used in this work, the tag representation and matching scheme that we used was clearly sufficient for success. 
 However, existing tag systems are limited in their capacity to scale up to substantially larger gene regulatory networks. 
@@ -18,12 +19,18 @@ As these networks grow, the specificity required for references to differentiate
 At some point references become brittle, as any mutation will switch the module that a call triggers.
 In ongoing work, we are investigating the wide variations in scalability of different metrics for measuring the similarity between tags.
 Substantial work will also need to be conducted by the community in order to develop more scalable representations for tag-based naming.
-For example, insights from the indirect referencing mechanisms of artificial biochemical networks and enzyme genetic programming systems may prove to be informative in developing new tag representations \citep{lones_artificial_2014,lones_biochemical_2013,lones_modelling_2004}.
+% @AML: new line below (currently very weak sentence)
+For example, insights from the indirect referencing mechanisms of artificial biochemical networks and enzyme genetic programming systems may prove to be informative in developing new tag representations \citep{lones_modelling_2004,lones_artificial_2014,lones_biochemical_2013}.
+% --- END REVISION ----
 
+% ---- BEGIN REVISION ----
+% - Comment: Another thing that would be good to comment on is the interpretability of the evolved solutions. I'm guessing that the regulatory-based solutions are harder for humans to understand?
+% @AML: needs work!!
 Evolved programs are often more challenging to read and understand than programs written by human developers.
 In our experience, evolved programs that make use of tag-based regulation were substantially more difficult to read and interpret by hand than evolved programs that do not use tag-based regulation.
-We found that visualizations of tag-based regulatory networks and program execution traces (\textit{e.g.}, Figures \ref{chapter:tag-based-regulation:fig:signal-counting-example-networks} and \ref{chapter:tag-based-regulation:fig:boolean-calc-prefix-example-networks}) greatly improved our ability to understand how a given evolved program worked.
-As we scale up tag-based regulation, the development of interactive visualizations will become increasingly important for understanding evolved programs that use tag-based regulation.  
+We found that visualizations of tag-based regulatory networks and program execution traces (\textit{e.g.}, Figures \ref{chapter:tag-based-regulation:fig:signal-counting-example-networks} and \ref{chapter:tag-based-regulation:fig:boolean-calc-prefix-example-networks}) improved our ability to understand how a given evolved program worked.
+As we scale up tag-based regulation, the development of interactive visualizations will become increasingly important for understanding evolved programs that make use of tag-based regulation.  
+% ---- END REVISION -----
 
 The current investigations have focused on regulation as a problem-solving tool, but with a few extensions these sorts of systems can also help us answer open questions about biological evolution.
 Our current implementation of tag-based regulation facilitates plasticity only within a program's lifetime; if we extend this capacity across multiple generations, we can study the effects of epigenetic inheritance on evolutionary dynamics.
