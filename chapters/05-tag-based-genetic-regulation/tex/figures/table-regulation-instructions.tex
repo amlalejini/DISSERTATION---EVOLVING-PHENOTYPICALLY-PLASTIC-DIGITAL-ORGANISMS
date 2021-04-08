@@ -87,114 +87,84 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Table
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\renewcommand{\arraystretch}{1.5}
 \begin{table}[htbp]
     \small
     \centering
-    \begin{tabular}{l | p{0.6\columnwidth}}
-        \toprule
+    \rowcolors{2}{gray!25}{white}
+    \begin{tabular}{l  p{0.6\columnwidth}}
+        \rowcolor{gray!50}
+        % \toprule
+        \hline
         \textbf{Instruction} & 
-        % Args. & 
-        % Tag-based? & 
         \textbf{Description} 
         \\ \hline 
         
         \SetRegulatorName & 
-        % \SetRegulatorArgs & 
-        % \SetRegulatorTag & 
         \SetRegulatorDescription 
-        \\ \hline
+        \\ %\hline
         
         \SetRegulatorMinusName & 
-        % \SetRegulatorMinusArgs & 
-        % \SetRegulatorMinusTag & 
         \SetRegulatorMinusDescription 
-        \\ \hline
+        \\ %\hline
         
         \SetOwnRegulatorName &
-        % \SetOwnRegulatorArgs &
-        % \SetOwnRegulatorTag &
         \SetOwnRegulatorDescription 
-        \\ \hline
+        \\ %\hline
         
         \SetOwnRegulatorMinusName & 
-        % \SetOwnRegulatorMinusArgs & 
-        % \SetOwnRegulatorMinusTag & 
         \SetOwnRegulatorMinusDescription 
-        \\ \hline
+        \\ %\hline
         
         \AdjRegulatorName & 
-        % \AdjRegulatorArgs & 
-        % \AdjRegulatorTag & 
         \AdjRegulatorDescription 
-        \\ \hline
+        \\ %\hline
         
         \AdjRegulatorMinusName & 
-        % \AdjRegulatorMinusArgs & 
-        % \AdjRegulatorMinusTag & 
         \AdjRegulatorMinusDescription 
-        \\ \hline
+        \\ %\hline
         
         \AdjOwnRegulatorName & 
-        % \AdjOwnRegulatorArgs & 
-        % \AdjOwnRegulatorTag & 
         \AdjOwnRegulatorDescription 
-        \\ \hline
+        \\ %\hline
         
         \AdjOwnRegulatorMinusName & 
-        % \AdjOwnRegulatorMinusArgs & 
-        % \AdjOwnRegulatorMinusTag &
         \AdjOwnRegulatorMinusDescription 
-        \\ \hline
+        \\ %\hline
         
         \ClearRegulatorName & 
-        % \ClearRegulatorArgs & 
-        % \ClearRegulatorTag & 
         \ClearRegulatorDescription 
-        \\ \hline
+        \\ %\hline
         
         \ClearOwnRegulatorName & 
-        % \ClearOwnRegulatorArgs & 
-        % \ClearOwnRegulatorTag & 
         \ClearOwnRegulatorDescription
-        \\ \hline
+        \\ %\hline
         
         \SenseRegulatorName & 
-        % \SenseRegulatorArgs & 
-        % \SenseRegulatorTag & 
         \SenseRegulatorDescription 
-        \\ \hline
+        \\ %\hline
         
         \SenseOwnRegulatorName & 
-        % \SenseOwnRegulatorArgs & 
-        % \SenseOwnRegulatorTag & 
         \SenseOwnRegulatorDescription
-        \\ \hline
+        \\ %\hline
         
         \IncRegulatorName & 
-        % \IncRegulatorArgs & 
-        % \IncRegulatorTag & 
         \IncRegulatorDescription 
-        \\ \hline
+        \\ %\hline
         
         \IncOwnRegulatorName & 
-        % \IncOwnRegulatorArgs & 
-        % \IncOwnRegulatorTag & 
         \IncOwnRegulatorDescription 
-        \\ \hline
+        \\ %\hline
         
         \DecRegulatorName & 
-        % \DecRegulatorArgs & 
-        % \DecRegulatorTag & 
         \DecRegulatorDescription 
-        \\ \hline
+        \\ %\hline
         
         \DecOwnRegulatorName & 
-        % \DecOwnRegulatorArgs & 
-        % \DecOwnRegulatorTag & 
         \DecOwnRegulatorDescription
-        \\ 
-        \bottomrule
+        \\
+        \hline
+        % \bottomrule
     \end{tabular}
     \caption{\small 
     \textbf{Regulatory instructions used in this work.} 
@@ -202,3 +172,6 @@
     }
     \label{chapter:tag-based-regulation:tab:regulation-instructions}
 \end{table}
+\renewcommand{\arraystretch}{1.0}
+
+

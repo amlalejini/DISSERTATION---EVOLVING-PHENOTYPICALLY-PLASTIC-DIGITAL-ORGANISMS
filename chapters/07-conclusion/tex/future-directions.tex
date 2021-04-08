@@ -1,8 +1,8 @@
 \section{Future Directions}
 
-Thus far, I have focused on using digital evolution techniques to study general principles about evolutionary processes (e.g., Chapters \ref{chapter:evolutionary-origins-of-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity}) and applying inspiration from biology to evolutionary computing (e.g., Chapters \ref{chapter:signalgp}, \ref{chapter:tag-based-regulation}, and \ref{chapter:tag-accessed-memory}).
+Thus far, I have focused on using digital evolution techniques to study general principles about evolutionary processes (Chapters \ref{chapter:evolutionary-origins-of-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity}) and applying inspiration from biology to evolutionary computing (Chapters \ref{chapter:signalgp}, \ref{chapter:tag-based-regulation}, and \ref{chapter:tag-accessed-memory}).
 There are many future directions with which to take my research.
-Here, I highlight just two (of many) planned directions: broadened applications of SignalGP and [bridging digital and laboratory experimental evolution].
+Here, I highlight just two (of many) planned directions: broadened applications of SignalGP and transferring techniques and insights from evolutionary computing back into laboratory-based experimental evolution.%[bridging digital and laboratory experimental evolution].
 
 % There are many possible future directions to take my research.
 % Below, I outline two broadened applications of SignalGP (introduced in Chapter \ref{chapter:signalgp}), and I discuss my immediate next steps to [bridge digital and laboratory experimental evolution]. 
@@ -11,52 +11,54 @@ Here, I highlight just two (of many) planned directions: broadened applications 
 \subsection{Broadened applications of SignalGP}
 
 There are many extensions and applications of SignalGP that I hope to either pursue, facilitate, or eagerly watch others carry out.
-Given that SignalGP is a new genetic programming representation, there are many [basic explorations still to carry out].
+Given that SignalGP is a new genetic programming representation with the capacity to address new type of problems, there are many fundamental topics ripe for exploration.
+%[basic explorations still to carry out].
 For example, I have yet to investigate the effects of crossover or any form of horizontal gene transfer in SignalGP.
-In addition, most of the program synthesis problems that I have applied SignalGP to have been primarily exploratory or diagnostic; in the future, I look forward to more broadly benchmarking SignalGP on more challenging event-driven program synthesis problems.  
+In addition, most of the program synthesis problems that I have applied SignalGP to have been primarily diagnostic; in the future, I look forward to more broadly benchmarking SignalGP on challenging event-driven program synthesis problems.  
 
-Below, I discuss in more detail two broadened applications of SignalGP: SignalGP as a new form of model digital organism and a multi-representation version of SignalGP.
+Below, I discuss in detail two additional extensions to my work: positioning SignalGP as a model organism for digital experimental evolution and a developing a multi-representation version of SignalGP that can bring together the most effect aspects of other GP representations.
 
-\subsubsection{SignalGP as a new type of model digital organism}
+\subsubsection{SignalGP as model organism for digital experimental evolution}
 
-In Chapters \ref{chapter:signalgp} and \ref{chapter:tag-based-regulation}, demonstrated SignalGP in an applied genetic programming context. 
-However, one of my original motivations for developing SignalGP was to design a new approach for representing self-replicating computer programs that emphasizes dynamic interactions among digital organisms and be-tween digital organisms and their environment.
-In Chapters \ref{chapter:evolutionary-origins-of-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity}, I experimentally evolved relatively simple forms of adaptive phenotypic plasticity; that is, to achieve an optimal form of plasticity, digital organisms needed to toggle between two, relatively simple phenotypes based on environmental conditions. 
-In some of my earliest (unpublished) digital evolution experiments using Avida, I attempted experiments that required more complex forms of adaptive plasticity evolve (e.g., the capacity to independently regulate many traits). 
+In Chapters \ref{chapter:signalgp} and \ref{chapter:tag-based-regulation}, I demonstrated SignalGP in an applied genetic programming context. 
+However, one of my original motivations for developing SignalGP was to design a new approach for representing self-replicating computer programs that emphasizes dynamic interactions among digital organisms and between digital organisms and their environment.
+In Chapters \ref{chapter:evolutionary-origins-of-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity}, I experimentally evolved relatively simple forms of adaptive phenotypic plasticity; that is, to achieve an optimal form of plasticity, digital organisms needed to toggle between two relatively simple phenotypes based on environmental conditions. 
+In some of my earliest (unpublished) experiments using Avida, I attempted to evolve more complex forms of adaptive plasticity (e.g., the capacity to independently regulate many traits). 
 Such adaptive plasticity proved to be challenging to evolve (and thus study) in Avida because genomes are expressed procedurally: actions are performed one at a time in a single chain of execution and must explicitly check for new sensory information.
 As such, organisms in Avida must continuously generate explicit queries in order to identify (and react to) any changes in their environment.
 Further, the genetic mechanisms in Avida for encoding adaptive plasticity are not easily scalable; I found that plastic programs typically regulate a few key instructions to alter their phenotype and cannot as easily toggle large sequences of instructions on or off.
 
 There are many different model organisms used in biological research, each with their own benefits and shortcomings for conducting evolution experiments. 
 Yet, historically, there have been very few different forms of self-replicating computer programs used in digital evolution experiments. 
-I envision SignalGP as a useful model digital organism for experiments in which digital organisms need to dynamically react to signals from the environment or other agents. 
-My work presented in Chapter \ref{chapter:tag-based-regulation} on tag-based regulation further enhances SignalGP as a model digital organism, as it [provides a model of] gene regulation and epigenetic inheritance.   
-I plan to expand on my research from Chapters \ref{chapter:evolutionary-origins-of-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity} on the evolutionary origins and consequences of adaptive phenotypic plasticity using SignalGP digital organisms. 
+I envision SignalGP as providing a useful representation for experiments where digital organisms need to dynamically react to signals from the environment or from other agents. 
+I look forward to expanding on my work presented in Chapter \ref{chapter:tag-based-regulation} on tag-based regulation to further enhance gene regulation and epigenetic inheritance in SignalGP.   
+% I plan to expand on my research from Chapters \ref{chapter:evolutionary-origins-of-plasticity} and \ref{chapter:evolutionary-consequences-of-plasticity} on the evolutionary origins and consequences of adaptive phenotypic plasticity using SignalGP digital organisms. 
 
 % @AML: More specifics here??
 
 I am most excited, however, by ongoing digital evolution work using SignalGP that is being conducted by \textit{other} researchers. 
-For example, Matthew Andres Moreno has incorporated SignalGP into their DISHTINY digital evolution platform \citep{moreno_toward_2019,Lalejini_Moreno_Ofria_DISHTINY_2020}.
-DISHTINY provides independently replicating digital organisms (cells) with the ability and the incentive to unite into new individuals, allowing \textit{de novo} major evolutionary transitions in individuality to occur without direct interventions by the experimenter. 
-Individual cells comprise SignalGP agents, which allows them respond to the environment and communicate with one another in an signal-driven context.
+For example, Matthew Andres Moreno has incorporated SignalGP into the DISHTINY digital evolution platform \citep{moreno_toward_2019,Lalejini_Moreno_Ofria_DISHTINY_2020}.
+DISHTINY provides independently replicating digital organisms (cells) with the ability and the incentive to unite into higher-level individuals.
+The system demonstrates \textit{de novo} major evolutionary transitions in individuality without direct interventions by the experimenter. 
+Individual cells are SignalGP agents, which allows them to respond to the environment and communicate with one another in a signal-driven context.
 Moreno has developed novel approaches to SignalGP module regulation and execution \citep{Moreno_2021}, distributed agent-agent interactions \citep{Moreno_Ofria_2020}, and even implemented substantially more efficient versions of the SignalGP virtual hardware \citep{Moreno_Rodriguez-Papa_2021}. 
 
 \subsubsection{Multi-representation SignalGP}
 
-In Chapters \ref{chapter:signalgp} and \ref{chapter:tag-based-regulation}, SignalGP functions (modules) associate a tag with a linear sequence of instructions. 
-We can imagine these functions to be black-box input-output machines: when called or triggered by an event, a function is run with input and can produce output by manipulating memory or by generating signals. 
+In Chapters \ref{chapter:signalgp} and \ref{chapter:tag-based-regulation}, SignalGP functions (modules) associate a tag with the start of a linear sequence of instructions. 
+We can imagine these functions to be black-box input-output machines: when called or triggered by an event, a function is provided with input and can return output, writing to memory or generating signals as it goes. 
 Instead of constructing functions with linear sequences of instructions, we could use other computational substrates capable of receiving input and producing output (\textit{e.g.}, other GP representations, artificial neural networks, Markov brains, hard-coded modules, \textit{etc.}). 
 We could even employ a variety of representations within a single SignalGP agent. 
 
-SignalGP's tag-based naming scheme allows us to use this black-box metaphor. 
+SignalGP's tag-based naming scheme enables this black-box metaphor. 
 Functions composed of different representations can still refer to one another via tags, and events are agnostic to the underlying representation used to handle them, requiring only that the representation is capable of processing event-specific data. 
 Allowing for such multi-representation agents may complicate the SignalGP virtual hardware, program evaluation, and mutation operators, but in exchange, it would provide evolution with a toolbox of diverse representations. 
 
-Hintze \textit{et al.} proposed and demonstrated the evolutionary ``buffet method'' where Markov brains could be composed of heterogeneous computational substrates, allowing evolution to work out the most appropriate representation for a given problem \citep{hintze_buffet_2019}. 
-Indeed, Hintze \textit{et al.} observed that different problems produced solutions with different distributions of component types, making buffet-style Markov brains a flexible representation for solving a range of different types of problems. 
+Hintze et al. proposed and demonstrated the evolutionary ``buffet method'' where Markov brains could be composed of heterogeneous computational substrates, allowing evolution to work out the most appropriate representation for a given problem \citep{hintze_buffet_2019}. 
+Indeed, Hintze et al. observed that different problems produced solutions with different distributions of component types, making buffet-style Markov brains a flexible representation for solving a range of different types of problems. 
 Multi-representation SignalGP provides an unexplored, alternative approach to evolving multi-representation agents, bringing the buffet method into an event-driven context.
 
-\subsection{Bridging digital and laboratory experimental evolution}
+\subsection{Transferring algorithms from evolutionary computing to laboratory-based experimental evolution}
 % Alternative titles:
 % - Applying evolutionary algorithms to direct the evolution of microbial populations
 % - applying evolutionary algorithms to direct the evolution of microbial populations
@@ -65,33 +67,32 @@ Multi-representation SignalGP provides an unexplored, alternative approach to ev
 % @AML: need to shape this into a better dissertation section. Currently does not flow well. 
 
 My eventual goal is to work, teach, and mentor seamlessly across computational and laboratory evolution systems, cyclically transferring insights from biology to evolutionary computing and back again.
-However, my research thus far has been entirely computational in nature, and I have yet to [work with laboratory experimental evolution systems].
+However, my research thus far has been entirely computational in nature, and I have yet to work with laboratory experimental evolution systems.
 To this end, my immediate future plans are to learn more about microbial experimental evolution as a postdoctoral researcher in Dr. Luis Zaman's laboratory at the University of Michigan.
 
-In collaboration with Dr. Zaman's lab, I will use cutting-edge laboratory automation and equipment fabrication technology to conduct evolution experiments that take advantage of [fine-grained] environmental controls and [high-resolution sensor feedback].
-One of the initial ways we aim to bridge computational and laboratory experimental evolution is by implementing modern evolutionary computing algorithms in the context of directing the evolution of microbial populations. 
+In collaboration with Dr. Zaman's lab, I will use cutting-edge laboratory automation and equipment fabrication technology to conduct evolution experiments that take advantage of precise environmental controls and high-resolution sensor feedback.
+One of the initial ways we aim to bridge computational and laboratory experimental evolution is by converting modern evolutionary computing algorithms to direct the evolution of microbial populations. 
 
-Directed evolution wields artificial selection as a tool to generate biomolecules and organisms with enhanced or novel functional traits [cite - Sanchez,Chen].
+Directed evolution wields artificial selection as a tool to generate biomolecules and organisms with enhanced or novel functional traits [cite - Sanchez, Chen, Frances Arnold]. 
 The scale and specificity of artificial selection has been revolutionized by a deeper understanding of evolutionary and molecular biology in combination with technological innovations in sequencing, sensing, and laboratory automation.
 These advances have cultivated growing interest in directing the evolution of whole microbial communities with functions that can be harnessed in medicine, biotechnology, and agriculture [cite - Sanchez]. 
-Yet, the procedures for selecting which promising communities to propagate remain relatively unexplored.
+Yet, the procedures for selecting which communities to propagate tend to focus on those that are the most fit, leaving more nuanced techniques unexplored, despite many highly effective results in evolutionary computation.
 
-As made clear in this dissertation, directed evolution has not been limited to biological systems. 
+%As made clear in this dissertation, directed evolution has not been limited to biological systems. 
 Indeed, since the 1960s, evolutionary computing has harnessed the principles of natural evolution as a general purpose search engine for solving challenging computational and engineering problems [cite - Back]. 
 As evolutionary computing has matured, the field has identified common pitfalls in directing evolution and has developed a robust toolbox of algorithms to more effectively steer evolutionary processes.
 
 As in evolutionary computing, directed evolution \textit{in vitro} begins with a library of variants (\textit{e.g.}, communities, genomes, or molecules). 
 Variants are scored according to the phenotypic trait (or set of traits) of interest, and the variants with the `best' traits are selected and used to produce the next generation.
-
 The method by which we select variants to propagate from generation to generation dramatically influences the success of directing evolution. 
 In complex fitness landscapes, using only the overall `best' variants to produce the next generation can lead to premature convergence on local optima and adaptive stagnation; 
 this is especially likely in scenarios with multiple objectives that have inherent functional trade-offs.
-These pitfalls are well studied in evolutionary computation and have motivated new selection schemes (methods for deciding which variants to propagate based on one or more criteria) that have dramatically improved the quality and diversity of evolved solutions.
-In conventional microbial directed evolution, only the most performant variants are selected to propagate [ cite - Sanchez].
-Does this prevent microbial directed evolution from realizing its full potential?
+These pitfalls are well studied in evolutionary computation and have motivated new selection schemes that have dramatically improved the quality and diversity of evolved solutions.
+% In conventional microbial directed evolution, only the most performant variants are selected to propagate [ cite - Sanchez].
+% Does this prevent microbial directed evolution from realizing its full potential?
 
-I plan to apply modern evolutionary computing selection algorithms (\textit{e.g.}, novelty-based algorithms, quality-diversity algorithms, lexicase-based algorithms, and multi-objective algorithms) steering the evolution of microbial communities.
-Eventually, we aim to further bridge digital and microbial experimental evolution by coevolving communities of digital organisms with microbial communities in real time, giving each control over aspects of the other's environment.
+I plan to apply modern evolutionary computing selection algorithms (\textit{e.g.}, novelty-based algorithms, quality-diversity algorithms, lexicase-based algorithms, and multi-objective algorithms) to steer the evolution of microbial communities.
+Eventually, we aim to further bridge digital and microbial experimental evolution by coevolving communities of digital organisms with microbial communities in real time, giving each influence over aspects of the other's environment.
 For example, such a hybrid experimental evolution platform would provide the opportunity to investigate the \textit{de novo} evolution of feedbacks between different ecosystems.
 
 
