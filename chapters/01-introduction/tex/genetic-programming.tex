@@ -46,7 +46,7 @@ In tree-based GP, programs are organized as abstract syntax trees \citep{poli_fi
 The leaves of a tree are variable inputs or constants (\textit{i.e.}, terminals) and the internal nodes are typically arithmetic operations (\textit{e.g.}, addition, multiplication, \textit{etc.}).
 Trees are conventionally executed using preorder traversal.
 That is, tree execution begins at the root, which immediately request the return value of its first sub-tree, triggering a recursive execution pattern.
-In practice, results from a tree are produces in a bottom-up fashion; that is, the bottom-most operations are resolved first, and the results of lower operations are propagated up the tree (as inputs to operations higher in the tree) until the root can finish being executed to produce the program's final output.
+In practice, results from a tree are produced in a bottom-up fashion; that is, the bottom-most operations are resolved first, and the results of lower operations are propagated up the tree (as inputs to operations higher in the tree) until the root can finish being executed to produce the program's final output.
 Tree-based programs typically describe multivariate mathematical functions.
 As such, tree-based GP is often applied to symbolic regression problems \citep{orzechowski_where_2018}. % [citations]. 
 

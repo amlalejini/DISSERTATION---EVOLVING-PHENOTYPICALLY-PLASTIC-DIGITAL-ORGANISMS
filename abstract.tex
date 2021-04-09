@@ -2,20 +2,44 @@
 % The intro has long wind-up time, this will be direct and to the point.
 
 % @AML: Really want this to be MUCH MUCH shorter. Maybe don't go into all the details? Just keep it at a high level?
-The ability to dynamically respond to exogenous cues from the environment is a fundamental feature of complex adaptive systems.
-In biology, such responsiveness is called phenotypic plasticity, which is the capacity for a single genotype to express different phenotypes in response to a change in its environment.
-% In this dissertation, I use digital evolution experiments to explore the process by which adaptive plasticity evolves and to illuminate its effects on subsequent evolutionary dynamics.   
-Biologists have long been interested in understanding how adaptive phenotypic plasticity evolves, the mechanisms underpinning plasticity in natural organisms, and how the evolution of plasticity influences subsequent evolutionary outcomes.
-Yet, few empirical studies using biological model organisms have been able to observe both the initial evolution of adaptive phenotypic plasticity and its subsequent evolutionary outcomes.
-In this dissertation, I use populations of self-replicating computer programs (digital organisms) to empirically study the conditions under which adaptive phenotypic plasticity evolves and how its evolution shapes subsequent evolutionary outcomes.
-I show that both mutation rate and environmental change rate influence the potential for adaptive plasticity to evolve, and I show that both unconditional trait expression and imprecise forms of plasticity are important evolutionary building blocks for the evolution of adaptive plasticity. 
-Next, I investigate how the \textit{de novo} evolution of adaptive plasticity influences subsequent evolutionary change and the evolution and maintenance of novel adaptive traits.
-I find that adaptive phenotypic plasticity stabilizes populations against environmental changes, which allows populations to more easily retain novel adaptive traits. 
+% - Would love to get this down to a single page. 
 
-Phenotypic plasticity also has practical applications in evolutionary computing wherein we exploit the natural principles of evolution as a general purpose search algorithm to solve challenging computational problems. 
-As in biological organisms, phenotypic plasticity can allow evolved solutions to be robust to noise and capable of dynamically responding to changing problem conditions.
-I focus on genetic programming wherein we apply evolutionary algorithms to automatically synthesize computer programs rather than writing them by hand.
-Specifically, I draw on our understanding of biological mechanisms of adaptive plasticity and their evolution to develop novel techniques for evolving more dynamically responsive computer programs.
-First, I introduce SignalGP, a novel genetic programming technique for evolving event-driven computer programs, and I show that SignalGP allows us to evolve programs better able to rapidly interact with the environment or with other agents. 
-Next, I demonstrate tag-based genetic regulation, a new genetic programming technique that allows programs to dynamically adjust the code modules that they execute, and I show that tag-based regulation improves problem-solving performance on context-dependent problems where programs must adjust how they respond to current inputs based on prior inputs.
-Finally, I briefly introduce tag-accessed memory, a novel genetic programming technique that provides a more flexible mechanism for programs to define and use evolvable variable names.
+The ability to dynamically respond to cues from the environment is a fundamental feature of complex adaptive systems.
+In biological systems, such responsiveness is called phenotypic plasticity, which is the capacity for a single genotype to express different phenotypes in response to a change in its environment.
+% Biologists have long been interested in understanding how adaptive phenotypic plasticity evolves, the mechanisms underpinning plasticity in natural organisms, and how the evolution of plasticity influences subsequent evolutionary outcomes.
+Indeed, phenotypic plasticity underlies many of the adaptive traits and developmental patterns found in nature and serves as a key mechanism for responding to spatially and temporally variable environments.
+Phenotypic plasticity also has practical applications in genetic programming, wherein we apply the natural principles of evolution to automatically synthesize computer programs rather than writing them by hand.
+Most computer programs require phenotypic plasticity, as they must respond dynamically to inputs based on user input, sensor data, \textit{et cetera}. % [current context] => [user input, sensor readings, et cetera]
+As such, if genetic programming is to achieve the long-standing goal of automating software development, we must develop techniques capable of promoting the evolution of complex forms of phenotypic plasticity.
+
+In this dissertation, I achieve two synergistic aims: (1) I use populations of self-replicating computer programs (digital organisms) to empirically study the conditions under which adaptive phenotypic plasticity evolves and how its evolution shapes subsequent evolutionary outcomes; and, (2) I transfer insights from biology to develop novel genetic programming techniques in order to evolve more responsive (\textit{i.e.}, phenotypically plastic) computer programs. % than allowed by existing state of the art...
+By analyzing the lineages of plastic digital organisms, I show that [both mutation rate and environmental change rate influence the potential for adaptive plasticity to evolve] and [that unconditional trait expression and imprecise forms of plasticity are important evolutionary building blocks for adaptive plasticity]. 
+Next, I show that the evolution of adaptive phenotypic plasticity stabilizes populations against environmental changes, which, in turn, allows populations to more easily retain novel adaptive traits as compared to non-plastic populations evolving in an otherwise identical environment. 
+Finally, I introduce and experimentally demonstrate three novel genetic programming techniques that improve our ability to evolve phenotypically plastic computer programs: SignalGP, tag-based genetic regulation, and tag-accessed memory.
+
+
+
+
+
+
+
+%%%%%%%%%% V1 %%%%%%%%%% 
+% The ability to dynamically respond to exogenous cues from the environment is a fundamental feature of complex adaptive systems.
+% In biology, such responsiveness is called phenotypic plasticity, which is the capacity for a single genotype to express different phenotypes in response to a change in its environment.
+% Biologists have long been interested in understanding how adaptive phenotypic plasticity evolves, the mechanisms underpinning plasticity in natural organisms, and how the evolution of plasticity influences subsequent evolutionary outcomes.
+% Yet, few empirical studies using biological model organisms have been able to observe both the initial evolution of adaptive phenotypic plasticity and its subsequent evolutionary outcomes.
+
+
+% In this dissertation, I use populations of self-replicating computer programs (digital organisms) to empirically study the conditions under which adaptive phenotypic plasticity evolves and how its evolution shapes subsequent evolutionary outcomes.
+% I show that both mutation rate and environmental change rate influence the potential for adaptive plasticity to evolve, and I show that both unconditional trait expression and imprecise forms of plasticity are important evolutionary building blocks for the evolution of adaptive plasticity. 
+% Next, I investigate how the \textit{de novo} evolution of adaptive plasticity influences subsequent evolutionary change and the evolution and maintenance of novel adaptive traits.
+% I find that adaptive phenotypic plasticity stabilizes populations against environmental changes, which allows populations to more easily retain novel adaptive traits. 
+
+% Phenotypic plasticity also has practical applications in evolutionary computing wherein we exploit the natural principles of evolution as a general purpose search algorithm to solve challenging computational problems. 
+% As in biological organisms, phenotypic plasticity can allow evolved solutions to be robust to noise and capable of dynamically responding to changing problem conditions.
+% I focus on genetic programming wherein we apply evolutionary algorithms to automatically synthesize computer programs rather than writing them by hand.
+% Specifically, I draw on our understanding of biological mechanisms of adaptive plasticity and their evolution to develop novel techniques for evolving more dynamically responsive computer programs.
+% First, I introduce SignalGP, a novel genetic programming technique for evolving event-driven computer programs, and I show that SignalGP allows us to evolve programs better able to rapidly interact with the environment or with other agents. 
+% Next, I demonstrate tag-based genetic regulation, a new genetic programming technique that allows programs to dynamically adjust the code modules that they execute, and I show that tag-based regulation improves problem-solving performance on context-dependent problems where programs must adjust how they respond to current inputs based on prior inputs.
+% Finally, I briefly introduce tag-accessed memory, a novel genetic programming technique that provides a more flexible mechanism for programs to define and use evolvable variable names.
+%%%%%%%%%%%%%%%%%%%%
