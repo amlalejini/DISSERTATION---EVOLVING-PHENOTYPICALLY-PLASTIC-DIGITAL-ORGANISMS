@@ -9,11 +9,16 @@
 \subsubsection{Event-driven strategies outperform imperative strategies}
 
 Figure \ref{chapter:signalgp:fig:chg-env-fitness} shows results for all environment sizes ($K$ = 2, 4, 8, and 16). 
-Programs evolved in treatments with fully event-driven SignalGP significantly outperformed those evolved in the imperative treatment across all environments: two-state (combined: $p<2$e-47; event-driven: $p<2$e-47), four-state (combined: $p<2$e-47; event-driven: $p<2$e-47), eight-state (combined: $p<2$e-46; event-driven: $p<3$e-45), and sixteen-state (combined: $p<2$e-34; event-driven: $p<3$e-33). Across all environments, there was no significant difference in final program performance between the event-driven and combined treatment. 
+Programs evolved in treatments with fully event-driven SignalGP significantly outperformed those evolved in the imperative treatment across all environments ($p<10^{-4}$ for all conditions). 
+% : two-state (combined and event-driven, $p<10^{-4}$), %(combined: $p<2$e-47; event-driven: $p<2$e-47), 
+% four-state (combined and event-driven, $p<10^{-4}$), %(combined: $p<2$e-47; event-driven: $p<2$e-47), 
+% eight-state (combined and event-driven, $p<10^{-4}$), %(combined: $p<2$e-46; event-driven: $p<3$e-45), 
+% and sixteen-state (combined and event-driven, $p<10^{-4}$), %(combined: $p<2$e-34; event-driven: $p<3$e-33). 
+Across all environments, there was no significant difference in final program performance between the event-driven and combined treatment. 
 See supplementary material for full details on statistical test results \citep{signalgp_supplement_2018}. 
 
 Further, only treatments with fully event-driven SignalGP produced programs capable of achieving a perfect fitness of 256. 
-This result is not surprising: \textit{only} programs that employ an entirely event-driven strategy can achieve a perfect score in multi-state environments. 
+This result is not surprising, as \textit{only} programs that employ an entirely event-driven strategy can achieve a perfect score in multi-state environments. 
 This is because imperative strategies must continuously poll the environment for changes, which decreases the efficiency of their response to an environmental change.
 This strategy becomes increasingly cumbersome and inefficient as the complexity of the environment increases. 
 In contrast, event-driven responses are triggered automatically \textit{via} the SignalGP virtual hardware, facilitating immediate reactions to environmental changes.
@@ -36,7 +41,8 @@ Any loss of functionality by programs in these new environments will tease apart
 
 Figure \ref{chapter:signalgp:fig:combined-reeval} shows the results of our re-evaluations. 
 Across all environment sizes, there was no significant difference between program performance in their original combined condition and the deactivated sensors conditions. 
-In contrast, program performances were significantly worse in the deactivated events condition than in the combined condition (two-state: $p<2$e-47; four-state: $p<2$e-47; eight-state: $p<7$e-49 ; sixteen-state: $p<4$e-35). 
+In contrast, program performances were significantly worse in the deactivated events condition than in the combined condition (all conditions, $p<10^{-4}$).
+% (two-state: $p<2$e-47; four-state: $p<2$e-47; eight-state: $p<7$e-49 ; sixteen-state: $p<4$e-35). 
 These data indicate that programs evolved in the combined condition primarily rely on event-driven strategies for the changing environment problem. 
 
 \subsection{Distributed Leader Election Problem}
@@ -48,7 +54,9 @@ These data indicate that programs evolved in the combined condition primarily re
 \subsubsection{Event-driven networks outperform imperative networks}
 
 Figure \ref{chapter:signalgp:fig:election-fitness} shows the results for the distributed leader election problem.
-Distributed systems evolved in the event-driven treatment significantly outperformed those evolved in both imperative treatments (fork-on-retrieval: $p<2$e-21; copy-on-retrieval: $p<2$e-13). 
+Distributed systems evolved in the event-driven treatment significantly outperformed those evolved in both imperative treatments 
+(fork-on-retrieval and copy-on-retrieval, $p<10^{-4}$). 
+% (fork-on-retrieval: $p<2$e-21; copy-on-retrieval: $p<2$e-13). 
 See supplementary material for full details on statistical test results \citep{signalgp_supplement_2018}. 
 
 All three conditions produced distributed systems capable of achieving election consensus. 

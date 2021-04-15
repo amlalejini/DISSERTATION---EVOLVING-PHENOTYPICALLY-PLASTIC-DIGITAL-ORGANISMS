@@ -17,7 +17,7 @@ We evolved agents to solve this problem at $K$ equal to 2, 4, 8, and 16 environm
 The problem scales in difficulty as the number of possible states that must be monitored increases. 
 Agents adjust their internal state by executing one of $K$ state-altering instructions.
 For each possible environmental state, there is an associated \code{SetState} instruction
-(\textit{i.e.}, for $K=4$, there are four instructions: \code{SetState,0}, \code{SetState1}, \code{SetState2}, and \code{SetState3}).
+(\textit{i.e.}, for $K=4$, there are four instructions: \code{SetState0}, \code{SetState1}, \code{SetState2}, and \code{SetState3}).
 Being required to execute a distinct instruction for each environment represents performing a behavior unique to that environment. 
 
 We compared the performance of programs with three different mechanisms to sense the environment: 

@@ -16,12 +16,12 @@ Figure \ref{chapter:signalgp:fig:signalgp-overview} shows a high-level overview 
 \label{chapter:signalgp:sec:signalgp:tag-based-referencing}
 
 Incorporating modules (\textit{e.g.}, functions, subroutines, macros, \textit{etc.}) into genetic programming has been extensively explored, and the benefits of modules in GP have been well documented
-(\textit{e.g.}, \citep{koza_genetic_1992,koza_genetic_1994,angeline_evolutionary_1992,keijzer_undirected_2005,walker_automatic_2008,roberts_evolving_2001,spector_simultaneous_1996}). 
+(\textit{e.g.}, \cite{koza_genetic_1992,koza_genetic_1994,angeline_evolutionary_1992,keijzer_undirected_2005,walker_automatic_2008,roberts_evolving_2001,spector_simultaneous_1996}). 
 The main purpose of SignalGP functions are to act as event-handlers---computations triggered in response to signals. However, they have the additional benefit of providing explicit architectural support for program modularity, bestowing the boon of reusable code. 
 As with any reusable code block in GP, the question remains: how should the code be referenced? 
 The answer to this question can be reused to answer the following question: how should we determine which event-handlers are triggered by events? 
 
-Inspired by John Holland's concept of a ``tag'' \citep{holland_effect_1993,holland_genetic_1987,holland_concerning_1990,holland_studying_2006} as a mechanism for matching, binding, and aggregation, Spector \textit{et al.} \citep{spector_tag-based_2011,spector_whats_2011,spector_tag-based_2012} introduced and demonstrated the value of tag-based referencing in the context of GP. 
+Inspired by John Holland's concept of a ``tag'' \citep{holland_effect_1993,holland_genetic_1987,holland_concerning_1990,holland_studying_2006} as a mechanism for matching, binding, and aggregation, Spector \textit{et al.} introduced and demonstrated the value of tag-based referencing in the context of GP \citep{spector_tag-based_2011,spector_whats_2011,spector_tag-based_2012}. 
 In this context, a tag-based reference always links to a tagged entity with its closest match. 
 These tagged entities include instructions and sequences of code (\textit{i.e.}, modules), providing an evolvable mechanism for code referencing. 
 
@@ -41,13 +41,13 @@ The \textbf{event queue} manages recently received events waiting to be dispatch
 
 The SignalGP virtual hardware supports an arbitrary number of \textbf{execution threads} that run concurrently. 
 Each thread processes a single instruction every time step. 
-In the same way that Byers \textit{et al.}'s parallel-executing digital enzymes \citep{byers_digital_2011} allow a robot controller to process many external stimuli simultaneously, parallel execution allows SignalGP agents to handle many events at once.
+Just as Byers \textit{et al.}'s parallel-executing digital enzymes allow robot controllers to process many external stimuli simultaneously \citep{byers_digital_2011}, parallel execution allows SignalGP agents to handle many events at once.
 
 Each thread maintains a call stack that stores state information about the thread's active function calls. 
 The current state for any given thread resides at the top of the thread's call stack. 
 Call states maintain local state information for the function call they represent: a function pointer, an instruction pointer, input memory, working memory, and output memory. 
-A function pointer indicates the current function being run. 
-An instruction pointer indicates the current instruction within that function. 
+The function pointer indicates the current function being run. 
+The instruction pointer indicates the current instruction within that function. 
 Input, working, and output memory serve as local memory. 
 
 Working memory is used for performing local operations (\textit{e.g.}, addition, subtraction, multiplication, \textit{etc.}). 
@@ -68,7 +68,7 @@ Further, instructions use their tag when generating events, either to be broadca
 Program evaluation can be initialized either actively or passively.  
 During active initialization, the program will begin evaluation by automatically calling a designated main function on a new thread.  
 In passive initialization, computation takes place only in response to external events.  
-In the work presented here, we use only active initialization and automatically reset the main thread if it would have otherwise terminated.
+In the work presented here, we use active initialization and automatically reset the main thread if it would have otherwise terminated.
 
 While executing, the SignalGP virtual hardware advances on each time step in three phases: 
 (1) All events in the event queue are dispatched, with each triggering a function \textit{via} tag-based referencing. 
@@ -79,7 +79,7 @@ Phases occur serially and in order.
 Executed instructions may call functions, manipulate local and shared memory, generate events, perform basic computations, control execution flow, \textit{et cetera} (see supplementary material \citep{signalgp_supplement_2018} for details on all instructions used in this work).
 Instructions in SignalGP are guaranteed to always be syntactically valid, but may be functionally useless. 
 Every instruction has three associated arguments and an associated tag. 
-Not all instructions make use of their three arguments or their tag; unused arguments and tags are not under direct selection and may drift until a mutation to the operand reveals them.
+Not all instructions make use of their three arguments or their tag; unused arguments and tags are not under direct selection and may drift until a mutation to the operator reveals them.
 
 % \vspace{2mm}
 % \noindent\textbf{Instruction-triggered Function Calls}\\

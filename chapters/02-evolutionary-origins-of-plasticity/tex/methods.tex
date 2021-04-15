@@ -5,8 +5,8 @@
 \label{chapter:origins-of-plasticity:sec:methods:avida}
 
 The Avida software platform provides a computational instance of evolution and enables researchers to experimentally test hypotheses about evolution that would otherwise be difficult or impossible to test in natural systems \citep{ofria_avida:_2009}. 
-Avida has a robust genetic encoding: all possible genetic sequences are well-defined in any context \citep{ofria_avida:_2009}. 
-Avida has also been shown to be capable of evolving to use a wide range of capabilities \citep{bryson_understanding_2013}, making it an ideal choice for studying phenotypic plasticity. 
+% Avida has a robust genetic encoding: all possible genetic sequences are well-defined in any context \citep{ofria_avida:_2009}. 
+% Avida has also been shown to be capable of evolving to use a wide range of capabilities \citep{bryson_understanding_2013}, making it an ideal choice for studying phenotypic plasticity.
 Here, we provide a brief overview of Avida as it is relevant to this work. 
 For a more detailed description of the Avida software platform, see \citep{ofria_avida:_2009}.
 
@@ -14,8 +14,8 @@ For a more detailed description of the Avida software platform, see \citep{ofria
 \label{chapter:origins-of-plasticity:sec:methods:avida:organisms}
 
 % Overview of Avida
-Populations in Avida are made up of self-replicating computer programs (digital organisms) that compete for space in a finite, toroidal grid. 
-Each of these digital organisms is defined by a sequence of instructions (\textit{i.e.}, its genotype), virtual hardware to execute the instructions, and a position on the grid. 
+Populations in Avida are made up of self-replicating computer programs (digital organisms) that compete for space in a finite toroidal grid. 
+Each digital organism is defined by a sequence of instructions (\textit{i.e.}, its genotype), virtual hardware to execute the instructions, and a position on the grid. 
 The instruction set of Avida is Turing-Complete and enables organisms to perform basic computations, control their own execution flow, and replicate. 
 An organism's virtual hardware (Figure \ref{chapter:origins-of-plasticity:fig:avida-virtual-cpu}) includes components such as a central processing unit (CPU), registers used for computation, input and output buffers, and memory stacks. 
 Organisms replicate asexually by copying themselves line-by-line and dividing; however, an organism's copy instruction is imperfect, which can result in mutated offspring.
@@ -25,7 +25,8 @@ Organisms replicate asexually by copying themselves line-by-line and dividing; h
 % Metabolism, competition
 Organisms can gain additional CPU cycles by performing tasks---such as mathematical computations---to improve their metabolic rate. 
 An organism's metabolic rate determines how rapidly it can execute its genome; a higher metabolic rate allows an organism to replicate faster. 
-Initially, an organism's metabolic rate is roughly proportional to its genome length; however, the organism's metabolic rate can be adjusted when the organism completes a task. 
+Initially, an organism's metabolic rate is roughly proportional to its genome length; however, when an organism completes designated tasks, the organism's metabolic rate can be adjusted.
+%the organism's metabolic rate can be adjusted when the organism completes a task. 
 In this way, we can differentially reward or punish the performance of different tasks.
 
 When an organism successfully replicates, its offspring is placed in a random location in the world, replacing the organism formerly occupying that location. 
@@ -88,7 +89,7 @@ When considering an organism's phenotype across both ENV-NAND and ENV-NOT, there
 We enumerate these phenotypes in Figure \ref{chapter:origins-of-plasticity:fig:task-profiles}. 
 Of these sixteen possible phenotypes, only four express the identical task profile in both environments; the other twelve profiles all exhibit some form of plasticity. 
 The optimal form of plasticity is to perform only the NAND task in ENV-NAND and to perform only the NOT task in ENV-NOT; any other form of plasticity is sub-optimal. 
-There are five possible phenotypes that leverage plasticity to perform punished tasks instead of rewarded tasks in a given environment; we did not expect these forms of phenotypic plasticity to be successful. 
+There are five possible phenotypes that leverage plasticity to perform punished tasks instead of rewarded tasks in a given environment; we did not expect these maladaptive forms of phenotypic plasticity to be successful. 
 
 \input{chapters/02-evolutionary-origins-of-plasticity/tex/figures/figure-task-profiles}
 
@@ -124,4 +125,4 @@ Any given genotype on the lineage must express one of the sixteen possible pheno
 At each point in time, the color of the visualized lineage corresponds to the color representing the phenotype expressed by the lineage at that point in time. 
 For example, because the ancestral organism is capable only of self-replication, all visualized lineages should show that the original ancestor's phenotype performed neither the NAND task nor the NOT task. 
 In addition to the visualized lineages, we indicate the actual environmental conditions experienced by the evolving populations at each point in time by the color of the vertical axis. 
-This type of visualization allows us to display the phenotypic states traversed by any given lineage, allowing us to explore evolutionary strategies leveraged by all evolved lineages.
+This type of visualization allows us to display the phenotypic states traversed by any given lineage. %, allowing us to explore evolutionary strategies leveraged by all evolved lineages.

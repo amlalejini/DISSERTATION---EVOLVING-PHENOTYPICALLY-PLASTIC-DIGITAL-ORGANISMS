@@ -20,7 +20,7 @@ the Robot Operating System (ROS) \citep{quigley_ros:_2009},
 the biological process of signal transduction, 
 and Byers \textit{et al.}'s digital enzymes robot controller \citep{byers_digital_2011,byers_exploring_2012}. 
 
-ROS is a popular robotics software development framework that provides standardized communication protocols to independently running programs referred to as nodes.
+ROS is a popular robotics software development framework that provides standardized communication protocols to independently running programs, which are referred to as nodes.
 While the ROS framework provides a variety of tools and other conveniences to robotics software developers, we focus on ROS's publish-subscribe communication protocol, framing it under the event-driven paradigm. 
 ROS nodes can communicate by passing strictly typed messages over named channels (topics). 
 Nodes send messages by publishing them over topics, and nodes receive messages from a particular topic by subscribing to that topic. 
@@ -35,7 +35,8 @@ Cells respond to signaling molecules via receptors, which bind specifically to n
 The process of cell signal transduction can be viewed as a form of event-driven computation: signaling molecules are like events, receptors are event-handlers, and the chemical and physical properties of signaling molecules determine with which receptors they are able to bind. 
 
 % Event-driven computing in an evolving system
-Evolutionary computation researchers have also made use of the event-driven paradigm; for example, Byers \textit{et al.} \citep{byers_digital_2011,byers_exploring_2012} demonstrated virtual robot controllers that operate using a digital model of signal transduction, and like biological signal transduction, these controllers follow an event-driven paradigm. 
+Evolutionary computation researchers have also made use of the event-driven paradigm.
+For example, Byers \textit{et al.} \citep{byers_digital_2011,byers_exploring_2012} demonstrated virtual robot controllers that operate using a digital model of signal transduction, and like biological signal transduction, these controllers follow an event-driven paradigm. 
 Byers \textit{et al.}'s virtual robot controllers have digital stimuli receptors, which bind to nearby ``signaling molecules'' represented as bit strings.
 Different bit strings represent different signals in the environment (\textit{e.g.}, the presence of nearby obstacles). 
 Once a signaling molecule binds to a digital receptor, a digital enzyme (program) processes the signaling molecule and influences the controller's behavior. 
