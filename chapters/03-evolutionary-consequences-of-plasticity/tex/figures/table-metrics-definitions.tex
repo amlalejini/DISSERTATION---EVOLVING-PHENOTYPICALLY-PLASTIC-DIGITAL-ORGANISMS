@@ -1,0 +1,125 @@
+%%%%%%%%%%%%%%%%%%% METRIC DEFINITIONS (used in table) %%%%%%%%%%%%%%%%%%%
+\newcommand{\SweepsMetricName}{
+Coalescence event count
+}
+\newcommand{\SweepsMetricDesc}{
+Number of coalescence events that have occurred, which indicates the frequency of selective sweeps in the population.
+}
+
+\newcommand{\MutationCountMetricName}{
+Mutation count
+}
+\newcommand{\MutationCountMetricDesc}{
+Sum of all mutations that have occurred along a lineage.
+}
+
+\newcommand{\PhenotypicVolatilityMetricName}{
+Phenotypic volatility
+}
+\newcommand{\PhenotypicVolatilityMetricDesc}{
+Number of instances where parent and offspring phenotypic profiles do not match along a lineage.
+Phenotypic volatility as defined here indicates the rate at which accumulated genetic changes actually change the phenotype along a lineage.
+}
+
+\newcommand{\MutationalStabilityMetricName}{
+Mutational stability
+}
+\newcommand{\MutationalStabilityMetricDesc}{
+Proportion of mutated offspring along a lineage whose phenotypic profile matches that of their parent. 
+}
+
+\newcommand{\GenotypicFidelityMetricName}{
+Genotypic fidelity
+}
+\newcommand{\GenotypicFidelityMetricDesc}{
+Frequency that an offspring's genotype is identical to its parent's genotype along a given lineage.
+}
+
+\newcommand{\PhenotypicFidelityMetricName}{
+Phenotypic fidelity
+}
+\newcommand{\PhenotypicFidelityMetricDesc}{
+Frequency that an offspring's phenotypic profile is identical to its parent's phenotypic profile along a given lineage.
+}
+
+\newcommand{\TaskPerformanceMetricName}{
+Final novel task count
+}
+\newcommand{\TaskPerformanceMetricDesc}{
+Count of unique novel tasks performed by the representative organism in a final population from experiment \hyperref[chapter:consequences-of-plasticity:sec:methods:experiment:novel-task-evolution]{phase 2B}. 
+This metric can range from 0 to 71 and measures the level of exploitation of the fitness landscape (\textit{i.e.}, the mapping between genetic space and phenotype space) at a given point in time.
+}
+
+\newcommand{\TaskDiscoveryMetricName}{
+Novel task discovery
+}
+\newcommand{\TaskDiscoveryMetricDesc}{
+Number of unique novel tasks ever performed along a given lineage in experimental \hyperref[chapter:consequences-of-plasticity:sec:methods:experiment:novel-task-evolution]{phase 2B}, even if a task is later lost.
+This metric can range from 0 to 71 and measures a given lineage's level of exploration of the fitness landscape.
+}
+
+\newcommand{\TaskLossMetricName}{
+Novel task loss
+}
+\newcommand{\TaskLossMetricDesc}{
+Number of instances along a given lineage from experimental \hyperref[chapter:consequences-of-plasticity:sec:methods:experiment:novel-task-evolution]{phase 2B} where a novel task is performed by a parent but not its offspring. 
+This metric measures how often a given lineage fails to retain evolved traits over time.
+}
+
+\newcommand{\FinalPoisonMetricName}{
+Final poisonous task count
+}
+\newcommand{\FinalPoisonMetricDesc}{
+Number of times the poisonous task is performed by the representative organism from a final population from experiment \hyperref[chapter:consequences-of-plasticity:sec:methods:experiment:deleterious-instruction-accumulation]{phase 2C}.
+}
+
+\newcommand{\LineagePoisonMetricName}{
+Poisonous task acquisition count
+}
+\newcommand{\LineagePoisonMetricDesc}{
+Number of instances along a given lineage where a mutation causes an offspring perform the poisonous task more times than its parent. 
+}
+
+\newcommand{\ArchitectureVolatilityMetricName}{
+Architectural volatility
+}
+\newcommand{\ArchitectureVolatilityMetricDesc}{
+The average number of mutations that cause a change in the function of loci along a lineage. 
+%Loci function is denoted as the combination of task machinery, plasticity machinery, vestigial machinery for both ENV-A and ENV-B tasks, as well as replication and required machinery. 
+}
+
+
+%%%%%%%%%%%%%%%%%%% TABLE %%%%%%%%%%%%%%%%%%%
+
+\newcommand*{\thead}[1]{\multicolumn{1}{c}{\bfseries #1}}
+
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1.1}
+\begin{table}[ht!]
+    \centering
+    
+    \rowcolors{2}{gray!25}{white}
+    \begin{tabularx}{\linewidth}{lX} % p{10cm}
+        \rowcolor{gray!50}
+        \hline 
+        \thead{Metric} & \thead{Description}   \\
+        \hline
+        \SweepsMetricName & \SweepsMetricDesc \\
+        \MutationCountMetricName & \MutationCountMetricDesc \\
+        \PhenotypicVolatilityMetricName & \PhenotypicVolatilityMetricDesc \\
+        \MutationalStabilityMetricName & \MutationalStabilityMetricDesc \\
+        \ArchitectureVolatilityMetricName & \ArchitectureVolatilityMetricDesc \\
+        \TaskPerformanceMetricName & \TaskPerformanceMetricDesc \\
+        \TaskDiscoveryMetricName & \TaskDiscoveryMetricDesc \\
+        \TaskLossMetricName & \TaskLossMetricDesc \\
+        \FinalPoisonMetricName & \FinalPoisonMetricDesc \\
+        \LineagePoisonMetricName & \LineagePoisonMetricDesc \\
+        \hline
+    \end{tabularx}
+    
+    \caption{\textbf{Metric descriptions.}}
+    \label{chapter:consequences-of-plasticity:tab:metrics-definitions}
+\end{table}
+\renewcommand{\arraystretch}{1.0}
+
+

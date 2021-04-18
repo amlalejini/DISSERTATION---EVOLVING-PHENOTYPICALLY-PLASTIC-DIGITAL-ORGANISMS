@@ -402,17 +402,7 @@
 	editor = {Komosinski, Maciej and Adamatzky, Andrew},
 	year = {2009},
 	doi = {10.1007/978-1-84882-285-6_1},
-	pages = {3--35},
-	annote = { Why UMAD is bonkers
-
-Page 16
-
-"Another commonly used source of mutations are insertion and deletion mutations"
-"two types of insertion/deletion mutations are available in the configuration files; they differ in that one is a genome-level rate and the other is a per-site rate"
-
-
-},
-	file = {Ofria_et_al_2009_Avida.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Ofria_et_al_2009_Avida.pdf:application/pdf;Ofria_et_al_2009_Avida.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Ofria_et_al_2009_Avida2.pdf:application/pdf}
+	pages = {3--35}
 }
 
 @article{rainey_evolutionary_2011,
@@ -445,12 +435,7 @@ Page 16
 	month = jan,
 	year = {2003},
 	keywords = {five stars},
-	pages = {98--105},
-	annote = {Notes
-Hypothesis for how cell types of multicellular organisms come to be differentiated:
-- Differentiation patterns orginally passive outcomes of environmental effects
-- As cells context with external environment diminished, gene expression patterns were altered},
-	file = {Schlichting_2003_Origins_of_differentiation_via_phenotypic_plasticity.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Schlichting_2003_Origins_of_differentiation_via_phenotypic_plasticity.pdf:application/pdf}
+	pages = {98--105}
 }
 
 @article{seger_what_1987,
@@ -509,16 +494,7 @@ Hypothesis for how cell types of multicellular organisms come to be differentiat
 	publisher = {Springer US},
 	author = {Brameier, Markus F. and Banzhaf, Wolfgang},
 	year = {2007},
-	doi = {10.1007/978-0-387-31030-5},
-	annote = {Support that UMAD is not new
-
-Page 122: "Macro instruction mutations either insert or delete a single instruction"
-
-"In doing so, they change absolute program length with a minimal effect on program structure"
-
-
-},
-	file = {Brameier_Banzhaf_2007_Linear_Genetic_Programming.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Brameier_Banzhaf_2007_Linear_Genetic_Programming.pdf:application/pdf}
+	doi = {10.1007/978-0-387-31030-5}
 }
 
 @inproceedings{byers_digital_2011,
@@ -1019,10 +995,7 @@ Page 122: "Macro instruction mutations either insert or delete a single instruct
 	editor = {Califano, Andrea},
 	month = sep,
 	year = {2008},
-	pages = {e3245},
-	annote = {publish-subscribe for signalgp?
-signals are published (via tag) and functions 'subscribe' via tag-based referencing ={\textgreater} things would need default promiscuity},
-	file = {Calcott_et_al_2008_A_Publish-Subscribe_Model_of_Genetic_Networks.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Calcott_et_al_2008_A_Publish-Subscribe_Model_of_Genetic_Networks.pdf:application/pdf}
+	pages = {e3245}
 }
 
 @article{banzhaf_artificial_2006,
@@ -1056,63 +1029,7 @@ signals are published (via tag) and functions 'subscribe' via tag-based referenc
 	author = {Cussat-Blanc, Sylvain and Harrington, Kyle and Banzhaf, Wolfgang},
 	month = mar,
 	year = {2019},
-	pages = {296--328},
-	annote = {refs to read
-Evo of networks: [1], [45]
-robot: [15]
-
-
-
-
- 
- 
-
-
- 
- 
- 
- 
-
-
- 
- 
- 
- 
-
-
- 
-
-
-
-[77] [91] [4] [149] [125] [73] [74] [63]
-
-
-
- 
-
-
-
-[113] [137] [112] [139]
-
-
-
-
-
- 
- 
- 
- 
-
-
- 
- 
- 
- 
-
-
-
-},
-	file = {Cussat-Blanc_et_al_2019_Artificial_Gene_Regulatory_Networks—A_Review.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Cussat-Blanc_et_al_2019_Artificial_Gene_Regulatory_Networks—A_Review.pdf:application/pdf}
+	pages = {296--328}
 }
 
 @article{aldana_robustness_2007,
@@ -1292,127 +1209,7 @@ robot: [15]
 	journal = {Genetic Programming and Evolvable Machines},
 	author = {O’Neill, Michael and Spector, Lee},
 	month = sep,
-	year = {2019},
-	annote = {Journal Club
-Overview
-Goal of paper:
-
-Issue a challenge to the genetic programming community to refocus our research toward the objective of automatic programming.
-
-If we solved idealized automatic programming, can we tell the computer to program a general purpose AI?
-What is automatic programming?
-Automatic Programming - the automatic generation of a computer program given a high-level statement of the program's desired behavior
-"we have not solved the program of automatic programming in any meaningfully scalable manner"
-
-I think this hinges on a very narrow definition of automatic programming (which isn't given by the stated definition).
-Symbolic regression, I think, fits under the definition of automatic programming.
-
-Wait, wait! Automatic programming is a moving goal post.
-Koza had 16 properties that an automatic programming system must possess.
-
-output in form of a computer program detailing a sequence of steps as to how to solve a problem
-ability to automatically organize useful groups of steps so that they can be reused
-capacity to be parameterized
-hierarchy of reuse can be constructed automatically
-system should be problem independent
-wide/scalable applicability
-capable of achieving human-competitive performance
-
-Challenges and solutions toward automatic programming
-Automatic programming is an example of an AI-complete problem.
-
-What to people think of the statement: "automatic programming requires a full solution to the artificial intelligence problem"?
-"Approaches to automatic programming to date suffer a scalability challenge."
-
-I'm not sure how much I would trust evolved code on a massive scale? Like, look at our DNA. It's a total mess. A wonderfully functional mess, but dear god it's a mess to maintain. If it weren't a mess to maintain, we'd have solved many of our genetic ailments by now, right?
-
-
-
-Issues:
-
-Telling the machine what to do
-Scalability
-Representation and approaches to code synthesis
-Benchmarks and baselines
-GP as a tool
-Trust, transparency, competence, reliability, and ethics
-Other issues
-
-Telling the machine what to do
-Possible solutions:
-
-Using a machine-readable specification
-
-Ah, but defining a fitness function for GP is always tricky - competing objectives, tradeoffs, etc.
-Need to move toward software testing based selection approaches. Developmental evaluation?
-Scalability
-Programs will need
-
-various kinds of modularity
-multiple/complex data types
-control structures
-potential to generate new instances of modularity, data/control structures
-
-modify these on the fly
-
-
-
-We will need a good representation... uh, okay?
-Representation and approaches to code synthesis
-We should draw inspiration/techniques from software engineering, other fields, etc.
-Benchmarks and baselines
-Some benchmarks:
-
-general program synthesis benchmark suite
-basic execution model problems
-arcade learnign environment (ALE)
-
-We need more benchmarks.
-GP as a tool
-GP will be useful (maybe essential!) to goal of automatic programming, but not only tool necessary.
-E.g., NLP for interpretting 'telling the machine what to do'.
-"For example, the python implementation... PushGP"
-Trust, transparency, competence, reliability, and ethics
-I do really appreciate that this section is here.
-
-They sort of outsource this to a european commision...
-
-Probably the most interesting/thought provoking section.
-Things to consider:
-
-Who is the author?
-Who is liable when the automatic programming system produces undersirable results?
-How do we avoid bias in the algorithms?
-
-On approach: shift responsibility to the designer of the algorithm to ensure that it is well behaved.
-
-Good things can always be abused/used for EVIL, though.
-
-European commission on AI
-
-AI should be: lawful, ethical, and robust
-lawful: follow all relevant regulations and laws
-ethical: seven requirements
-
-need to respect human agency and oversight
-technical robustness and safety
-transparency
-diversity, non-discrimination, and fairness
-environmental and societal well-being
-accountability
-
-
-robust: we must have confidence that the ai system will perform in a safe, secure, and reliable manner and will not unintentionally cause harm
-
-"One advantage to increasingly higher-level code is its transparency"
-
-Ugh. Have you seen evolved call maps?
-
-Other issues
- 
- 
- },
-	file = {O’Neill_Spector_2019_Automatic_programming.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/O’Neill_Spector_2019_Automatic_programming.pdf:application/pdf}
+	year = {2019}
 }
 
 @book{downing_intelligence_2015,
@@ -1526,105 +1323,7 @@ Other issues
 	author = {Wagner, Günter P. and Pavlicev, Mihaela and Cheverud, James M.},
 	month = dec,
 	year = {2007},
-	pages = {921--931},
-	annote = {Notes
-
-Wagner, G. P., Pavlicev, M., \& Cheverud, J. M. (2007). The road to modularity. Nature Reviews Genetics, 8(12), 921–931. https://doi.org/10.1038/nrg2267
-
-Authors review the evidence for modularity and models about the origin of modularity.
-Modularity
-
-A network of interactions is called modular if it is subdivided into relatively autonomous, internally highly connected components.
-Open question: whether modules arise through the action of natural selection or because of biased mutational mechanisms.
-Modularity is an abstract concept that seeks to capture the various levels and kinds of heterogeneity found in organisms, and it is considered a fundamental aspect of biological organization.
-
-Modules
-
-Variational module - composed of features that vary together and are relatively independent of other sets of features
-Functional module - composed of features that act together in performing some discrete physiological function that is semi-autonomous in relation to other functional modules
-Developmental module - either a part of an embryo that is quasi-autonomous with respect to pattern formation and differentiation, or an autonomous signal cascade.
-A module is a part of an organism that is integrated with respect to a certain kind of process and relatively autonomous with respect to other parts of the organisms.
-Modules are composed of elements that are highly connected within-'module' but loosely connected outside of the 'module'.
-
-elements in this context can be nucleotides in an RNA molecule, proteins in a cell, cells or morphological characters
-
-
-Regulatory modules
-
-Genes participating in gene regulatory modules are expected to be coexpressed
-
-
-
-Examples of modularity in nature
-
-Higher organisms possess different cell types for specialized functions
-Single-celled organisms have discrete and separable functional systems such as the flagellum and the mitotic spindle
-
-Evolution
-
-Date vs. Party protein-protein interaction hubs
-
-date {\textasciitilde}= inter-module interactions
-party {\textasciitilde}= intra-module interactions
-data suggest inter-module interactions are more often subject to evolutionary modification than intra-module interactions
-
-
-Genes in the same 'module' have more similar rates of evolution than genes from different modules.
-
-this applies both in terms of sequence evolution and gene expression evolution
-
-
-
-Origins of modulaity
-
-event abstract features of organisms have an evolutionary history and thus require an evolutionary explanation
-'neutral models' - natural selection is at most a secondary force
-
-duplication-differentiation
-
-it has been shown that the highly non-random structure of protein-protein interaction networks can be explained by simple models of gene duplication without the intervention of natural selection
-
-
-neutral modular restructuring
-
-subfunction fission is possible by non-adaptive mechanisms, but is not necessarily the result
-
-
-
-
-'selection-driven models' - natural selection drives the origin of modularity by direct or indirect effects
-
-direct selection for modularity
-
-modularity can be selected if it breaks a developmental constraint and thereby makes adaptive phenotypes accessible that would be genetically unattainable otherwise
-when ontogenetic development of the optimal phenotype itself is aided by a modular organization of development
-
-
-variational adaption
-
-environmental changes do not always require changes in all aspects of the organism
-IDEA: follow-up current experiments w/meta-modules
-
-if two gene targets are correlated \& change together, those two genes should overlap with one another more often than expected by chance
-
-
-
-
-differential erosion of interactions
-
-selection acts on a character that directly affects fitness, but any character that is genetically correlated with the adaptive character will also evolve
-
-e.g., selection on body size can lead to changes in skull shape if there is some correlation between body size and skill shape
-
-
-modularity can evolve as a correlated selection response (e.g., direct selection on robustness)
-
-
-
-
-
- },
-	file = {Wagner_et_al_2007_The_road_to_modularity.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Wagner_et_al_2007_The_road_to_modularity.pdf:application/pdf}
+	pages = {921--931}
 }
 
 @article{stearns_evolutionary_1989,
@@ -1828,8 +1527,7 @@ Publisher: Kluwer Academic Publishers},
 	editor = {Whitley, Darrell and Goldberg, David and Cantu-Paz, Erick and Spector, Lee and Parmee, Ian and Beyer, Hans-Georg},
 	year = {2000},
 	keywords = {genetic algorithms, genetic programming},
-	pages = {485--490},
-	annote = {A joint meeting of the ninth International Conference on Genetic Algorithms (ICGA-2000) and the fifth Annual Genetic Programming Conference (GP-2000) Part of {\textbackslash}citewhitley:2000:GECCO}
+	pages = {485--490}
 }
 
 @inproceedings{binard_abstraction-based_2007,
@@ -2376,9 +2074,7 @@ Publisher: Kluwer Academic Publishers},
 	month = may,
 	year = {1994},
 	note = {arXiv: adap-org/9405003},
-	keywords = {Nonlinear Sciences - Adaptation and Self-Organizing Systems, Quantitative Biology},
-	annote = {Comment: 5 p., postscript with figures (unpack with uufiles), to appear in the Proc. of ``Artificial Life IV'', MIT Press},
-	file = {Adami_Brown_1994_Evolutionary_Learning_in_the_2D_Artificial_Life_System_Avida.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Adami_Brown_1994_Evolutionary_Learning_in_the_2D_Artificial_Life_System_Avida.pdf:application/pdf}
+	keywords = {Nonlinear Sciences - Adaptation and Self-Organizing Systems, Quantitative Biology}
 }
 
 
@@ -3453,4 +3149,659 @@ Publisher: Kluwer Academic Publishers},
 	editor = {Bäck, Thomas and Fogel, David B. and Michalewics, Zbigniew},
 	year = {1997},
 	keywords = {Neural networks (Computer science), Evolutionary computation, Handbooks, manuals, etc}
+}
+
+@article{ghalambor_adaptive_2007,
+	title = {Adaptive versus non-adaptive phenotypic plasticity and the potential for contemporary adaptation in new environments},
+	volume = {21},
+	issn = {0269-8463, 1365-2435},
+	url = {http://doi.wiley.com/10.1111/j.1365-2435.2007.01283.x},
+	doi = {10.1111/j.1365-2435.2007.01283.x},
+	language = {english},
+	number = {3},
+	urldate = {2021-02-09},
+	journal = {Functional Ecology},
+	author = {Ghalambor, C. K. and McKAY, J. K. and Carroll, S. P. and Reznick, D. N.},
+	month = jun,
+	year = {2007},
+	pages = {394--407},
+	file = {Ghalambor_et_al_2007_Adaptive_versus_non-adaptive_phenotypic_plasticity_and_the_potential_for_contemporary_adaptation_in_new_environments.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Ghalambor_et_al_2007_Adaptive_versus_non-adaptive_phenotypic_plasticity_and_the_potential_for_contemporary_adaptation_in_new_environments.pdf:application/pdf}
+}
+
+@article{beaumont_experimental_2009,
+	title = {Experimental evolution of bet hedging},
+	volume = {462},
+	issn = {0028-0836, 1476-4687},
+	url = {http://www.nature.com/articles/nature08504},
+	doi = {10.1038/nature08504},
+	language = {english},
+	number = {7269},
+	urldate = {2021-02-24},
+	journal = {Nature},
+	author = {Beaumont, Hubertus J. E. and Gallie, Jenna and Kost, Christian and Ferguson, Gayle C. and Rainey, Paul B.},
+	month = nov,
+	year = {2009},
+	pages = {90--93},
+	file = {Beaumont_et_al_2009_Experimental_evolution_of_bet_hedging.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Beaumont_et_al_2009_Experimental_evolution_of_bet_hedging2.pdf:application/pdf}
+}
+
+@article{winger_long_2019,
+	title = {A long winter for the {Red} {Queen}: rethinking the evolution of seasonal migration},
+	volume = {94},
+	issn = {1464-7931, 1469-185X},
+	shorttitle = {A long winter for the {Red} {Queen}},
+	url = {https://onlinelibrary.wiley.com/doi/abs/10.1111/brv.12476},
+	doi = {10.1111/brv.12476},
+	language = {english},
+	number = {3},
+	urldate = {2021-02-15},
+	journal = {Biological Reviews},
+	author = {Winger, Benjamin M. and Auteri, Giorgia G. and Pegan, Teresa M. and Weeks, Brian C.},
+	month = jun,
+	year = {2019},
+	pages = {737--752},
+	file = {Winger_et_al_2019_A_long_winter_for_the_Red_Queen.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Winger_et_al_2019_A_long_winter_for_the_Red_Queen.pdf:application/pdf}
+}
+
+@article{barrett_adaptation_2008,
+	title = {Adaptation from standing genetic variation},
+	volume = {23},
+	issn = {01695347},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S0169534707002868},
+	doi = {10.1016/j.tree.2007.09.008},
+	language = {english},
+	number = {1},
+	urldate = {2021-02-15},
+	journal = {Trends in Ecology \& Evolution},
+	author = {Barrett, R and Schluter, D},
+	month = jan,
+	year = {2008},
+	pages = {38--44}
+}
+
+@article{wennersten_population-level_2012,
+	title = {Population-level consequences of polymorphism, plasticity and randomized phenotype switching: a review of predictions},
+	volume = {87},
+	issn = {14647931},
+	shorttitle = {Population-level consequences of polymorphism, plasticity and randomized phenotype switching},
+	url = {http://doi.wiley.com/10.1111/j.1469-185X.2012.00231.x},
+	doi = {10.1111/j.1469-185X.2012.00231.x},
+	language = {english},
+	number = {3},
+	urldate = {2021-02-28},
+	journal = {Biological Reviews},
+	author = {Wennersten, Lena and Forsman, Anders},
+	month = aug,
+	year = {2012},
+	pages = {756--767}
+}
+
+@article{schaum_plasticity_2014,
+	title = {Plasticity predicts evolution in a marine alga},
+	volume = {281},
+	issn = {0962-8452, 1471-2954},
+	url = {https://royalsocietypublishing.org/doi/10.1098/rspb.2014.1486},
+	doi = {10.1098/rspb.2014.1486},
+	language = {english},
+	number = {1793},
+	urldate = {2021-02-28},
+	journal = {Proceedings of the Royal Society B: Biological Sciences},
+	author = {Schaum, C. Elisa and Collins, Sinéad},
+	month = oct,
+	year = {2014},
+	pages = {20141486}
+}
+
+@article{dunn_two_2005,
+	title = {Two cues for sex determination in \textit{{Gammarus} duebeni} : {Adaptive} variation in environmental sex determination?},
+	volume = {50},
+	issn = {00243590},
+	shorttitle = {Two cues for sex determination in \textit{{Gammarus} duebeni}},
+	url = {http://doi.wiley.com/10.4319/lo.2005.50.1.0346},
+	doi = {10.4319/lo.2005.50.1.0346},
+	language = {english},
+	number = {1},
+	urldate = {2021-02-22},
+	journal = {Limnology and Oceanography},
+	author = {Dunn, Alison M. and Hogg, John C. and Kelly, Andrew and Hatcher, Melanie J.},
+	month = jan,
+	year = {2005},
+	pages = {346--353},
+	file = {Dunn_et_al_2005_Two_cues_for_sex_determination_in_iGammarus_duebeni-i.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Dunn_et_al_2005_Two_cues_for_sex_determination_in_iGammarus_duebeni-i.pdf:application/pdf}
+}
+
+@article{chadwick_parasite-mediated_2005,
+	title = {A parasite-mediated life-history shift in \textit{{Daphnia} magna}},
+	volume = {272},
+	issn = {0962-8452, 1471-2954},
+	url = {https://royalsocietypublishing.org/doi/10.1098/rspb.2004.2959},
+	doi = {10.1098/rspb.2004.2959},
+	language = {english},
+	number = {1562},
+	urldate = {2021-02-28},
+	journal = {Proceedings of the Royal Society B: Biological Sciences},
+	author = {Chadwick, William and Little, Tom J},
+	month = mar,
+	year = {2005},
+	pages = {505--509}
+}
+
+@article{wund_assessing_2012,
+	title = {Assessing the {Impacts} of {Phenotypic} {Plasticity} on {Evolution}},
+	volume = {52},
+	issn = {1540-7063, 1557-7023},
+	url = {https://academic.oup.com/icb/article-lookup/doi/10.1093/icb/ics050},
+	doi = {10.1093/icb/ics050},
+	language = {english},
+	number = {1},
+	urldate = {2021-02-16},
+	journal = {Integrative and Comparative Biology},
+	author = {Wund, M. A.},
+	month = jul,
+	year = {2012},
+	pages = {5--15}
+}
+
+@article{forsman_rethinking_2015,
+	title = {Rethinking phenotypic plasticity and its consequences for individuals, populations and species},
+	volume = {115},
+	issn = {0018-067X, 1365-2540},
+	url = {http://www.nature.com/articles/hdy201492},
+	doi = {10.1038/hdy.2014.92},
+	language = {english},
+	number = {4},
+	urldate = {2019-08-22},
+	journal = {Heredity},
+	author = {Forsman, A},
+	month = oct,
+	year = {2015},
+	pages = {276--284}
+}
+
+@article{ghalambor_non-adaptive_2015,
+	title = {Non-adaptive plasticity potentiates rapid adaptive evolution of gene expression in nature},
+	volume = {525},
+	issn = {0028-0836, 1476-4687},
+	url = {http://www.nature.com/articles/nature15256},
+	doi = {10.1038/nature15256},
+	language = {english},
+	number = {7569},
+	urldate = {2021-02-16},
+	journal = {Nature},
+	author = {Ghalambor, Cameron K. and Hoke, Kim L. and Ruell, Emily W. and Fischer, Eva K. and Reznick, David N. and Hughes, Kimberly A.},
+	month = sep,
+	year = {2015},
+	pages = {372--375}
+}
+
+@article{hendry_key_2016,
+	title = {Key {Questions} on the {Role} of {Phenotypic} {Plasticity} in {Eco}-{Evolutionary} {Dynamics}},
+	volume = {107},
+	issn = {0022-1503, 1465-7333},
+	url = {https://academic.oup.com/jhered/article-lookup/doi/10.1093/jhered/esv060},
+	doi = {10.1093/jhered/esv060},
+	language = {english},
+	number = {1},
+	urldate = {2020-08-21},
+	journal = {Journal of Heredity},
+	author = {Hendry, Andrew P.},
+	month = jan,
+	year = {2016},
+	pages = {25--41}
+}
+
+@article{ancel_undermining_2000,
+	title = {Undermining the {Baldwin} {Expediting} {Effect}: {Does} {Phenotypic} {Plasticity} {Accelerate} {Evolution}?},
+	volume = {58},
+	issn = {00405809},
+	shorttitle = {Undermining the {Baldwin} {Expediting} {Effect}},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S0040580900914849},
+	doi = {10.1006/tpbi.2000.1484},
+	language = {english},
+	number = {4},
+	urldate = {2021-02-16},
+	journal = {Theoretical Population Biology},
+	author = {Ancel, Lauren W.},
+	month = dec,
+	year = {2000},
+	pages = {307--319}
+}
+
+@article{huey_behavioral_2003,
+	title = {Behavioral {Drive} versus {Behavioral} {Inertia} in {Evolution}: {A} {Null} {Model} {Approach}},
+	volume = {161},
+	issn = {0003-0147, 1537-5323},
+	shorttitle = {Behavioral {Drive} versus {Behavioral} {Inertia} in {Evolution}},
+	url = {https://www.journals.uchicago.edu/doi/10.1086/346135},
+	doi = {10.1086/346135},
+	language = {english},
+	number = {3},
+	urldate = {2021-02-16},
+	journal = {The American Naturalist},
+	author = {Huey, Raymond B. and Hertz, Paul E. and Sinervo, B.},
+	month = mar,
+	year = {2003},
+	pages = {357--366}
+}
+
+
+@article{price_role_2003,
+	title = {The role of phenotypic plasticity in driving genetic evolution},
+	volume = {270},
+	issn = {0962-8452, 1471-2954},
+	url = {https://royalsocietypublishing.org/doi/10.1098/rspb.2003.2372},
+	doi = {10.1098/rspb.2003.2372},
+	language = {english},
+	number = {1523},
+	urldate = {2020-10-08},
+	journal = {Proceedings of the Royal Society of London. Series B: Biological Sciences},
+	author = {Price, Trevor D. and Qvarnström, Anna and Irwin, Darren E.},
+	month = jul,
+	year = {2003},
+	pages = {1433--1440}
+}
+
+
+@article{gupta_study_1982,
+	title = {A {Study} of {Reaction} {Norms} in {Natural} {Populations} of {Drosophila} pseudoobscura},
+	volume = {36},
+	issn = {00143820},
+	url = {https://www.jstor.org/stable/2408073?origin=crossref},
+	doi = {10.2307/2408073},
+	number = {5},
+	urldate = {2021-02-16},
+	journal = {Evolution},
+	author = {Gupta, Anand P. and Lewontin, R. C.},
+	month = sep,
+	year = {1982},
+	pages = {934}
+}
+
+@article{paenke_influence_2007,
+	title = {Influence of {Plasticity} and {Learning} on {Evolution} under {Directional} {Selection}},
+	volume = {170},
+	issn = {0003-0147, 1537-5323},
+	url = {https://www.journals.uchicago.edu/doi/10.1086/518952},
+	doi = {10.1086/518952},
+	language = {english},
+	number = {2},
+	urldate = {2021-02-15},
+	journal = {The American Naturalist},
+	author = {Paenke, Ingo and Sendhoff, Bernhard and Kawecki, Tadeusz J.},
+	month = aug,
+	year = {2007},
+	pages = {E47--E58}
+}
+
+@article{schlichting_phenotypic_2014,
+	title = {Phenotypic {Plasticity} and {Epigenetic} {Marking}: {An} {Assessment} of {Evidence} for {Genetic} {Accommodation}},
+	volume = {68},
+	issn = {00143820},
+	shorttitle = {{PHENOTYPIC} {PLASTICITY} {AND} {EPIGENETIC} {MARKING}},
+	url = {http://doi.wiley.com/10.1111/evo.12348},
+	doi = {10.1111/evo.12348},
+	language = {english},
+	number = {3},
+	urldate = {2021-02-16},
+	journal = {Evolution},
+	author = {Schlichting, Carl D. and Wund, Matthew A.},
+	month = mar,
+	year = {2014},
+	pages = {656--672}
+}
+
+@article{levis_evaluating_2016,
+	title = {Evaluating ‘{Plasticity}-{First}’ {Evolution} in {Nature}: {Key} {Criteria} and {Empirical} {Approaches}},
+	volume = {31},
+	issn = {01695347},
+	shorttitle = {Evaluating ‘{Plasticity}-{First}’ {Evolution} in {Nature}},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S0169534716000914},
+	doi = {10.1016/j.tree.2016.03.012},
+	language = {english},
+	number = {7},
+	urldate = {2019-04-30},
+	journal = {Trends in Ecology \& Evolution},
+	author = {Levis, Nicholas A. and Pfennig, David W.},
+	month = jul,
+	year = {2016},
+	pages = {563--574}
+}
+
+@article{zheng_cryptic_2019,
+	title = {Cryptic genetic variation accelerates evolution by opening access to diverse adaptive peaks},
+	volume = {365},
+	issn = {0036-8075, 1095-9203},
+	url = {https://www.sciencemag.org/lookup/doi/10.1126/science.aax1837},
+	doi = {10.1126/science.aax1837},
+	abstract = {Cryptic genetic variation can facilitate adaptation in evolving populations. To elucidate the underlying genetic mechanisms, we used directed evolution in
+              Escherichia coli
+              to accumulate variation in populations of yellow fluorescent proteins and then evolved these proteins toward the new phenotype of green fluorescence. Populations with cryptic variation evolved adaptive genotypes with greater diversity and higher fitness than populations without cryptic variation, which converged on similar genotypes. Populations with cryptic variation accumulated neutral or deleterious mutations that break the constraints on the order in which adaptive mutations arise. In doing so, cryptic variation opens paths to adaptive genotypes, creates historical contingency, and reduces the predictability of evolution by allowing different replicate populations to climb different adaptive peaks and explore otherwise-inaccessible regions of an adaptive landscape.},
+	language = {english},
+	number = {6451},
+	urldate = {2021-02-16},
+	journal = {Science},
+	author = {Zheng, Jia and Payne, Joshua L. and Wagner, Andreas},
+	month = jul,
+	year = {2019},
+	pages = {347--353}
+}
+
+@article{schlichting_hidden_2008,
+	title = {Hidden {Reaction} {Norms}, {Cryptic} {Genetic} {Variation}, and {Evolvability}},
+	volume = {1133},
+	issn = {00778923, 17496632},
+	url = {http://doi.wiley.com/10.1196/annals.1438.010},
+	doi = {10.1196/annals.1438.010},
+	language = {english},
+	number = {1},
+	urldate = {2021-02-16},
+	journal = {Annals of the New York Academy of Sciences},
+	author = {Schlichting, Carl D.},
+	month = jun,
+	year = {2008},
+	pages = {187--203}
+}
+
+@article{schwander_genes_2011,
+	title = {Genes as leaders and followers in evolution},
+	volume = {26},
+	issn = {01695347},
+	url = {https://linkinghub.elsevier.com/retrieve/pii/S0169534710003022},
+	doi = {10.1016/j.tree.2010.12.010},
+	language = {english},
+	number = {3},
+	urldate = {2021-02-16},
+	journal = {Trends in Ecology \& Evolution},
+	author = {Schwander, Tanja and Leimar, Olof},
+	month = mar,
+	year = {2011},
+	pages = {143--151}
+}
+
+@article{west-eberhard_developmental_2005,
+	title = {Developmental plasticity and the origin of species differences},
+	volume = {102},
+	issn = {0027-8424},
+	url = {http://www.pnas.org/cgi/doi/10.1073/pnas.0501844102},
+	doi = {10.1073/pnas.0501844102},
+	language = {english},
+	number = {Supplement 1},
+	urldate = {2021-02-17},
+	journal = {Proceedings of the National Academy of Sciences},
+	author = {West-Eberhard, M. J.},
+	month = may,
+	year = {2005},
+	pages = {6543--6549},
+	file = {West-Eberhard_2005_Developmental_plasticity_and_the_origin_of_species_differences.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/West-Eberhard_2005_Developmental_plasticity_and_the_origin_of_species_differences.pdf:application/pdf}
+}
+
+
+@article{pigliucci_phenotypic_2006,
+	title = {Phenotypic plasticity and evolution by genetic assimilation},
+	volume = {209},
+	issn = {0022-0949, 1477-9145},
+	url = {http://jeb.biologists.org/cgi/doi/10.1242/jeb.02070},
+	doi = {10.1242/jeb.02070},
+	language = {english},
+	number = {12},
+	urldate = {2021-02-17},
+	journal = {Journal of Experimental Biology},
+	author = {Pigliucci, M.},
+	month = jun,
+	year = {2006},
+	pages = {2362--2367}
+}
+
+
+@article{crispo_baldwin_2007,
+	title = {The {Baldwin} effect and genetic assimilation: revisiting two mechanisms of evolutionary change mediated by phenotypic plasticity},
+	volume = {61},
+	issn = {0014-3820, 1558-5646},
+	shorttitle = {{THE} {BALDWIN} {EFFECT} {AND} {GENETIC} {ASSIMILATION}},
+	url = {http://doi.wiley.com/10.1111/j.1558-5646.2007.00203.x},
+	doi = {10.1111/j.1558-5646.2007.00203.x},
+	language = {english},
+	number = {11},
+	urldate = {2021-02-17},
+	journal = {Evolution},
+	author = {Crispo, Erika},
+	month = nov,
+	year = {2007},
+	pages = {2469--2479}
+}
+
+@article{chevin_when_2010,
+	title = {When do adaptive plasticity and genetic evolution prevent extinction of a density‐regulated population?},
+	volume = {64},
+	issn = {00143820},
+	url = {http://doi.wiley.com/10.1111/j.1558-5646.2009.00875.x},
+	doi = {10.1111/j.1558-5646.2009.00875.x},
+	language = {english},
+	number = {4},
+	urldate = {2021-02-17},
+	journal = {Evolution},
+	author = {Chevin, Luis-Miguel and Lande, Russell},
+	year = {2010},
+	pages = {1143--1150}
+}
+
+@article{li_digital_2004,
+	title = {Digital {Evolution} in {Time}-{Dependent} {Fitness} {Landscapes}},
+	volume = {10},
+	issn = {1064-5462, 1530-9185},
+	url = {http://www.mitpressjournals.org/doi/10.1162/106454604773563559},
+	doi = {10.1162/106454604773563559},
+	language = {english},
+	number = {2},
+	urldate = {2019-08-18},
+	journal = {Artificial Life},
+	author = {Li, Ye and Wilke, Claus O.},
+	month = mar,
+	year = {2004},
+	keywords = {changing environment, avida},
+	pages = {123--134}
+}
+
+@article{kruskal_use_1952,
+	title = {Use of {Ranks} in {One}-{Criterion} {Variance} {Analysis}},
+	volume = {47},
+	issn = {0162-1459, 1537-274X},
+	url = {http://www.tandfonline.com/doi/abs/10.1080/01621459.1952.10483441},
+	doi = {10.1080/01621459.1952.10483441},
+	language = {english},
+	number = {260},
+	urldate = {2021-02-18},
+	journal = {Journal of the American Statistical Association},
+	author = {Kruskal, William H. and Wallis, W. Allen},
+	month = dec,
+	year = {1952},
+	pages = {583--621}
+}
+
+
+@incollection{kotz_individual_1992,
+	address = {New York, NY},
+	title = {Individual {Comparisons} by {Ranking} {Methods}},
+	isbn = {978-0-387-94039-7 978-1-4612-4380-9},
+	url = {http://link.springer.com/10.1007/978-1-4612-4380-9_16},
+	urldate = {2021-02-18},
+	booktitle = {Breakthroughs in {Statistics}},
+	publisher = {Springer New York},
+	author = {Wilcoxon, Frank},
+	editor = {Kotz, Samuel and Johnson, Norman L.},
+	year = {1992},
+	doi = {10.1007/978-1-4612-4380-9_16},
+	note = {Series Title: Springer Series in Statistics},
+	pages = {196--202}
+}
+
+@article{rice_analyzing_1989,
+	title = {Analyzing {Tables} of {Statistical} {Tests}},
+	volume = {43},
+	issn = {00143820},
+	url = {https://www.jstor.org/stable/2409177?origin=crossref},
+	doi = {10.2307/2409177},
+	number = {1},
+	urldate = {2021-02-18},
+	journal = {Evolution},
+	author = {Rice, William R.},
+	month = jan,
+	year = {1989},
+	pages = {223}
+}
+
+@article{lande_measurement_1983,
+	title = {The {Measurement} of {Selection} on {Correlated} {Characters}},
+	volume = {37},
+	issn = {00143820},
+	url = {https://www.jstor.org/stable/2408842?origin=crossref},
+	doi = {10.2307/2408842},
+	number = {6},
+	urldate = {2021-02-24},
+	journal = {Evolution},
+	author = {Lande, Russell and Arnold, Stevan J.},
+	month = nov,
+	year = {1983},
+	pages = {1210},
+	file = {Lande_Arnold_1983_The_Measurement_of_Selection_on_Correlated_Characters.pdf:/Users/amlalejini/Dropbox/Library/research-bibliography/Lande_Arnold_1983_The_Measurement_of_Selection_on_Correlated_Characters.pdf:application/pdf}
+}
+
+
+@book{zimmer_evolution_2013,
+	address = {Greenwood Village, CO},
+	title = {Evolution: making sense of life},
+	isbn = {978-1-936221-17-2 978-1-936221-36-3},
+	shorttitle = {Evolution},
+	publisher = {Roberts and Company Publishers},
+	author = {Zimmer, Carl and Emlen, Douglas John},
+	year = {2013},
+	keywords = {Evolution (Biology), SCIENCE / Life Sciences / Evolution}
+}
+
+@article{chevin_adaptation_2010,
+	title = {Adaptation, {Plasticity}, and {Extinction} in a {Changing} {Environment}: {Towards} a {Predictive} {Theory}},
+	volume = {8},
+	issn = {1545-7885},
+	shorttitle = {Adaptation, {Plasticity}, and {Extinction} in a {Changing} {Environment}},
+	url = {https://dx.plos.org/10.1371/journal.pbio.1000357},
+	doi = {10.1371/journal.pbio.1000357},
+	language = {english},
+	number = {4},
+	urldate = {2020-10-09},
+	journal = {PLoS Biology},
+	author = {Chevin, Luis-Miguel and Lande, Russell and Mace, Georgina M.},
+	editor = {Kingsolver, Joel G.},
+	month = apr,
+	year = {2010},
+	pages = {e1000357}
+}
+
+@article{smith_hitch-hiking_1974,
+	title = {The hitch-hiking effect of a favourable gene},
+	volume = {23},
+	issn = {0016-6723, 1469-5073},
+	url = {https://www.cambridge.org/core/product/identifier/S0016672300014634/type/journal_article},
+	doi = {10.1017/S0016672300014634},
+	language = {english},
+	number = {1},
+	urldate = {2021-02-18},
+	journal = {Genetical Research},
+	author = {Smith, John Maynard and Haigh, John},
+	month = feb,
+	year = {1974},
+	pages = {23--35}
+}
+
+@article{buskirk_hitchhiking_2017,
+	title = {Hitchhiking and epistasis give rise to cohort dynamics in adapting populations},
+	volume = {114},
+	issn = {0027-8424, 1091-6490},
+	url = {http://www.pnas.org/lookup/doi/10.1073/pnas.1702314114},
+	doi = {10.1073/pnas.1702314114},
+	language = {english},
+	number = {31},
+	urldate = {2021-02-18},
+	journal = {Proceedings of the National Academy of Sciences},
+	author = {Buskirk, Sean W. and Peace, Ryan Emily and Lang, Gregory I.},
+	month = aug,
+	year = {2017},
+	pages = {8330--8335}
+}
+
+@article{van_den_bergh_experimental_2018,
+	title = {Experimental {Design}, {Population} {Dynamics}, and {Diversity} in {Microbial} {Experimental} {Evolution}},
+	volume = {82},
+	issn = {1092-2172, 1098-5557},
+	url = {https://mmbr.asm.org/content/82/3/e00008-18},
+	doi = {10.1128/MMBR.00008-18},
+	language = {english},
+	number = {3},
+	urldate = {2020-08-17},
+	journal = {Microbiology and Molecular Biology Reviews},
+	author = {Van den Bergh, Bram and Swings, Toon and Fauvart, Maarten and Michiels, Jan},
+	month = jul,
+	year = {2018},
+	pages = {e00008--18, /mmbr/82/3/e00008--18.atom}
+}
+
+@article{barton_genetic_2000,
+	title = {Genetic hitchhiking},
+	volume = {355},
+	number = {1403},
+	journal = {Philosophical Transactions of the Royal Society of London. Series B: Biological Sciences},
+	author = {Barton, Nicholas H.},
+	year = {2000},
+	note = {Publisher: The Royal Society},
+	pages = {1553--1562},
+	file = {Full Text:/research/zotero/data/storage/WKF9DGIY/Barton - 2000 - Genetic hitchhiking.pdf:application/pdf;Snapshot:/research/zotero/data/storage/5NJJZ2WT/rstb.2000.html:text/html}
+}
+
+@article{gomulkiewicz_when_1995,
+	title = {When does {Evolution} by {Natural} {Selection} {Prevent} {Extinction}?},
+	volume = {49},
+	issn = {00143820},
+	url = {https://www.jstor.org/stable/2410305?origin=crossref},
+	doi = {10.2307/2410305},
+	number = {1},
+	urldate = {2021-02-28},
+	journal = {Evolution},
+	author = {Gomulkiewicz, Richard and Holt, Robert D.},
+	month = feb,
+	year = {1995},
+	pages = {201}
+}
+
+@article{boyer_adaptation_2021,
+	title = {Adaptation is influenced by the complexity of environmental change during evolution in a dynamic environment},
+	volume = {17},
+	issn = {1553-7404},
+	url = {https://dx.plos.org/10.1371/journal.pgen.1009314},
+	doi = {10.1371/journal.pgen.1009314},
+	language = {english},
+	number = {1},
+	urldate = {2021-02-02},
+	journal = {PLOS Genetics},
+	author = {Boyer, Sébastien and Hérissant, Lucas and Sherlock, Gavin},
+	editor = {Butler, Geraldine},
+	month = jan,
+	year = {2021},
+	pages = {e1009314}
+}
+
+@article{lahti_relaxed_2009,
+	title = {Relaxed selection in the wild},
+	volume = {24},
+	issn = {0169-5347},
+	url = {http://www.sciencedirect.com/science/article/pii/S0169534709001505},
+	doi = {10.1016/j.tree.2009.03.010},
+	abstract = {Natural populations often experience the weakening or removal of a source of selection that had been important in the maintenance of one or more traits. Here we refer to these situations as ‘relaxed selection,’ and review recent studies that explore the effects of such changes on traits in their ecological contexts. In a few systems, such as the loss of armor in stickleback, the genetic, developmental and ecological bases of trait evolution are being discovered. These results yield insights into whether and how fast a trait is reduced or lost under relaxed selection. We provide a prospectus and a framework for understanding relaxed selection and trait loss in natural populations. We also examine its implications for applied issues, such as antibiotic resistance and the success of invasive species.},
+	language = {english},
+	number = {9},
+	urldate = {2020-08-31},
+	journal = {Trends in Ecology \& Evolution},
+	author = {Lahti, David C. and Johnson, Norman A. and Ajie, Beverly C. and Otto, Sarah P. and Hendry, Andrew P. and Blumstein, Daniel T. and Coss, Richard G. and Donohue, Kathleen and Foster, Susan A.},
+	month = sep,
+	year = {2009},
+	pages = {487--496},
+	file = {ScienceDirect Snapshot:/research/zotero/data/storage/SH7VUIPI/S0169534709001505.html:text/html;Lahti et al. - 2009 - Relaxed selection in the wild.pdf:/research/zotero/data/storage/ZJGDDRAB/Lahti et al. - 2009 - Relaxed selection in the wild.pdf:application/pdf}
 }
