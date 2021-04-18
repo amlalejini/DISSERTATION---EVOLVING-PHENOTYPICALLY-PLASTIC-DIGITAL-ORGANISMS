@@ -4,7 +4,7 @@
 
 A dissertation by Alexander M. Lalejini.
 
-## Advice
+## Tips
 
 - Labels and references
 - Siloing and modularity 
