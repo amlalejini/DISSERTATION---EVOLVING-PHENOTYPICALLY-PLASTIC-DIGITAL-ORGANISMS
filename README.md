@@ -6,6 +6,6 @@ A dissertation by Alexander M. Lalejini.
 
 ## Tips
 
-- Labels and references
-- Siloing and modularity 
-- GitHub
+- Standardize your latex labels and references. E.g., `chapter:[chapter-name]:sec:introduction`
+- Silo chapters to avoid becoming overwhelmed with the size of your dissertation while you edit.   
+- GitHub is fantastic for versioning! 

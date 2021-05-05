@@ -32,7 +32,7 @@ When a module is called, it is executed procedurally, instruction-by-instruction
 We modified SignalGP in two ways to implement tag-based genetic regulation: 
 
 \begin{enumerate}
-    \item We added a ``regulatory modifier'' value (represented as a floating point value) to all tag-addressed modules. A module's regulatory modifier adjusts how well that module will match to referring tags, and thus, modifies the likelihood it will be referenced.
+    \item We added a ``regulatory modifier'' value (represented as a floating point value) to all tag-addressed modules. A module's regulatory modifier adjusts how well that module matches to referring tags, and thus, modifies the likelihood it will be referenced.
     \item We supplemented the instruction set with promoter and repressor instructions that, when executed, adjust a target module's regulatory modifier. 
 \end{enumerate} 
 
