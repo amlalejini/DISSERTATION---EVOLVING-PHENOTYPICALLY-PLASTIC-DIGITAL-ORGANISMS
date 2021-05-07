@@ -69,8 +69,12 @@
 
 %%% Use the following to format your titles for the Table of Contents, List of Figures, List of Tables. 
 %\renewcommand{\cfttoctitlefont}{\normalfont\Large\bfseries\MakeUppercase}
-\setlength{\cftbeforetoctitleskip}{-0.2in}
-\setlength{\cftaftertoctitleskip}{0.1875in}
+% ---- 2021-05-06 - pre-msu-revision ----
+% \setlength{\cftbeforetoctitleskip}{-0.2in}
+% \setlength{\cftaftertoctitleskip}{0.1875in}
+% ------
+\setlength{\cftaftertoctitleskip}{-0.1in}
+\setlength{\cftbeforetoctitleskip}{-0.65in}
 \renewcommand{\cfttoctitlefont}{\hfill\Large\bfseries}
 \renewcommand{\cftaftertoctitle}{\hfill}
 \renewcommand{\contentsname}{\large\begin{center}{TABLE OF CONTENTS}\end{center}}
@@ -211,7 +215,8 @@ for the degree of\\
 %Change the next line as needed for your degree
 
 Computer Science - Doctor of Philosophy; \\
-Ecology, Evolution, and Behavior - Dual Major - Doctor of Philosophy
+Ecology, Evolution, and Behavior - Dual Major - Doctor of Philosophy 
+\vspace{\baselineskip}
 
 %put in the appropriate year
 \graduationYear\\
@@ -224,7 +229,7 @@ Ecology, Evolution, and Behavior - Dual Major - Doctor of Philosophy
 \pagenumbering{roman}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % == Abstract ==
-\thispagestyle{empty} \setcounter{page}{2}
+\thispagestyle{empty} \setcounter{page}{4}
 \begin{doublespace}
 \begin{centering}
 ABSTRACT \\ %
@@ -267,7 +272,7 @@ Copyright by \\
 \vspace{5ex}
 ACKNOWLEDGEMENTS \par
 \end{centering}
-\vspace{10ex}
+\vspace{\baselineskip}
 
 \begin{doublespace}
 
@@ -327,6 +332,8 @@ ACKNOWLEDGEMENTS \par
 
 %%%  Include the chapters of your dissertation:
 %%% Use format: \include{<file here>(No Extension)}
+
+\begin{raggedbottom}
 \include{chapters/01-introduction/main}
 \include{chapters/02-evolutionary-origins-of-plasticity/main}
 \include{chapters/03-evolutionary-consequences-of-plasticity/main}
@@ -334,6 +341,7 @@ ACKNOWLEDGEMENTS \par
 \include{chapters/05-tag-based-genetic-regulation/main}
 \include{chapters/06-tag-access-memory/main}
 \include{chapters/07-conclusion/main}
+\end{raggedbottom}
 
 %%%  Appendices, if necessary:
 
