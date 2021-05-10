@@ -15,9 +15,8 @@
 - [x] TABLE OF CONTENTS: the heading TABLE OF CONTENTS is to be centered, 1inch from the top of the page. It is too far down on the page currently.
   - RESPONSE: Tweak `cftbeforetoctitleskip` to adjust spacing from top of page.
 
-- [ ] TABLE OF CONTENTS: after the heading, only double space twice. You have too much space here currently.
+- [x] TABLE OF CONTENTS: after the heading, only double space twice. You have too much space here currently.
   - RESPONSE: Tweak `cftaftertoctitleskip`
-  - TODO - double check spacing
 
 - [x] Page 31 heading 2.3.1: since the heading is going onto two lines anyway, it would look better if plasticity was not hyphenated and it was all on the 2nd line.
   - RESPONSE: Use `raggedright` environment to tell latex it's okay to do what the MSU people want
@@ -35,7 +34,8 @@
 - [x] Page 80 the spacing after 4.3.1 is too large. Remove one of the double spaces. Review your entire document to ensure that the spacing between headings and text is consistent throughout the document.
   - RESPONSE: use `raggedbottom` environment for entire document...
 
-- [ ] Please submit the signed Approval Form. This form is taken as evidence that your document has been examined and approved by the major professor. The approval form, with the required signatures can be submitted to the Graduate School by email to msuetds.approval@grd.msu.edu . The approval form may be found at: https://grad.msu.edu/etd/Required-Paperwork-and-Surveys.
+- [x] Please submit the signed Approval Form. This form is taken as evidence that your document has been examined and approved by the major professor. The approval form, with the required signatures can be submitted to the Graduate School by email to msuetds.approval@grd.msu.edu . The approval form may be found at: https://grad.msu.edu/etd/Required-Paperwork-and-Surveys.
   - RESPONSE: Filled out new form. Check with Charles if he received an email.
+    - Charles found email in spam.
 
 - [x] Please submit the IRB Approval letter if human subjects were used or the IACUC letter if animal subjects were used. This may be submitted to the Graduate School by email to msuetds.approval@grd.msu.edu *****NOTE: if you used human subjects and your name does not appear on the IRB Letter you must provide documentation that you are an approved researcher on the project. Either send a screenshot from the “CLICK” site where you are listed as a researcher OR have your PI send an email to msuetds.approval@grd.msu.edu stating the IRB number, the project title and that you are an approved researcher on the project. (If you used animal subjects, your name does not need to appear on the IACUC letter.) 
