@@ -4,7 +4,7 @@
 
 A dissertation by Alexander M. Lalejini.
 
-All of my requested (formatting) revisions from the graduate school are in the [supporting directory](https://github.com/amlalejini/DISSERTATION---EVOLVING-PHENOTYPICALLY-PLASTIC-DIGITAL-ORGANISMS/tree/main/supporting).
+My requested (formatting) revisions from the graduate school, chapter origins documentation, and defense announcement are in the [supporting directory](https://github.com/amlalejini/DISSERTATION---EVOLVING-PHENOTYPICALLY-PLASTIC-DIGITAL-ORGANISMS/tree/main/supporting).
 
 ## Tips
 
