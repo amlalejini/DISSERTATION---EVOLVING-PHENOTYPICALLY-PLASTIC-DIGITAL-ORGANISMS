@@ -4,6 +4,8 @@
 
 A dissertation by Alexander M. Lalejini.
 
+All of my requested (formatting) revisions from the graduate school are in the [supporting directory](https://github.com/amlalejini/DISSERTATION---EVOLVING-PHENOTYPICALLY-PLASTIC-DIGITAL-ORGANISMS/tree/main/supporting).
+
 ## Tips
 
 - Standardize your latex labels and references. E.g., `chapter:[chapter-name]:sec:introduction`
