@@ -1,11 +1,5 @@
 # Notes
 
-## Reminders/Todos:
-
-- [ ] Fix spacing in list of Tables/figures
-- [ ] Double check degree names for CS and EEB
-- [ ] Double check general formatting requirements
-
 ## Nomenclature and convention
 
 ### Chapter IDs
